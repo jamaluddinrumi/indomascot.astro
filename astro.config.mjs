@@ -1,13 +1,11 @@
 import { defineConfig } from "astro/config";
-
-// https://astro.build/config
 import { loadEnv } from "vite";
 import storyblok from "@storyblok/astro";
 import tailwind from "@astrojs/tailwind";
+import image from "@astrojs/image";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
-// https://astro.build/config
 export default defineConfig({
   output: "static",
   integrations: [
@@ -22,5 +20,8 @@ export default defineConfig({
       },
     }),
     tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
   ],
 });
