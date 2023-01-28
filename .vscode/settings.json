@@ -179,7 +179,9 @@
     "javascript",
     "astro", // Enable .astro
     "typescript" // Enable .ts
-  ]
+  ],
+  "prettier.documentSelectors": ["**/*.astro"]
+
   // START if using daisy ui
   // "tailwindCSS.experimental.configFile": "tailwind.config.intellisense.js",
   // END if using daisy ui
