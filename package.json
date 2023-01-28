@@ -26,7 +26,10 @@
     "@storyblok/js": "^2.0.11",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
+    "@typescript-eslint/parser": "^5.49.0",
     "astro-icon": "^0.8.0",
+    "eslint": "^8.32.0",
+    "eslint-plugin-astro": "^0.23.0",
     "pnpm": "^7.26.1",
     "sharp": "^0.31.3",
     "vite": "^4.0.4"
