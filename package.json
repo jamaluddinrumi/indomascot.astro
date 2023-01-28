@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@astrojs/image": "^0.13.0",
@@ -33,6 +34,7 @@
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "pnpm": "^7.26.1",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0",
