@@ -5,8 +5,10 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
-
+import robotsTxt from "astro-robots-txt";
 const env = loadEnv("", process.cwd(), "STORYBLOK");
+
+// https://astro.build/config
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,5 +31,6 @@ export default defineConfig({
     }),
     compress(),
     sitemap(),
+    robotsTxt(),
   ],
 });
