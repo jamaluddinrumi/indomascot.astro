@@ -175,12 +175,6 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
-  "eslint.validate": [
-    "javascript",
-    "astro", // Enable .astro
-    "typescript" // Enable .ts
-  ],
-  "prettier.documentSelectors": ["**/*.astro"]
 
   // START if using daisy ui
   // "tailwindCSS.experimental.configFile": "tailwind.config.intellisense.js",

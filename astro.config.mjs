@@ -9,8 +9,6 @@ import robotsTxt from "astro-robots-txt";
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
 // https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
   output: "static",
   site: "https://www.indomascot.com",
