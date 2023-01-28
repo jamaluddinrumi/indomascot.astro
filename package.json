@@ -1,17 +1,21 @@
 {
-  "name": "@example/basics",
+  "name": "indomascot",
   "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host --https",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/node": "^5.0.1",
     "astro": "^2.0.2"
+  },
+  "devDependencies": {
+    "pnpm": "^7.26.1"
   }
 }

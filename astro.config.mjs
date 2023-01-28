@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 import node from "@astrojs/node";
@@ -6,5 +6,7 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: node()
+  adapter: node({
+    mode: "standalone",
+  }),
 });
