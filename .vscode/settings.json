@@ -171,7 +171,10 @@
     "vue": "html",
     "javascript": "javascriptreact"
   },
-  "files.autoSave": "off"
+  "files.autoSave": "off",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
   // START if using daisy ui
   // "tailwindCSS.experimental.configFile": "tailwind.config.intellisense.js",
   // END if using daisy ui
