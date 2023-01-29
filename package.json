@@ -10,16 +10,19 @@
     "preview": "astro preview",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "format": "npx pnpm exec prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
   },
   "dependencies": {
     "@astrojs/image": "^0.13.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
+    "@astrojs/vue": "^2.0.0",
     "astro": "^2.0.2",
     "astro-compress": "^1.1.28",
     "astro-robots-txt": "^0.3.11",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "vue": "^3.2.30"
   },
   "devDependencies": {
     "@fontsource/bangers": "^4.5.9",
@@ -39,8 +42,10 @@
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
+    "sass": "^1.57.1",
     "sharp": "^0.31.3",
     "stylelint-config-prettier": "^9.0.4",
-    "vite": "^4.0.4"
+    "vite": "^4.0.4",
+    "vue-i18n": "9"
   }
 }

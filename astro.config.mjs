@@ -6,7 +6,8 @@ import image from "@astrojs/image";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
-const env = loadEnv("", process.cwd(), "STORYBLOK");
+import vue from "@astrojs/vue";
+const STORYBLOK_TOKEN = import.meta.env.STORYBLOK_TOKEN;
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
   site: "https://www.indomascot.com",
   integrations: [
     storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
+      accessToken: STORYBLOK_TOKEN,
       components: {
         // Add your components here
       },
@@ -30,5 +31,6 @@ export default defineConfig({
     compress(),
     sitemap(),
     robotsTxt(),
+    vue({ appEntrypoint: "/src/pages/_app" }),
   ],
 });
