@@ -24,15 +24,32 @@ import {
 } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHome,
+  faMapMarker,
+  faExternalLinkAlt,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faWhatsapp,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+// import { far } from "@fortawesome/free-regular-svg-icons";
 
 export default (app: App) => {
   app.use(i18n);
 
   /* add icons to the library */
-  library.add(fas, fab, far);
+  library.add(
+    faHome,
+    faMapMarker,
+    faExternalLinkAlt,
+    faEnvelope,
+    faWhatsapp,
+    faInstagram,
+    faYoutube
+  );
 
   /* add font awesome icon component */
   app.component("font-awesome-icon", FontAwesomeIcon);
