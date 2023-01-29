@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
 import storyblok from "@storyblok/astro";
 import tailwind from "@astrojs/tailwind";
-import image from "@astrojs/image";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
@@ -25,9 +24,6 @@ export default defineConfig({
       },
     }),
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
     compress(),
     sitemap(),
     robotsTxt(),

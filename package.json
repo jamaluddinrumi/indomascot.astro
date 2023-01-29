@@ -10,11 +10,10 @@
     "preview": "astro preview",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
-    "lint": "eslint . --fix",
-    "format": "npx pnpm exec prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
+    "lint": "pnpx eslint . --fix",
+    "format": "pnpx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
   },
   "dependencies": {
-    "@astrojs/image": "^0.13.0",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@astrojs/vue": "^2.0.0",
@@ -28,6 +27,11 @@
     "@fontsource/bangers": "^4.5.9",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/josefin-sans": "^4.5.12",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@storyblok/astro": "^2.0.5",
     "@storyblok/js": "^2.0.11",
     "@tailwindcss/line-clamp": "^0.4.2",
