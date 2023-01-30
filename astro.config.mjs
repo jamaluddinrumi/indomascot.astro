@@ -7,13 +7,12 @@ import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
-import AstroPWA from "@vite-pwa/astro";
 const env = loadEnv("", "", "");
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    logLevel: 'info',
+    logLevel: "info",
     define: {
       __DATE__: `'${new Date().toISOString()}'`,
     },
@@ -42,43 +41,5 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     vue({ appEntrypoint: "/src/pages/_app" }),
-    AstroPWA({
-      mode: "development",
-      base: "/",
-      scope: "/",
-      includeAssets: ["favicon.svg"],
-      registerType: "autoUpdate",
-      manifest: {
-        name: "Admin INDOMASCOT",
-        short_name: "Admin INDOMASCOT",
-        description: "Admin INDOMASCOT",
-        theme_color: "#121212",
-        icons: [
-          {
-            src: "pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-          },
-          {
-            src: "pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-          },
-          {
-            src: "pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
-        ],
-      },
-      workbox: {
-        globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
-      },
-      devOptions: {
-        enabled: true,
-        navigateFallback: "/404",
-      },
-    }),
   ],
 });

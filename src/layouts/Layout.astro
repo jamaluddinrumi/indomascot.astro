@@ -9,7 +9,6 @@ import "@fontsource/inter/800.css";
 import "@fontsource/josefin-sans/100.css";
 import "@fontsource/josefin-sans/300.css";
 import "@fontsource/josefin-sans/400.css";
-import { pwaInfo } from "virtual:pwa-info";
 
 export interface Props {
   title: string;
@@ -26,10 +25,13 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script src="/src/pwa.ts"></script>
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body>
+    <nav>
+      <li><a href="/">home</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/contact">contact</a></li>
+    </nav>
     <slot />
   </body>
 </html>
