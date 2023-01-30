@@ -7,29 +7,34 @@ import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
-const STORYBLOK_TOKEN = import.meta.env.STORYBLOK_TOKEN;
+import AstroPWA from "@vite-pwa/astro";
+const env = loadEnv("", "", "");
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
+    logLevel: 'info',
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`,
+    },
     server: {
-      https: {
-        key: fs.readFileSync("../127.0.0.1+7-key.pem"),
-        cert: fs.readFileSync("../127.0.0.1+7.pem"),
-      },
+      https:
+        env.NODE_ENV === "development" && env.USE_LOCAL_HTTPS === "true"
+          ? {
+              key: fs.readFileSync("../127.0.0.1+7-key.pem"),
+              cert: fs.readFileSync("../127.0.0.1+7.pem"),
+            }
+          : false,
     },
   },
   output: "static",
   site: "https://www.indomascot.com",
   integrations: [
     storyblok({
-      accessToken: STORYBLOK_TOKEN,
-      components: {
-        // Add your components here
-      },
+      accessToken: env.STORYBLOK_TOKEN,
+      components: {},
       apiOptions: {
-        // Choose your Storyblok space region
-        region: "eu", // optional,  or 'eu' (default)
+        region: "eu",
       },
     }),
     tailwind(),
@@ -37,5 +42,43 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     vue({ appEntrypoint: "/src/pages/_app" }),
+    AstroPWA({
+      mode: "development",
+      base: "/",
+      scope: "/",
+      includeAssets: ["favicon.svg"],
+      registerType: "autoUpdate",
+      manifest: {
+        name: "Admin INDOMASCOT",
+        short_name: "Admin INDOMASCOT",
+        description: "Admin INDOMASCOT",
+        theme_color: "#121212",
+        icons: [
+          {
+            src: "pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
+      },
+      devOptions: {
+        enabled: true,
+        navigateFallback: "/404",
+      },
+    }),
   ],
 });

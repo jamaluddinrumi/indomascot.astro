@@ -4,14 +4,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev --host --https",
+    "dev": "astro dev --host --port 3005",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
-    "lint": "pnpx eslint . --fix",
-    "format": "pnpx prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
+    "lint": "eslint . --fix",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.0.0",
@@ -37,6 +37,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/parser": "^5.49.0",
+    "@vite-pwa/astro": "^0.0.1",
     "astro-icon": "^0.8.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
@@ -50,6 +51,8 @@
     "sharp": "^0.31.3",
     "stylelint-config-prettier": "^9.0.4",
     "vite": "^4.0.4",
-    "vue-i18n": "9"
+    "vite-plugin-pwa": "^0.14.1",
+    "vue-i18n": "9",
+    "workbox-window": "^6.5.4"
   }
 }

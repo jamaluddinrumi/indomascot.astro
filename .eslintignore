@@ -1,6 +1,10 @@
 dist
 public
 
+node_modules
+
 # ignore generate imports
 auto-imports.d.ts
 components.d.ts
+
+dev-dist

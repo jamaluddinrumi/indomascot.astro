@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "baseUrl": ".",
+    "types": ["vite-plugin-pwa/client"],
     "paths": {
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
