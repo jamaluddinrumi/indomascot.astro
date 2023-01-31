@@ -1,6 +1,10 @@
 {
   "root": true,
-  "extends": ["plugin:astro/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "plugin:astro/recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:prettier/recommended"
+  ],
   "overrides": [
     {
       // Define the configuration for `.astro` file.
