@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --host --port 3005",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
@@ -43,6 +43,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.9.0",
     "pnpm": "^7.26.1",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0",
