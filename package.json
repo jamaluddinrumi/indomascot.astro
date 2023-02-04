@@ -14,7 +14,9 @@
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
   },
   "dependencies": {
+    "@nanostores/vue": "^0.7.0",
     "astro": "^2.0.2",
+    "nanostores": "^0.7.3",
     "tailwindcss": "^3.0.24",
     "vue": "^3.2.30"
   },
