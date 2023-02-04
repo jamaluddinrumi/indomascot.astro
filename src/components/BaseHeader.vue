@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { locale } from "@src/locale";
 import { useStore } from "@nanostores/vue";
 import LocalChanger from "@components/LocalChanger.vue";
 </script>
