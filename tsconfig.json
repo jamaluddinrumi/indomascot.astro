@@ -5,11 +5,9 @@
     "baseUrl": ".",
     "types": ["vite-plugin-pwa/client"],
     "paths": {
-      "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@locales/*": ["src/locales/*"],
-      "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"]
     }
   }
