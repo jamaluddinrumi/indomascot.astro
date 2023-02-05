@@ -50,7 +50,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
         >
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/"
               aria-label="Homepage"
             >
@@ -61,7 +61,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="badut-maskot"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
@@ -71,7 +71,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="cara-pemesanan"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
@@ -81,7 +81,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
@@ -91,7 +91,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="syarat-ketentuan"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
@@ -101,7 +101,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="tentang-kami"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
@@ -111,7 +111,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           </li>
           <li class="menu-item mb-0">
             <a
-              class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="blog"
             >
               <span class="josefin-sans text-base font-bold uppercase">
