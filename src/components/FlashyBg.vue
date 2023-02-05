@@ -7,7 +7,7 @@
         provider="storyblok"
         width="1280"
         height="373"
-        src="https://a.storyblok.com/f/118728/2296x668/bf95cc1f80/flashy.png"
+        src="https://a.storyblok.com/f/118728/2296x668/bf95cc1f80/flashy.png/m/"
         alt="flashy background"
         class="w-[71.75rem] max-w-none flex-none"
         sizes="xs:414px lg:1280px"
