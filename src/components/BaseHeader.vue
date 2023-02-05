@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useStore } from "@nanostores/vue";
-import LocalChanger from "@components/LocalChanger.vue";
+import LanguageSwitcher from "@components/LanguageSwitcher.vue";
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import LocalChanger from "@components/LocalChanger.vue";
     class="header supports-backdrop-blur:bg-white/60 sticky top-0 z-[3001] w-full flex-none backdrop-blur transition"
   >
     <div class="grid-container">
-      <LocalChanger />
+      <LanguageSwitcher />
     </div>
   </header>
 </template>
