@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
 import FlashyBg from "@components/FlashyBg.vue";
 import IconClose from "@components/Icon/Close.vue";
 import IconFlagId from "@components/Icon/FlagId.vue";
@@ -8,6 +10,10 @@ import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = useStore(mainMenu);
+
+const menuHalaman = ref(null);
+
+onClickOutside(menuHalaman, (event) => mainMenu.set(false));
 </script>
 
 <template>
@@ -37,7 +43,11 @@ const $mainMenu = useStore(mainMenu);
         </div>
       </div>
       <nav class="grid place-content-center">
-        <ul id="menu-halaman" class="vertical justify menu mx-auto">
+        <ul
+          id="menu-halaman"
+          ref="menuHalaman"
+          class="vertical justify menu mx-auto"
+        >
           <li class="menu-item mb-0">
             <a
               class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
