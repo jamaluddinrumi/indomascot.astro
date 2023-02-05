@@ -102,7 +102,7 @@ const $mainMenu = useStore(mainMenu);
           <li class="menu-item mb-0">
             <a
               class="mx-auto p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="blog'"
+              href="blog"
             >
               <span class="josefin-sans text-base font-bold uppercase">
                 {{ $t("blog") }}
