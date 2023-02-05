@@ -1,5 +1,5 @@
 <template>
-  <NuxtImg
+  <img
     preload
     provider="storyblok"
     width="18"
