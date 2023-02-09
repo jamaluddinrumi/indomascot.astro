@@ -7,6 +7,7 @@ export const isDark = atom(
     attribute: "data-theme",
     valueDark: "dark",
     valueLight: "light",
+    storageKey: "vueuse-color-scheme",
   })
 );
 export const mainMenu = atom(false);

@@ -25,14 +25,6 @@ const { indexText = "Home", mainBemClass = "c-breadcrumbs" } = ref(
   Astro.props as BreadcrumbsProps
 );
 
-console.log("lumping");
-
-onMounted(() => {
-  console.log("kudaaa");
-  
-  console.log(Astro);
-});
-
 // const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
 // const ariaCurrent = Astro.request.url.pathname === "/" ? "page" : undefined;
 

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 import { useToggle, useDark } from "@vueuse/core";
 import { isDark } from "/src/states";
 import { useStore } from "@nanostores/vue";
 
-const toggleDark = useToggle(isDark.get());
+const $isDark = useStore(isDark);
+
+const toggleDark = useToggle(isDark.value);
 </script>
 
 <template>
