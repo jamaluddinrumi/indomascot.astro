@@ -1,10 +1,10 @@
 import type { App } from "vue";
-
+import { MotionPlugin } from "@vueuse/motion";
 import { createI18n } from "vue-i18n";
-import id from "../locales/id-ID";
-import en from "../locales/en-US";
+import id from "@locales/id-ID";
+import en from "@locales/en-US";
 
-const i18n = createI18n({
+export const i18n = createI18n({
   locale: "id",
   fallbackLocale: "en",
   legacy: true,
@@ -39,6 +39,7 @@ import {
 
 export default (app: App) => {
   app.use(i18n);
+  app.use(MotionPlugin);
 
   /* add icons to the library */
   library.add(

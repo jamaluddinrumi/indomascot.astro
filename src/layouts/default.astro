@@ -9,6 +9,9 @@ import "@fontsource/inter/800.css";
 import "@fontsource/josefin-sans/100.css";
 import "@fontsource/josefin-sans/300.css";
 import "@fontsource/josefin-sans/400.css";
+import BaseHeader from "@components/BaseHeader.vue";
+import FlashyBg from "@components/FlashyBg.vue";
+import MainMenu from "@components/MainMenu.vue";
 
 export interface Props {
   title: string;
@@ -22,31 +25,34 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="INDOMASCOT melayani pembuatan kostum badut maskot untuk branding produk atau instansi anda dengan desain dari anda sendiri. (WA 0822-2155-6633)"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-    <nav>
-      <li><a href="/">home</a></li>
-      <li><a href="/about">about</a></li>
-      <li><a href="/contact">contact</a></li>
-    </nav>
-    <slot />
+    <BaseHeader client:only="vue" />
+    <FlashyBg />
+    <main>
+      <slot />
+    </main>
+    <MainMenu client:only="vue" />
   </body>
 </html>
 
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    background-color: #f6f6f6;
-  }
+<style lang="scss" is:global>
+  $indomascot-yellow: #e59700;
+  $table-is-striped: false;
+  $indomascot-blue: #0033cc;
+  $indomascot-old-blue: #003399;
+  $whatsapp-green: #25d366;
+  $whatsapp-old-green: #128c7e;
+  $bca: #4000a1;
+  $mandiri: #003066;
+  $bni: #f05921;
+  $bri: #00529c;
+  $full-white: #ffffff;
 </style>

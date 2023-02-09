@@ -15,7 +15,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.minimap.showSlider": "always",
   "editor.accessibilitySupport": "off",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
@@ -25,11 +25,19 @@
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.unicodeHighlight.invisibleCharacters": false,
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll": false,
-  //   "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-  //   "source.organizeImports": false
-  // },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".vue"]
+  },
+  "eslint.validate": [
+    "markdown",
+    "mdx",
+    "javascript",
+    "typescript",
+    "vue"
+  ],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "window.dialogStyle": "custom",
@@ -83,7 +91,8 @@
   "scss.lint.unknownAtRules": "ignore",
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.scss": "tailwindcss"
+    "*.scss": "tailwindcss",
+    "*.mdx": "markdown"
   },
   "tailwindCSS.files.exclude": [
     "**/.git/**",
@@ -174,7 +183,7 @@
   "files.autoSave": "off",
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
+  }
 
   // START if using daisy ui
   // "tailwindCSS.experimental.configFile": "tailwind.config.intellisense.js",
