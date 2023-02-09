@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { toRefs, toRaw, ref, onMounted } from "vue";
-import { Code } from "astro/components";
 
 const props = defineProps({
   Astro: {
