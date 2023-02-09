@@ -12,10 +12,6 @@ import { useStore } from "@nanostores/vue";
 const $isDark = useStore(isDark);
 
 const toggleDark = useToggle(isDark.value);
-
-watchEffect(() => {
-  isDark.set($isDark.value);
-});
 </script>
 
 <template>
