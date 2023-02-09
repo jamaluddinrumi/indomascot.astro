@@ -27,7 +27,7 @@ export default defineConfig({
     },
   },
   output: "static",
-  site: "https://www.indomascot.com",
+  site: "https://astro.indomascot.com",
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
