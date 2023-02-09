@@ -29,6 +29,8 @@ import {
   faMapMarker,
   faExternalLinkAlt,
   faEnvelope,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faWhatsapp,
@@ -49,7 +51,9 @@ export default (app: App) => {
     faEnvelope,
     faWhatsapp,
     faInstagram,
-    faYoutube
+    faYoutube,
+    faSun,
+    faMoon
   );
 
   /* add font awesome icon component */

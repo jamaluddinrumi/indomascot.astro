@@ -171,9 +171,4 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
 
 <style lang="scss" scoped>
 $indomascot-old-blue: #003399;
-
-#menu-halaman > .active > a,
-#menu-halaman > .is-active > a {
-  @apply rounded-full bg-gradient-to-br from-indomascot-blue to-indomascot-old-blue;
-}
 </style>

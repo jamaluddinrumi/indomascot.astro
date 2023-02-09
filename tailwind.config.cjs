@@ -94,6 +94,23 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: ["light", "dark"],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          primary: require("daisyui/src/colors/themes")["[data-theme=light]"][
+            "base-content"
+          ],
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          primary: require("daisyui/src/colors/themes")["[data-theme=dark]"][
+            "base-content"
+          ],
+        },
+      },
+    ],
   },
 };
