@@ -82,7 +82,7 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
           <li class="menu-item mb-0">
             <a
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="//"
+              href="/"
             >
               <span class="josefin-sans text-base font-bold uppercase">{{
                 $t("designFitting")
