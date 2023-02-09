@@ -19,7 +19,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <label for="dark-toggle" class="swap btn-outline swap-rotate btn">
+  <label for="dark-toggle" class="swap-rotate swap btn-outline btn">
     <!-- this hidden checkbox controls the state -->
     <input
       id="dark-toggle"
