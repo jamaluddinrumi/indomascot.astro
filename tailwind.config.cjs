@@ -98,6 +98,7 @@ module.exports = {
       {
         dark: {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          "base-content": "#FFFFFF",
           primary: require("daisyui/src/colors/themes")["[data-theme=dark]"][
             "base-content"
           ],
@@ -106,6 +107,7 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          "base-content": "#000000",
           primary: require("daisyui/src/colors/themes")["[data-theme=light]"][
             "base-content"
           ],
