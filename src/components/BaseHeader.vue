@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { i18n } from "/src/pages/_app.ts";
 import { watchEffect, ref } from "vue";
 import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
-
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
-
 import DarkToggle from "@components/DarkToggle.vue";
 
 const $mainMenu = ref(useStore(mainMenu));
@@ -12,6 +11,12 @@ const $mainMenu = ref(useStore(mainMenu));
 function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
 }
+
+useHead({
+  htmlAttrs: {
+    lang: i18n.global.locale,
+  },
+});
 </script>
 
 <template>

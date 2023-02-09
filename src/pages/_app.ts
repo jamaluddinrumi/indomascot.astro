@@ -1,8 +1,11 @@
 import type { App } from "vue";
 import { MotionPlugin } from "@vueuse/motion";
+import { createHead } from "@unhead/vue";
 import { createI18n } from "vue-i18n";
 import id from "@locales/id-ID";
 import en from "@locales/en-US";
+
+export const head = createHead();
 
 export const i18n = createI18n({
   locale: "id",
@@ -40,6 +43,7 @@ import {
 // import { far } from "@fortawesome/free-regular-svg-icons";
 
 export default (app: App) => {
+  app.use(head);
   app.use(i18n);
   app.use(MotionPlugin);
 

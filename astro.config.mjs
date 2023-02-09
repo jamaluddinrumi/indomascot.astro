@@ -7,6 +7,8 @@ import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
+import AutoImport from "unplugin-auto-import/vite";
+import { unheadVueComposablesImports } from "@unhead/vue";
 const env = loadEnv("", "", "");
 
 // https://astro.build/config
@@ -27,6 +29,11 @@ export default defineConfig({
             }
           : false,
     },
+    plugins: [
+      AutoImport({
+        imports: [unheadVueComposablesImports],
+      }),
+    ],
   },
   output: "static",
   site: "https://astro.indomascot.com",
