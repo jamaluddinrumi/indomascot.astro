@@ -113,5 +113,5 @@ module.exports = {
       },
     ],
   },
-  darkTheme: false,
+  darkTheme: "dark",
 };
