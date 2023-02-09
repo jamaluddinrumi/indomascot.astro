@@ -12,9 +12,11 @@ function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
 }
 
+const locale = ref(i18n.global.locale);
+
 useHead({
   htmlAttrs: {
-    lang: i18n.global.locale,
+    lang: locale.value,
   },
 });
 </script>
