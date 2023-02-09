@@ -96,17 +96,17 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          primary: require("daisyui/src/colors/themes")["[data-theme=light]"][
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          primary: require("daisyui/src/colors/themes")["[data-theme=dark]"][
             "base-content"
           ],
         },
       },
       {
-        dark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          primary: require("daisyui/src/colors/themes")["[data-theme=dark]"][
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          primary: require("daisyui/src/colors/themes")["[data-theme=light]"][
             "base-content"
           ],
         },
