@@ -28,7 +28,7 @@ function openMainMenu() {
       </div>
       <!-- main menu button -->
       <div class="flex-none">
-        <DarkToggle />
+        <DarkToggle client:only="vue" />
         <button
           class="btn-outline btn ml-2 shadow-inner"
           :class="{ 'btn-disabled': $mainMenu }"
