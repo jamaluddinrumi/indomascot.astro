@@ -6,8 +6,10 @@ import {
   useColorMode,
   usePreferredColorScheme,
 } from "@vueuse/core";
-import { isDark } from "/src/states";
+import { isDark, mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
+
+const $mainMenu = ref(useStore(mainMenu));
 
 const $isDark = useStore(isDark);
 
@@ -18,6 +20,7 @@ const toggleDark = useToggle(isDark.value);
   <label
     for="dark-toggle"
     class="swap-rotate swap btn-outline btn shadow-inner"
+    :class="{ 'label-disabled': $mainMenu }"
   >
     <!-- this hidden checkbox controls the state -->
     <input
@@ -47,3 +50,16 @@ const toggleDark = useToggle(isDark.value);
     </font-awesome-layers>
   </label>
 </template>
+
+<style>
+.label-disabled,
+.label-disabled:hover,
+.label[disabled],
+.label[disabled]:hover {
+  --tw-border-opacity: 0;
+  background-color: hsl(var(--n) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.2;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+  --tw-text-opacity: 0.2;
+}
+</style>

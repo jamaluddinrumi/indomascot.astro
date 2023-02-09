@@ -38,6 +38,7 @@ useHead({
         <DarkToggle client:only="vue" />
         <button
           class="btn-outline btn ml-2 shadow-inner"
+          :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
           <span class="font-bold shadow-inner">MENU</span>
