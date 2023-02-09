@@ -24,8 +24,8 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="header supports-backdrop-blur:bg-white/60 grid-container sticky top-0 z-[3001] w-full flex-none backdrop-blur transition will-change-[filter]"
-    :class="{ blur: $mainMenu }"
+    class="header supports-backdrop-blur:bg-white/60 grid-container sticky top-0 z-50 w-full flex-none backdrop-blur transition will-change-[filter]"
+    :class="{ 'blur-sm': $mainMenu }"
   >
     <div class="navbar">
       <div class="flex-1">
@@ -38,7 +38,6 @@ useHead({
         <DarkToggle client:only="vue" />
         <button
           class="btn-outline btn ml-2 shadow-inner"
-          :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
           <span class="font-bold shadow-inner">MENU</span>

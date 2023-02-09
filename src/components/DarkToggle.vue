@@ -15,7 +15,10 @@ const toggleDark = useToggle(isDark.value);
 </script>
 
 <template>
-  <label for="dark-toggle" class="swap-rotate swap btn-outline btn">
+  <label
+    for="dark-toggle"
+    class="swap-rotate swap btn-outline btn shadow-inner"
+  >
     <!-- this hidden checkbox controls the state -->
     <input
       id="dark-toggle"
@@ -28,9 +31,9 @@ const toggleDark = useToggle(isDark.value);
     <!-- sun icon -->
     <font-awesome-layers class="fa-fw swap-on">
       <font-awesome-icon
-        :icon="['fas', 'sun']"
+        :icon="['fas', 'cloud-sun']"
         aria-hidden="true"
-        class="mt-px mr-1 h-4 w-4 lg:mr-0.5 lg:h-5 lg:w-5"
+        class="mt-px mr-1 h-4 w-4 shadow-inner lg:mr-0.5 lg:h-5 lg:w-5"
       />
     </font-awesome-layers>
 
@@ -39,7 +42,7 @@ const toggleDark = useToggle(isDark.value);
       <font-awesome-icon
         :icon="['fas', 'moon']"
         aria-hidden="true"
-        class="mt-px mr-1 h-4 w-4 lg:mr-0.5 lg:h-5 lg:w-5"
+        class="mt-px mr-1 h-4 w-4 shadow-inner lg:mr-0.5 lg:h-5 lg:w-5"
       />
     </font-awesome-layers>
   </label>

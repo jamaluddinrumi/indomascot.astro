@@ -32,7 +32,7 @@ import {
   faMapMarker,
   faExternalLinkAlt,
   faEnvelope,
-  faSun,
+  faCloudSun,
   faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -56,7 +56,7 @@ export default (app: App) => {
     faWhatsapp,
     faInstagram,
     faYoutube,
-    faSun,
+    faCloudSun,
     faMoon
   );
 

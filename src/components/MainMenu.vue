@@ -26,11 +26,17 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
     }"
     :enter="{
       y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 250,
+        damping: 25,
+        mass: 0.5,
+      },
     }"
-    class="top-0 z-[9999] px-0 py-4"
+    class="absolute top-0 z-[9999] min-h-screen min-w-full"
   >
     <div class="grid-container">
-      <div class="flex justify-end pr-2">
+      <div class="mt-4 flex justify-end pr-2">
         <div class="flex w-[76px] justify-center">
           <button
             class="shadow-none hover:cursor-pointer"
@@ -55,7 +61,11 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               aria-label="Homepage"
             >
               <font-awesome-layers class="fa-fw">
-                <font-awesome-icon :icon="['fas', 'home']" aria-hidden="true" />
+                <font-awesome-icon
+                  :icon="['fas', 'home']"
+                  aria-hidden="true"
+                  class="shadow-inner"
+                />
               </font-awesome-layers>
             </a>
           </li>
@@ -64,9 +74,10 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/badut-maskot"
             >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("portfolio")
-              }}</span>
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+                >{{ $t("portfolio") }}</span
+              >
             </a>
           </li>
           <li class="menu-item mb-0">
@@ -74,9 +85,10 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/cara-pemesanan"
             >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("howToOrder")
-              }}</span>
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+                >{{ $t("howToOrder") }}</span
+              >
             </a>
           </li>
           <li class="menu-item mb-0">
@@ -84,9 +96,10 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/"
             >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("designFitting")
-              }}</span>
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+                >{{ $t("designFitting") }}</span
+              >
             </a>
           </li>
           <li class="menu-item mb-0">
@@ -94,9 +107,10 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/syarat-ketentuan"
             >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("termsAndConditions")
-              }}</span>
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+                >{{ $t("termsAndConditions") }}</span
+              >
             </a>
           </li>
           <li class="menu-item mb-0">
@@ -104,9 +118,10 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/tentang-kami"
             >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("aboutUs")
-              }}</span>
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+                >{{ $t("aboutUs") }}</span
+              >
             </a>
           </li>
           <li class="menu-item mb-0">
@@ -114,7 +129,9 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               href="/blog"
             >
-              <span class="josefin-sans text-base font-bold uppercase">
+              <span
+                class="josefin-sans text-base font-bold uppercase shadow-inner"
+              >
                 {{ $t("blog") }}
               </span>
             </a>
