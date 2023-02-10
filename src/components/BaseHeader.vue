@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { i18n } from "/src/pages/_app.ts";
 import { watchEffect, ref } from "vue";
-import { mainMenu } from "/src/states";
-import { useStore } from "@nanostores/vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import DarkToggle from "@components/DarkToggle.vue";
+import { mainMenu } from "/src/states";
+import { useStore } from "@nanostores/vue";
 
-const $mainMenu = ref(useStore(mainMenu));
+const $mainMenu = useStore(mainMenu);
 
 function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
