@@ -8,12 +8,42 @@ import IconFlagEn from "@components/Icon/FlagEn.vue";
 import InstallButton from "@components/InstallButton.vue";
 import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n(/*{ useScope: 'global' }*/);
 
 const $mainMenu = useStore(mainMenu);
 
 const menuHalaman = ref(null);
 
 onClickOutside(menuHalaman, (event) => mainMenu.set(false));
+
+const menus = [
+  {
+    text: t("portfolio"),
+    href: "/badut-maskot",
+  },
+  {
+    text: t("howToOrder"),
+    href: "/cara-pemesanan",
+  },
+  {
+    text: t("designFitting"),
+    href: "/",
+  },
+  {
+    text: t("termsAndConditions"),
+    href: "/syarat-ketentuan",
+  },
+  {
+    text: t("aboutUs"),
+    href: "/tentang-kami",
+  },
+  {
+    text: t("blog"),
+    href: "/blog",
+  },
+];
 </script>
 
 <template>
@@ -69,107 +99,13 @@ onClickOutside(menuHalaman, (event) => mainMenu.set(false));
               </font-awesome-layers>
             </a>
           </li>
-          <li class="menu-item mb-0">
+          <li v-for="menu in menus" :key="menu.href" class="menu-item mb-0">
             <a
               class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/badut-maskot"
-            >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("portfolio")
-              }}</span>
-            </a>
-          </li>
-          <li class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/cara-pemesanan"
-            >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("howToOrder")
-              }}</span>
-            </a>
-          </li>
-          <li class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/"
-            >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("designFitting")
-              }}</span>
-            </a>
-          </li>
-          <li class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/syarat-ketentuan"
-            >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("termsAndConditions")
-              }}</span>
-            </a>
-          </li>
-          <li class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/tentang-kami"
-            >
-              <span class="josefin-sans text-base font-bold uppercase">{{
-                $t("aboutUs")
-              }}</span>
-            </a>
-          </li>
-          <li class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/blog"
+              :href="menu.href"
             >
               <span class="josefin-sans text-base font-bold uppercase">
-                {{ $t("blog") }}
-              </span>
-            </a>
-          </li>
-          <!-- <li class="kontak-whatsapp menu-item">
-        <whatsapp-button class="mt-4 w-fit"></whatsapp-button>
-      </li> -->
-          <li class="menu-item mt-4 flex justify-center">
-            <InstallButton icon="apple" :mobile="true" />
-          </li>
-          <li class="menu-item flex justify-center">
-            <InstallButton icon="android" :mobile="true" />
-          </li>
-          <li class="menu-item mb-4 flex justify-center">
-            <InstallButton icon="chrome" :mobile="true" />
-          </li>
-          <li class="lg:hidden">
-            <a
-              class="mr-1 p-4 text-black no-underline hover:text-black focus:text-black focus-visible:ring focus-visible:ring-indomascot-yellow"
-              aria-label="language switcher"
-            >
-              <span
-                class="font-bold"
-                :class="
-                  $i18n.locale === 'en'
-                    ? 'text-slate-400'
-                    : 'text-indomascot-old-blue'
-                "
-                >ID</span
-              >
-              <span class="mr-0.5 inline-block align-middle">
-                <IconFlagId />
-              </span>
-              <span class="text-slate-800">|</span>
-              <span
-                class="font-bold"
-                :class="
-                  $i18n.locale === 'id'
-                    ? 'text-slate-400'
-                    : 'text-indomascot-old-blue'
-                "
-                >EN</span
-              >
-              <span class="inline-block align-middle">
-                <IconFlagEn />
+                {{ menu.text }}
               </span>
             </a>
           </li>

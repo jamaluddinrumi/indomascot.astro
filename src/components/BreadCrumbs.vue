@@ -82,7 +82,7 @@ paths.forEach((text: string, index: number) => {
 <template>
   <nav
     aria-label="Breadcrumbs"
-    class="breadcrumbs"
+    class="navbar breadcrumbs sm:max-w-xs"
     :class="{ 'blur-sm': $mainMenu }"
   >
     <ul>

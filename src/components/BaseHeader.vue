@@ -24,7 +24,7 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="header supports-backdrop-blur:bg-white/60 grid-container sticky top-0 z-50 w-full flex-none backdrop-blur transition will-change-[filter]"
+    class="header supports-backdrop-blur:bg-white/60 grid-container container sticky top-0 z-50 w-full flex-none backdrop-blur transition will-change-[filter]"
     :class="{ 'blur-sm': $mainMenu }"
   >
     <div class="navbar">
