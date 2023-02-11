@@ -8,23 +8,11 @@ import { useStore } from "@nanostores/vue";
 const $mainMenu = useStore(mainMenu);
 
 const props = defineProps({
-  props: {
-    type: Object,
-    default: new Object(),
-  },
   pathname: {
     type: String,
     default: undefined,
   },
   reqPathname: {
-    type: String,
-    default: undefined,
-  },
-  slots: {
-    type: Object,
-    default: new Object(),
-  },
-  mainBemClass: {
     type: String,
     default: undefined,
   },
@@ -81,6 +69,7 @@ paths.forEach((text: string, index: number) => {
 
 <template>
   <nav
+    v-if="pathname !== '/'"
     aria-label="Breadcrumbs"
     class="navbar breadcrumbs sm:max-w-xs"
     :class="{ 'blur-sm': $mainMenu }"

@@ -29,7 +29,7 @@ const menus = [
   },
   {
     text: t("designFitting"),
-    href: "/",
+    href: "/#fitting",
   },
   {
     text: t("termsAndConditions"),

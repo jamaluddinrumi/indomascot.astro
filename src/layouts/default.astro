@@ -38,12 +38,9 @@ const { title } = Astro.props;
     <FlashyBg />
     <main class="container">
       <BreadCrumbs
-      client:idle
-        mainBemClass="breadcrumbs"
-        props={Astro.props}
+        client:idle
         pathname={Astro.url.pathname}
-        reqPathname={Astro.request.url.pathname}
-        slots={Astro.slots}
+        reqPathname={new URL(Astro.request.url).pathname}
       />
       <slot />
     </main>
