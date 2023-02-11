@@ -26,7 +26,7 @@ const menuHalaman = ref(null);
 
 onClickOutside(menuHalaman, (event) => mainMenu.set(false));
 
-const menus = [
+const menus = ref([
   {
     text: "",
     href: "/",
@@ -55,7 +55,7 @@ const menus = [
     text: t("blog"),
     href: "/blog",
   },
-];
+]);
 </script>
 
 <template>
