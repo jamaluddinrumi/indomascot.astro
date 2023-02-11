@@ -1,12 +1,48 @@
-<script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean,
-}>()
+<script lang="ts" setup>
+import $device from "/src/device";
+import { ref, computed } from "vue";
 
+const props = defineProps({
+  id: {
+    type: String,
+    default: "",
+  },
+  icon: {
+    type: String,
+    default: "",
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const deferredPrompt = ref(null);
 </script>
 
 <template>
-  <div>
-    <slot/>
+  <div class="flex flex-col items-center px-0">
+    <button
+      :disabled="disabled"
+      class="flex w-fit cursor-pointer justify-center rounded-full border bg-gradient-to-b from-slate-50 to-slate-100 px-6 py-4 uppercase tracking-wide disabled:cursor-not-allowed"
+      @click="install()"
+    >
+      <font-awesome-layers class="fa-fw">
+        <font-awesome-icon
+          :icon="['fab', icon]"
+          aria-hidden="true"
+          class="mt-px h-4 w-4 fill-slate-900/80 text-slate-900/80"
+        />
+      </font-awesome-layers>
+      <span
+        class="mx-0.5 text-xs font-bold uppercase leading-normal text-slate-900"
+        >{{ $t("install") }}</span
+      >
+    </button>
+    <label :for="id">
+      <span class="bg-gradient-to-b bg-clip-text text-xs text-base-content/60"
+        >(*) {{ $t(`onlyOn.${icon === "apple" ? "ios" : icon}`) }}</span
+      >
+    </label>
   </div>
 </template>

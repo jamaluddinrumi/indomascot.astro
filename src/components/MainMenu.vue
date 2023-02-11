@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import $device from "/src/device";
 import { ref } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import FlashyBg from "@components/FlashyBg.vue";
@@ -10,6 +11,13 @@ import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 
+const props = defineProps({
+  pathname: {
+    type: String,
+    default: undefined,
+  },
+});
+
 const { t } = useI18n(/*{ useScope: 'global' }*/);
 
 const $mainMenu = useStore(mainMenu);
@@ -19,6 +27,10 @@ const menuHalaman = ref(null);
 onClickOutside(menuHalaman, (event) => mainMenu.set(false));
 
 const menus = [
+  {
+    text: "",
+    href: "/",
+  },
   {
     text: t("portfolio"),
     href: "/badut-maskot",
@@ -63,51 +75,56 @@ const menus = [
         mass: 0.5,
       },
     }"
-    class="absolute top-0 z-[9999] min-h-screen min-w-full"
+    class="container fixed top-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll bg-base-100 pb-10"
   >
-    <div class="grid-container">
-      <div class="mt-4 flex justify-end pr-2">
-        <div class="flex w-[76px] justify-center">
-          <button
-            class="shadow-none hover:cursor-pointer"
-            data-close
-            aria-label="Close modal"
-            type="button"
-          >
-            <IconClose />
-          </button>
-        </div>
-      </div>
-      <nav class="grid place-content-center">
+    <div class="relative">
+      <nav
+        class="grid h-screen place-content-center overflow-y-scroll lg:h-[calc(100vh_-_48px)]"
+      >
         <ul
           id="menu-halaman"
           ref="menuHalaman"
-          class="vertical justify menu mx-auto"
+          class="vertical justify menu pt-20"
         >
-          <li class="menu-item mb-0">
+          <li v-for="menu in menus" :key="menu.href" class="my-0.5">
             <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
-              href="/"
-              aria-label="Homepage"
-            >
-              <font-awesome-layers class="fa-fw">
-                <font-awesome-icon
-                  :icon="['fas', 'home']"
-                  aria-hidden="true"
-                  class="shadow-inner"
-                />
-              </font-awesome-layers>
-            </a>
-          </li>
-          <li v-for="menu in menus" :key="menu.href" class="menu-item mb-0">
-            <a
-              class="btn-wide flex justify-center p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="btn-wide flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              :class="{ active: menu.href === pathname }"
               :href="menu.href"
             >
-              <span class="josefin-sans text-base font-bold uppercase">
-                {{ menu.text }}
-              </span>
+              <template v-if="menu.href === '/'">
+                <font-awesome-layers class="fa-fw">
+                  <font-awesome-icon
+                    :icon="['fas', 'house-chimney']"
+                    aria-hidden="true"
+                    class="shadow-inner"
+                  />
+                </font-awesome-layers>
+              </template>
+
+              <template v-else>
+                <span class="josefin-sans text-base font-bold uppercase">
+                  {{ menu.text }}
+                </span>
+              </template>
             </a>
+          </li>
+          <li class="mx-auto mt-4 flex w-fit justify-center">
+            <InstallButton
+              :disabled="$device.isDesktop"
+              icon="apple"
+              :mobile="true"
+            />
+          </li>
+          <li class="mx-auto mt-2 flex w-fit justify-center">
+            <InstallButton
+              :disabled="$device.isDesktop"
+              icon="android"
+              :mobile="true"
+            />
+          </li>
+          <li class="mx-auto mt-2 mb-4 flex w-fit justify-center">
+            <InstallButton icon="chrome" :mobile="true" />
           </li>
         </ul>
       </nav>
@@ -116,5 +133,7 @@ const menus = [
 </template>
 
 <style lang="scss" scoped>
-$indomascot-old-blue: #003399;
+nav ul.menu > li a.active > span {
+  @apply text-base-300;
+}
 </style>

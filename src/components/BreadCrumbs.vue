@@ -76,8 +76,21 @@ paths.forEach((text: string, index: number) => {
   >
     <ul>
       <li v-for="(part, index) in parts" :key="part.href">
-        <a :href="part.href" :class="{ active: part.href.includes(paths[0]) }">
-          {{ startCase(part.text) }}
+        <a
+          :href="part.href"
+        >
+          <template v-if="part.href === '/'">
+            <font-awesome-layers class="fa-fw">
+              <font-awesome-icon
+                class="!mb-0.5"
+                :icon="['fas', 'house-chimney']"
+                aria-hidden="true"
+              />
+            </font-awesome-layers>
+          </template>
+          <template v-else>
+            {{ startCase(part.text) }}
+          </template>
         </a>
       </li>
     </ul>

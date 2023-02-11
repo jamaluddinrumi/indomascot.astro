@@ -28,19 +28,24 @@ import {
 
 /* import specific icons */
 import {
-  faHome,
-  faMapMarker,
   faExternalLinkAlt,
   faEnvelope,
   faCloudSun,
   faMoon,
+  faMapMarkerAlt,
+  faHouseChimney,
 } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faWhatsapp,
   faInstagram,
   faYoutube,
+  faApple,
+  faAndroid,
+  faChrome,
 } from "@fortawesome/free-brands-svg-icons";
-// import { far } from "@fortawesome/free-regular-svg-icons";
+
+// import {  } from "@fortawesome/free-regular-svg-icons";
 
 export default (app: App) => {
   app.use(head);
@@ -49,15 +54,18 @@ export default (app: App) => {
 
   /* add icons to the library */
   library.add(
-    faHome,
-    faMapMarker,
     faExternalLinkAlt,
     faEnvelope,
     faWhatsapp,
     faInstagram,
     faYoutube,
     faCloudSun,
-    faMoon
+    faMoon,
+    faMapMarkerAlt,
+    faApple,
+    faAndroid,
+    faChrome,
+    faHouseChimney
   );
 
   /* add font awesome icon component */

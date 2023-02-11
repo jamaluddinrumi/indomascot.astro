@@ -24,10 +24,12 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="header supports-backdrop-blur:bg-white/60 grid-container container sticky top-0 z-50 w-full flex-none backdrop-blur transition will-change-[filter]"
+    class="container sticky top-0 z-50 mx-auto w-full flex-none"
     :class="{ 'blur-sm': $mainMenu }"
   >
-    <div class="navbar">
+    <div
+      class="supports-backdrop-blur:bg-white/60 navbar backdrop-blur transition will-change-[filter]"
+    >
       <div class="flex-1">
         <a href="/">
           <IconIndomascot />
@@ -37,11 +39,11 @@ useHead({
       <div class="flex-none">
         <DarkToggle client:only="vue" />
         <button
-          class="btn-outline btn ml-2 shadow-inner"
+          class="btn-outline btn ml-2 rounded-full px-6 pt-1 shadow-inner"
           :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
-          <span class="font-bold shadow-inner">MENU</span>
+          <span class="josefin-sans font-semibold shadow-inner">MENU</span>
         </button>
       </div>
       <!-- END main menu button -->

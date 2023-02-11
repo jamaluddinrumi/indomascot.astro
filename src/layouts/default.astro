@@ -9,10 +9,12 @@ import "@fontsource/inter/800.css";
 import "@fontsource/josefin-sans/100.css";
 import "@fontsource/josefin-sans/300.css";
 import "@fontsource/josefin-sans/400.css";
+import "@fontsource/josefin-sans/700.css";
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
 import MainMenu from "@components/MainMenu.vue";
 import BreadCrumbs from "@components/BreadCrumbs.vue";
+import BaseFooter from "@components/BaseFooter.vue";
 
 export interface Props {
   title: string;
@@ -26,6 +28,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow" />
     <meta
       name="description"
       content="INDOMASCOT melayani pembuatan kostum badut maskot untuk branding produk atau instansi anda dengan desain dari anda sendiri. (WA 0822-2155-6633)"
@@ -36,15 +39,16 @@ const { title } = Astro.props;
   <body>
     <BaseHeader client:only="vue" />
     <FlashyBg />
-    <main class="container">
+    <main class="container mx-auto min-h-screen">
       <BreadCrumbs
-        client:idle
-        pathname={Astro.url.pathname}
+        client:only="vue"
+        pathname={new URL(Astro.url).pathname}
         reqPathname={new URL(Astro.request.url).pathname}
       />
       <slot />
     </main>
-    <MainMenu client:only="vue" />
+    <BaseFooter client:only="vue" />
+    <MainMenu client:only="vue" pathname={new URL(Astro.url).pathname} />
   </body>
 </html>
 
@@ -60,4 +64,37 @@ const { title } = Astro.props;
   $bni: #f05921;
   $bri: #00529c;
   $full-white: #ffffff;
+
+  html[data-theme="light"] body {
+    background-image: linear-gradient(-180deg, $full-white 0%, #f1f7ff 100%);
+  }
+
+  html[data-theme="dark"] body {
+    background-image: linear-gradient(-180deg, hsl(var(--b1)), hsl(var(--n)));
+  }
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    font-family: "Josefin Sans", serif;
+  }
+
+  .josefin-sans {
+    font-family: "Josefin Sans", serif;
+  }
+
+  .bangers {
+    font-family: "Bangers", sans-serif;
+    @apply tracking-wide;
+  }
 </style>
