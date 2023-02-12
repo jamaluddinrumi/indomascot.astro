@@ -18,6 +18,7 @@ const toggleDark = useToggle(isDark.value);
 
 <template>
   <label
+    id="dark-toggle-label"
     for="dark-toggle"
     class="swap-rotate swap btn-outline btn rounded-full shadow-inner"
     :class="{ 'label-disabled': $mainMenu }"
@@ -28,6 +29,7 @@ const toggleDark = useToggle(isDark.value);
       type="checkbox"
       true-value="true"
       false-value="false"
+      aria-labelledby="dark-toggle-label"
       @click="toggleDark()"
     />
 
