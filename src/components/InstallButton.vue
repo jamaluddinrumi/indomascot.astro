@@ -23,8 +23,8 @@ const deferredPrompt = ref(null);
 <template>
   <div class="flex flex-col items-center px-0 hover:bg-transparent">
     <button
-      :disabled="disabled"
-      class="gradient flex w-fit cursor-pointer justify-center rounded-full border bg-gradient-to-b px-6 py-4 uppercase tracking-wide disabled:cursor-not-allowed"
+      class="gradient btn-outline btn flex w-fit cursor-pointer justify-center rounded-full border px-6 py-4 uppercase tracking-wide disabled:cursor-not-allowed"
+      :class="{ 'btn-disabled': disabled }"
       @click="install()"
     >
       <font-awesome-layers class="fa-fw">
@@ -46,25 +46,4 @@ const deferredPrompt = ref(null);
   </div>
 </template>
 
-<style lang="scss" scoped>
-[data-theme="light"] {
-  .gradient {
-    @apply from-slate-800 to-slate-900 text-slate-100;
-  }
-  svg {
-    svg {
-      @apply fill-slate-100/80 text-slate-100/80;
-    }
-  }
-}
-
-[data-theme="dark"],
-[data-theme="auto"] {
-  .gradient {
-    @apply from-slate-50 to-slate-100 text-slate-900;
-  }
-  svg {
-    @apply fill-slate-900/80 text-slate-900/80;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

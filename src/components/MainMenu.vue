@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import $device from "/src/device";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import FlashyBg from "@components/FlashyBg.vue";
 import IconClose from "@components/Icon/Close.vue";
@@ -10,6 +10,7 @@ import InstallButton from "@components/InstallButton.vue";
 import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
+import { getBrowserHeight, Dimension } from "/src/dimension";
 
 const props = defineProps({
   pathname: {
@@ -56,6 +57,12 @@ const menus = ref([
     href: "/blog/",
   },
 ]);
+
+const browserDimension = ref<Dimension>(null);
+
+onMounted(() => {
+  browserDimension.value = getBrowserHeight();
+});
 </script>
 
 <template>
@@ -64,7 +71,7 @@ const menus = ref([
     id="main-menu"
     v-motion
     :initial="{
-      y: -100,
+      y: -browserDimension.height,
     }"
     :enter="{
       y: 0,
@@ -73,9 +80,12 @@ const menus = ref([
         stiffness: 250,
         damping: 25,
         mass: 0.5,
+        delay: 10,
       },
     }"
-    :delay="100"
+    :leave="{
+      y: -browserDimension.height,
+    }"
     class="fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll bg-base-100"
   >
     <div class="relative">
@@ -107,21 +117,13 @@ const menus = ref([
             </a>
           </li>
           <li class="mx-auto mt-4 flex w-fit justify-center">
-            <InstallButton
-              :disabled="$device.isDesktop"
-              icon="apple"
-              :mobile="true"
-            />
+            <InstallButton :disabled="$device.isDesktop" icon="apple" />
           </li>
           <li class="mx-auto mt-2 flex w-fit justify-center">
-            <InstallButton
-              :disabled="$device.isDesktop"
-              icon="android"
-              :mobile="true"
-            />
+            <InstallButton :disabled="$device.isDesktop" icon="android" />
           </li>
           <li class="mx-auto mt-2 mb-4 flex w-fit justify-center">
-            <InstallButton icon="chrome" :mobile="true" />
+            <InstallButton icon="chrome" />
           </li>
         </ul>
       </nav>
