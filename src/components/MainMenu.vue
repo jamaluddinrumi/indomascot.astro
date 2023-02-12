@@ -75,6 +75,7 @@ const menus = ref([
         mass: 0.5,
       },
     }"
+    :delay="100"
     class="fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll bg-base-100"
   >
     <div class="relative">
