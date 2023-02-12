@@ -21,7 +21,7 @@ const deferredPrompt = ref(null);
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-0">
+  <div class="flex flex-col items-center px-0 hover:bg-transparent">
     <button
       :disabled="disabled"
       class="gradient flex w-fit cursor-pointer justify-center rounded-full border bg-gradient-to-b px-6 py-4 uppercase tracking-wide disabled:cursor-not-allowed"
