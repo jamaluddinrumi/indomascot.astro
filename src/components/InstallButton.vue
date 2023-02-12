@@ -23,7 +23,7 @@ const deferredPrompt = ref(null);
 <template>
   <div class="flex flex-col items-center px-0 hover:bg-transparent">
     <button
-      class="gradient btn-outline btn flex w-fit cursor-pointer justify-center rounded-full border px-6 py-4 uppercase tracking-wide disabled:cursor-not-allowed"
+      class="gradient btn-outline btn flex w-fit cursor-pointer justify-center rounded-full border px-6 py-4 uppercase tracking-wide"
       :class="{ 'btn-disabled': disabled }"
       @click="install()"
     >
@@ -34,7 +34,7 @@ const deferredPrompt = ref(null);
           class="mt-px h-4 w-4"
         />
       </font-awesome-layers>
-      <span class="mx-0.5 text-xs font-bold uppercase leading-normal">{{
+      <span class="mx-0.5 text-xs font-bold uppercase">{{
         $t("install")
       }}</span>
     </button>
