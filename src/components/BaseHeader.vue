@@ -3,6 +3,7 @@ import { i18n } from "/src/pages/_app.ts";
 import { watchEffect, ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import DarkToggle from "@components/DarkToggle.vue";
+import { useStorage } from "@vueuse/core";
 import { mainMenu } from "/src/states";
 import { useStore } from "@nanostores/vue";
 
@@ -14,9 +15,12 @@ function openMainMenu() {
 
 const locale = ref(i18n.global.locale);
 
+const colorScheme = useStorage("vueuse-color-scheme", "light"); // returns Ref<boolean>
+
 useHead({
   htmlAttrs: {
     lang: locale.value,
+    "data-theme": colorScheme.value,
   },
 });
 </script>

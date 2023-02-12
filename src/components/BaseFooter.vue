@@ -140,9 +140,6 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
         <FooterApps />
       </div>
     </div>
-    <div class="container mx-auto">
-      <FooterNav />
-    </div>
   </footer>
 </template>
 
