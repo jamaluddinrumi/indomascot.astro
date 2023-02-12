@@ -58,7 +58,8 @@ const deferredPrompt = ref(null);
   }
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+[data-theme="auto"] {
   .gradient {
     @apply from-slate-50 to-slate-100 text-slate-900;
   }
