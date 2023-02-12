@@ -90,7 +90,7 @@ onMounted(() => {
   >
     <div class="relative">
       <nav
-        class="grid min-h-screen place-content-center overflow-y-scroll py-8"
+        class="grid min-h-screen place-content-center overflow-y-scroll py-16"
       >
         <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
           <li v-for="menu in menus" :key="menu.href" class="my-0.5">
