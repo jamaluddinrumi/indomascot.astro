@@ -6,11 +6,11 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
 const menus = [
   {
     text: t("portfolio"),
-    href: "/badut-maskot",
+    href: "/badut-maskot/",
   },
   {
     text: t("howToOrder"),
-    href: "/cara-pemesanan",
+    href: "/cara-pemesanan/",
   },
   {
     text: t("designFitting"),
@@ -18,15 +18,15 @@ const menus = [
   },
   {
     text: t("termsAndConditions"),
-    href: "/syarat-ketentuan",
+    href: "/syarat-ketentuan/",
   },
   {
     text: t("aboutUs"),
-    href: "/tentang-kami",
+    href: "/tentang-kami/",
   },
   {
     text: t("blog"),
-    href: "/blog",
+    href: "/blog/",
   },
 ];
 </script>

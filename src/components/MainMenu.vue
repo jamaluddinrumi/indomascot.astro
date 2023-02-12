@@ -33,11 +33,11 @@ const menus = ref([
   },
   {
     text: t("portfolio"),
-    href: "/badut-maskot",
+    href: "/badut-maskot/",
   },
   {
     text: t("howToOrder"),
-    href: "/cara-pemesanan",
+    href: "/cara-pemesanan/",
   },
   {
     text: t("designFitting"),
@@ -45,15 +45,15 @@ const menus = ref([
   },
   {
     text: t("termsAndConditions"),
-    href: "/syarat-ketentuan",
+    href: "/syarat-ketentuan/",
   },
   {
     text: t("aboutUs"),
-    href: "/tentang-kami",
+    href: "/tentang-kami/",
   },
   {
     text: t("blog"),
-    href: "/blog",
+    href: "/blog/",
   },
 ]);
 </script>
@@ -75,17 +75,13 @@ const menus = ref([
         mass: 0.5,
       },
     }"
-    class="container fixed top-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll bg-base-100 pb-10"
+    class="fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll bg-base-100"
   >
     <div class="relative">
       <nav
-        class="grid h-screen place-content-center overflow-y-scroll lg:h-[calc(100vh_-_48px)]"
+        class="grid min-h-screen place-content-center overflow-y-scroll py-8"
       >
-        <ul
-          id="menu-halaman"
-          ref="menuHalaman"
-          class="vertical justify menu pt-20"
-        >
+        <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
           <li v-for="menu in menus" :key="menu.href" class="my-0.5">
             <a
               class="btn-wide flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
