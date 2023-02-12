@@ -62,6 +62,7 @@ paths.forEach((text: string, index: number) => {
       text: text.replace(/[-_]/g, " "),
       href,
       "aria-current": ariaCurrent,
+      alt: startCase(text),
     },
   ];
 });
@@ -76,9 +77,7 @@ paths.forEach((text: string, index: number) => {
   >
     <ul>
       <li v-for="(part, index) in parts" :key="part.href">
-        <a
-          :href="part.href"
-        >
+        <a :href="part.href" :alt="part.alt">
           <template v-if="part.href === '/'">
             <font-awesome-layers class="fa-fw">
               <font-awesome-icon
