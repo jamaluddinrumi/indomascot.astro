@@ -1,7 +1,5 @@
 import fs from "fs";
 import { defineConfig } from "astro/config";
-import { loadEnv } from "vite";
-import storyblok from "@storyblok/astro";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
@@ -9,6 +7,7 @@ import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
 import AutoImport from "unplugin-auto-import/vite";
 import { unheadVueComposablesImports } from "@unhead/vue";
+import { loadEnv } from "vite";
 const env = loadEnv("", "", "");
 
 // https://astro.build/config
@@ -39,13 +38,6 @@ export default defineConfig({
   site: "https://astro.indomascot.com",
   trailingSlash: "always",
   integrations: [
-    storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
-      components: {},
-      apiOptions: {
-        region: "eu",
-      },
-    }),
     tailwind(),
     compress(),
     sitemap(),

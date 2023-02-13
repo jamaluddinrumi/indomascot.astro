@@ -1,12 +1,24 @@
 <script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean,
-}>()
+import { ref } from "vue";
+import { useStoryblok } from "@storyblok/vue";
 
+const content = ref(new Object());
+
+useStoryblok("halaman-depan", { version: "draft" })
+  .then((data) => {
+    content.value = data.value.content;
+  })
+  .catch((error) => console.log(error));
 </script>
 
 <template>
-  <div>
-    <slot/>
+  <div id="portfolio-homepage" class="mt-10 lg:mt-16">
+    <h2
+      id="portfolio-title"
+      class="min-h has-text-align-center mb-4 text-[1.5rem] uppercase leading-8 lg:mb-12 lg:min-h-fit lg:text-[2.5rem] lg:leading-[3rem]"
+    >
+      {{ $t("portfolio") }}
+    </h2>
+    <StoryblokComponent v-if="content" :blok="content" />
   </div>
 </template>

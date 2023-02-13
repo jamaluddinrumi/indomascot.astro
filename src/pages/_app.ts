@@ -4,6 +4,10 @@ import { createHead } from "@unhead/vue";
 import { createI18n } from "vue-i18n";
 import id from "@locales/id-ID";
 import en from "@locales/en-US";
+import { StoryblokVue, apiPlugin } from "@storyblok/vue";
+import Grid from "@components/Portfolio/Grid.vue";
+import Page from "@components/Portfolio/Page.vue";
+import Photo from "@components/Portfolio/Photo.vue";
 
 export const head = createHead();
 
@@ -50,6 +54,10 @@ import {
 export default (app: App) => {
   app.use(head);
   app.use(i18n);
+  app.use(StoryblokVue, {
+    accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN,
+    use: [apiPlugin],
+  });
   app.use(MotionPlugin);
 
   /* add icons to the library */
@@ -68,7 +76,9 @@ export default (app: App) => {
     faHouseChimney
   );
 
-  /* add font awesome icon component */
   app.component("font-awesome-icon", FontAwesomeIcon);
   app.component("font-awesome-layers", FontAwesomeLayers);
+  app.component("Page", Page);
+  app.component("Grid", Grid);
+  app.component("Photo", Photo);
 };
