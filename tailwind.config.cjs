@@ -1,5 +1,6 @@
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
+const daisyUi = require("daisyui/src/colors/themes");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -97,11 +98,31 @@ module.exports = {
     themes: [
       {
         dark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          "base-content": "#ffffff",
-          primary: require("daisyui/src/colors/themes")["[data-theme=dark]"][
-            "base-content"
-          ],
+          primary: "#8532CE",
+          "primary-focus": "#A667E4",
+          "primary-content": daisyUi["[data-theme=dark]"]["primary-content"],
+          secondary: "#878593",
+          "secondary-focus": daisyUi["[data-theme=dark]"]["secondary-focus"],
+          "secondary-content":
+            daisyUi["[data-theme=dark]"]["secondary-content"],
+          accent: daisyUi["[data-theme=dark]"]["accent"],
+          "accent-focus": daisyUi["[data-theme=dark]"]["accent-focus"],
+          "accent-content": daisyUi["[data-theme=dark]"]["accent-content"],
+          neutral: daisyUi["[data-theme=dark]"]["neutral"],
+          "neutral-focus": daisyUi["[data-theme=dark]"]["neutral-focus"],
+          "neutral-content": "#FFFFFF",
+          "base-100": daisyUi["[data-theme=dark]"]["base-100"],
+          "base-200": daisyUi["[data-theme=dark]"]["base-200"],
+          "base-300": "#13111C",
+          "base-content": "#FFFFFF",
+          info: daisyUi["[data-theme=dark]"]["info"],
+          "info-content": daisyUi["[data-theme=dark]"]["info-content"],
+          success: daisyUi["[data-theme=dark]"]["success"],
+          "success-content": daisyUi["[data-theme=dark]"]["success-content"],
+          warning: daisyUi["[data-theme=dark]"]["warning"],
+          "warning-content": daisyUi["[data-theme=dark]"]["warning-content"],
+          error: daisyUi["[data-theme=dark]"]["error"],
+          "error-content": daisyUi["[data-theme=dark]"]["error-content"],
         },
       },
       {
