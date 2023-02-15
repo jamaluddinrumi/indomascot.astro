@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import DarkToggle from "@components/DarkToggle.vue";
-import { mainMenu } from "@src/states";
+import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = useStore(mainMenu);
+
+const $isDark = useStore(isDark);
 
 function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
@@ -20,6 +22,12 @@ useHead({
   htmlAttrs: {
     lang: locale.value,
   },
+  meta: [
+    {
+      name: "theme-color",
+      content: computed(() => ($isDark.value ? "#13111C" : "#8532CE")),
+    },
+  ],
 });
 </script>
 
