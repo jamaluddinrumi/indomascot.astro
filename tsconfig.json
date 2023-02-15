@@ -9,6 +9,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@locales/*": ["src/locales/*"],
+      "@src/*": ["src/*"]
     }
   }
 }
