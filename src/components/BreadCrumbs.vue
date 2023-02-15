@@ -74,7 +74,7 @@ paths.forEach((text: string, index: number) => {
   <nav
     v-if="pathname !== '/'"
     aria-label="Breadcrumbs"
-    class="container navbar breadcrumbs mx-auto w-full max-w-6xl px-5"
+    class="container navbar breadcrumbs mx-auto w-full max-w-sm px-5 lg:max-w-6xl"
     :class="{ 'blur-sm': $mainMenu }"
   >
     <ul>
