@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { i18n } from "@src/pages/_app.ts";
-import { watchEffect, ref } from "vue";
+import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import DarkToggle from "@components/DarkToggle.vue";
-import { useStorage } from "@vueuse/core";
 import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
@@ -13,14 +12,13 @@ function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
 }
 
-const locale = ref(i18n.global.locale);
+const i18n = useI18n();
 
-const colorScheme = useStorage("vueuse-color-scheme", "light"); // returns Ref<boolean>
+const locale = ref(i18n.locale);
 
 useHead({
   htmlAttrs: {
     lang: locale.value,
-    "data-theme": colorScheme.value,
   },
 });
 </script>
