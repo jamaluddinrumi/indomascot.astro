@@ -28,7 +28,7 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="container sticky top-0 z-50 mx-auto w-full flex-none"
+    class="container sticky top-0 z-50 mx-auto grid h-[72px] w-full flex-none content-center"
     :class="{ 'blur-sm': $mainMenu }"
   >
     <div
