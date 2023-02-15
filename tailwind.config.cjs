@@ -115,7 +115,7 @@ module.exports = {
           "neutral-content": "#FFFFFF",
           "base-100": daisyUi["[data-theme=dark]"]["base-100"],
           "base-200": daisyUi["[data-theme=dark]"]["base-200"],
-          "base-300": "#13111C",
+          "base-300": daisyUi["[data-theme=dark]"]["base-300"],
           "base-content": "#FEFEFE",
           info: daisyUi["[data-theme=dark]"]["info"],
           "info-content": daisyUi["[data-theme=dark]"]["info-content"],
@@ -125,6 +125,9 @@ module.exports = {
           "warning-content": daisyUi["[data-theme=dark]"]["warning-content"],
           error: daisyUi["[data-theme=dark]"]["error"],
           "error-content": daisyUi["[data-theme=dark]"]["error-content"],
+          ".bg-body": {
+            "background-color": "#13111C",
+          },
           ".bg-gradient": {
             "background-image":
               "linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%)",
@@ -171,6 +174,9 @@ module.exports = {
           "warning-content": daisyUi["[data-theme=light]"]["warning-content"],
           error: daisyUi["[data-theme=light]"]["error"],
           "error-content": daisyUi["[data-theme=light]"]["error-content"],
+          ".bg-body": {
+            "background-color": "#FEFEFE",
+          },
           ".bg-gradient": {
             "background-image":
               "linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%)",
