@@ -138,6 +138,10 @@ module.exports = {
             stroke: "#FEFEFE",
             color: "#FEFEFE",
           },
+          ".whatsapp-contact": {
+            "border-color": "rgba(255, 255, 255, 0.05)",
+            "background-color": "rgba(255, 255, 255, 0.1)",
+          },
         },
       },
       {
@@ -179,6 +183,10 @@ module.exports = {
             fill: "#8532CE",
             stroke: "#8532CE",
             color: "#8532CE",
+          },
+          ".whatsapp-contact": {
+            "border-color": "rgba(82, 41, 122, 0.05)",
+            "background-color": "rgba(82, 41, 122, 0.1)",
           },
         },
       },
