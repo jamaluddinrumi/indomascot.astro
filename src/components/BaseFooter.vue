@@ -14,10 +14,10 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
 
 <template>
   <footer
-    class="bg-gradient container mx-auto border-t-neutral-content bg-repeat text-center text-base-content shadow-inner"
+    class="bg-gradient border-t-neutral-content bg-repeat text-center text-base-content shadow-inner"
     role="contentinfo"
   >
-    <div class="grid grid-cols-1 pb-8 lg:grid-cols-3 lg:pb-0">
+    <div class="container mx-auto grid grid-cols-1 pb-8 lg:grid-cols-3 lg:pb-0">
       <div class="mt-16">
         <h4
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
