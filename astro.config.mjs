@@ -35,8 +35,8 @@ export default defineConfig({
     ],
   },
   output: "static",
-  site: "https://astro.indomascot.com",
-  trailingSlash: "always",
+  site: "https://astro.indomascot.com/",
+  trailingSlash: "ignore",
   integrations: [
     tailwind(),
     compress(),
