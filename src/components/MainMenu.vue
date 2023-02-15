@@ -93,7 +93,8 @@ onMounted(() => {
             <a
               class="flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               :class="{
-                'btn-shadow btn-gradient active': menu.href === pathname,
+                'btn-shadow btn-gradient active':
+                  menu.href === pathname || menu.href === `${pathname}/`,
               }"
               :href="menu.href"
             >
