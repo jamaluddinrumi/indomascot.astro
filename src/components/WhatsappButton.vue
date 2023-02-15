@@ -6,7 +6,7 @@ const waUrl = import.meta.env.WA_URL;
   <a
     rel="noopener"
     target="_blank"
-    class="whatsapp button float-center mt-1 w-fit whitespace-nowrap rounded-full px-6 py-3 text-center font-semibold tracking-normal text-white no-underline shadow-md"
+    class="whatsapp button float-center mt-1 w-fit whitespace-nowrap rounded-full px-6 py-3 text-center text-white no-underline shadow-md"
     :href="waUrl"
   >
     <font-awesome-layers class="fa-fw">
@@ -16,7 +16,7 @@ const waUrl = import.meta.env.WA_URL;
         class="mr-0 h-4 w-4 lg:h-5 lg:w-5"
       />
     </font-awesome-layers>
-    <span class="uppercase leading-normal tracking-tight">
+    <span class="tracking-wide">
       {{ $t("whatsAppNo") }}
     </span>
   </a>
@@ -36,5 +36,4 @@ const waUrl = import.meta.env.WA_URL;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ff5f', endColorstr='#25d366', GradientType=0);
   /* IE6-9 */
 }
-
 </style>
