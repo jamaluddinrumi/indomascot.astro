@@ -1,9 +1,9 @@
-export type Dimesion = {
+export type Dimension = {
   width: number;
   height: number;
 };
 
-export function getBrowserHeight(): Dimesion {
+export function getBrowserHeight(): Dimension {
   let width = 0,
     height = 0;
   if (typeof window.innerWidth == "number") {
