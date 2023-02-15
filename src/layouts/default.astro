@@ -16,6 +16,7 @@ import BreadCrumbs from "@components/BreadCrumbs.vue";
 import BaseFooter from "@components/BaseFooter.vue";
 import MainMenu from "@components/MainMenu.vue";
 import FooterNav from "@components/FooterNav.vue";
+import FloatingWhatsapp from "@components/FloatingWhatsapp.vue";
 
 export interface Props {
   title: string;
@@ -50,6 +51,7 @@ const { title } = Astro.props;
     </main>
     <BaseFooter client:only="vue" />
     <MainMenu client:only="vue" pathname={new URL(Astro.url).pathname} />
+    <FloatingWhatsapp client:only="vue" />
   </body>
 </html>
 
