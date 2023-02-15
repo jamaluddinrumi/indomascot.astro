@@ -20,6 +20,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.51.0
   '@unhead/addons': ^1.0.21
   '@unhead/vue': ^1.0.21
+  '@unpic/vue': ^0.0.3
   '@vite-pwa/astro': ^0.0.1
   '@vueuse/core': ^9.12.0
   '@vueuse/motion': 2.0.0-beta.12
@@ -76,6 +77,7 @@ devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.6
   '@types/lodash-es': 4.17.6
   '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
+  '@unpic/vue': 0.0.3
   '@vite-pwa/astro': 0.0.1
   '@vueuse/core': 9.12.0_vue@3.2.47
   '@vueuse/motion': 2.0.0-beta.12_vue@3.2.47
@@ -2268,6 +2270,19 @@ packages:
       hookable: 5.4.2
       vue: 3.2.47
     dev: false
+
+  /@unpic/core/0.0.6:
+    resolution: {integrity: sha512-R/oiZecXhpXKiX6g+l7B78IGziXnAACbM3XrrXB4RhVt/xxCzrixYZdwQFHp5bCb5hYaXOZ9N8phk6kOyVw2kA==}
+    dependencies:
+      unpic: 2.0.2
+    dev: true
+
+  /@unpic/vue/0.0.3:
+    resolution: {integrity: sha512-zUAAVi6rHxFtYhgeeJcsERS9ciHEeWUzfmtn5gQM1SeAJ8i5OVsDjk8zGA+oP51QxN6Bei6rYntasBZuKxIu5w==}
+    dependencies:
+      '@unpic/core': 0.0.6
+      vue: 3.2.47
+    dev: true
 
   /@vite-pwa/astro/0.0.1:
     resolution: {integrity: sha512-FkX3F+JbVVjSjXrHkE681ZmOSIS2h43ldj7+YnBf52/qoSM9Ns05kNcjC7RNSIlRpD0a0TN1efutulDWWra6UQ==}
@@ -6779,6 +6794,10 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
+    dev: true
+
+  /unpic/2.0.2:
+    resolution: {integrity: sha512-b0A/QsPbNWWGrs16lVKYNEjN2+73020Nn+j66pbqzS+jRIyBObxeoAlO9B/fOHQcETXByW2fxRtwy4X+kqSY7g==}
     dev: true
 
   /unplugin-ast/0.7.0:

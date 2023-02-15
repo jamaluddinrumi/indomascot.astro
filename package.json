@@ -40,6 +40,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/parser": "^5.51.0",
+    "@unpic/vue": "^0.0.3",
     "@vite-pwa/astro": "^0.0.1",
     "@vueuse/core": "^9.12.0",
     "@vueuse/motion": "2.0.0-beta.12",
