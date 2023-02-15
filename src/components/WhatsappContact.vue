@@ -28,6 +28,6 @@ import WhatsappButton from "./WhatsappButton.vue";
         </div>
       </div>
     </div>
-    <WhatsappButton :kontak="true" class="my-0" />
+    <WhatsappButton :kontak="true" class="mt-1.5 lg:mt-0" />
   </section>
 </template>
