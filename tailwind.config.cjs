@@ -192,5 +192,5 @@ module.exports = {
       },
     ],
   },
-  darkTheme: "dark",
+  darkTheme: false,
 };
