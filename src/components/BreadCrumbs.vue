@@ -27,6 +27,7 @@ interface BreadcrumbItem {
   text: string;
   href: string;
   "aria-current"?: string;
+  alt: string;
 }
 
 const { indexText = "Home", mainBemClass = "c-breadcrumbs" } = ref(
@@ -47,6 +48,7 @@ let parts: Array<BreadcrumbItem> = [
     text: indexText,
     href: "/",
     "aria-current": ariaCurrent,
+    alt: "",
   },
 ];
 
@@ -81,14 +83,16 @@ paths.forEach((text: string, index: number) => {
           <template v-if="part.href === '/'">
             <font-awesome-layers class="fa-fw">
               <font-awesome-icon
-                class="!mb-0.5"
+                class="logo !mb-0.5"
                 :icon="['fas', 'house-chimney']"
                 aria-hidden="true"
               />
             </font-awesome-layers>
           </template>
           <template v-else>
-            {{ startCase(part.text) }}
+            <span class="logo">
+              {{ startCase(part.text) }}
+            </span>
           </template>
         </a>
       </li>
