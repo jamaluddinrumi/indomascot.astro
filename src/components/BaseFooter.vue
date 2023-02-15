@@ -14,7 +14,7 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
 
 <template>
   <footer
-    class="mt-16 border-t-neutral-content bg-repeat text-center text-base-content shadow-inner"
+    class="mt-16 bg-repeat text-center text-base-content"
     role="contentinfo"
   >
     <div class="container mx-auto grid grid-cols-1 pb-8 lg:grid-cols-3 lg:pb-0">
