@@ -28,11 +28,11 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="container sticky top-0 z-50 mx-auto grid h-[72px] w-full flex-none content-center"
+    class="container sticky top-0 z-50 mx-auto grid w-full flex-none content-center"
     :class="{ 'blur-sm': $mainMenu }"
   >
     <div
-      class="supports-backdrop-blur:bg-white/60 navbar backdrop-blur transition will-change-[filter]"
+      class="supports-backdrop-blur:bg-white/60 navbar h-[72px] backdrop-blur transition will-change-[filter]"
     >
       <div class="flex-1">
         <a href="/">
