@@ -32,7 +32,7 @@ const menus = [
 </script>
 
 <template>
-  <footer class="container mx-auto">
+  <div class="container mx-auto">
     <nav role="navigation" class="mt-16 hidden pb-8 lg:block">
       <ul id="menu-bawah" class="flex flex-col justify-center lg:flex-row">
         <li>
@@ -62,5 +62,5 @@ const menus = [
         </li>
       </ul>
     </nav>
-  </footer>
+  </div>
 </template>

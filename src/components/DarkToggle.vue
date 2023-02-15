@@ -1,17 +1,10 @@
 <script setup lang="ts">
-import { ref, watchEffect, onMounted, computed } from "vue";
-import {
-  useToggle,
-  useDark,
-  useColorMode,
-  usePreferredColorScheme,
-} from "@vueuse/core";
-import { isDark, mainMenu } from "/src/states";
+import { ref } from "vue";
+import { useToggle } from "@vueuse/core";
+import { isDark, mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = ref(useStore(mainMenu));
-
-const $isDark = useStore(isDark);
 
 const toggleDark = useToggle(isDark.value);
 </script>
@@ -20,7 +13,7 @@ const toggleDark = useToggle(isDark.value);
   <label
     id="dark-toggle-label"
     for="dark-toggle"
-    class="swap-rotate swap btn-outline btn rounded-full shadow-inner"
+    class="swap-rotate btn-shadow swap btn-primary btn rounded-full shadow-inner"
     :class="{ 'label-disabled': $mainMenu }"
   >
     <!-- this hidden checkbox controls the state -->

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import $device from "/src/device";
+import $device from "@src/device";
 </script>
 
 <template>

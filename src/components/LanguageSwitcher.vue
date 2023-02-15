@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import { i18n } from "/src/pages/_app.ts";
+import { i18n } from "@src/pages/_app.ts";
 
 const localeChanger = ref(null);
 

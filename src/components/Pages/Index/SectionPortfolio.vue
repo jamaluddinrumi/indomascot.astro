@@ -5,8 +5,8 @@ import { useStoryblok } from "@storyblok/vue";
 const content = ref(new Object());
 
 useStoryblok("halaman-depan", { version: "draft" })
-  .then((data) => {
-    content.value = data.value.content;
+  .then(async (data) => {
+    content.value = await data.value.content;
   })
   .catch((error) => console.log(error));
 </script>

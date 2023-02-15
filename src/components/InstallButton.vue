@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import $device from "/src/device";
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 const props = defineProps({
   id: {
@@ -17,6 +16,8 @@ const props = defineProps({
   },
 });
 
+function install() {}
+
 const deferredPrompt = ref(null);
 </script>
 
@@ -24,7 +25,7 @@ const deferredPrompt = ref(null);
   <div class="flex flex-col items-center px-0 hover:bg-transparent">
     <button
       class="gradient btn-outline btn flex w-fit cursor-pointer justify-center rounded-full border px-6 py-4 uppercase tracking-wide"
-      :class="{ 'btn-disabled': disabled }"
+      :class="{ 'btn-disabled cursor-not-allowed': disabled }"
       @click="install()"
     >
       <font-awesome-layers class="fa-fw">
@@ -39,9 +40,12 @@ const deferredPrompt = ref(null);
       }}</span>
     </button>
     <label :for="id">
-      <span class="bg-gradient-to-b bg-clip-text text-xs text-base-content/60"
-        >(*) {{ $t(`onlyOn.${icon === "apple" ? "ios" : icon}`) }}</span
+      <span
+        class="bg-gradient-to-b bg-clip-text text-xs text-base-content"
+        :class="disabled ? 'text-opacity-30' : 'text-opacity-60'"
       >
+        (*) {{ $t(`onlyOn.${icon === "apple" ? "ios" : icon}`) }}
+      </span>
     </label>
   </div>
 </template>

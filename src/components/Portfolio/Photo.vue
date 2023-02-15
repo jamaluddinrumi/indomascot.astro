@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { Image } from "@unpic/vue";
 
 const { t } = useI18n(/*{ useScope: 'global' }*/);
 
@@ -28,13 +29,13 @@ const caption = ref("");
       data-featherlight="image"
       :alt="alt"
     >
-      <img
-        provider="storyblok"
+      <Image
+        cdn="storyblok"
         loading="lazy"
         width="342"
         height="342"
         sizes="xs:237px lg:342px"
-        :src="blok.photo"
+        :src="`${blok.photo}/m/342x342`"
         :alt="blok.caption"
         :title="title"
         :placeholder="[100, 100, 10]"

@@ -2,7 +2,7 @@
 import { toRefs, toRaw, ref, onMounted } from "vue";
 import { startCase } from "lodash-es";
 
-import { mainMenu } from "/src/states";
+import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = useStore(mainMenu);

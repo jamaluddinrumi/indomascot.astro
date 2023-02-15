@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { i18n } from "/src/pages/_app.ts";
+import { i18n } from "@src/pages/_app.ts";
 import { watchEffect, ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import DarkToggle from "@components/DarkToggle.vue";
 import { useStorage } from "@vueuse/core";
-import { mainMenu } from "/src/states";
+import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = useStore(mainMenu);
@@ -43,7 +43,7 @@ useHead({
       <div class="flex-none">
         <DarkToggle client:only="vue" />
         <button
-          class="btn-outline btn ml-2 rounded-full px-6 pt-1 shadow-inner"
+          class="btn-shadow btn-gradient btn-primary btn ml-2 rounded-full px-6 pt-1 shadow-inner"
           :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
