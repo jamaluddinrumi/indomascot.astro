@@ -82,7 +82,8 @@ onMounted(() => {
     :leave="{
       y: -browserDimension.height,
     }"
-    class="bg-body fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll"
+    class="fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll backdrop-blur-3xl"
+    style="-webkit-transform: translate3d(0, 0, 0)"
   >
     <div class="relative">
       <nav

@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import { i18n } from "@src/pages/_app.ts";
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 
-const localeChanger = ref(null);
+const localeChanger = ref("");
 
-localeChanger.value = i18n.global.locale;
+const i18n = useI18n();
+
+localeChanger.value = i18n.locale;
 </script>
 
 <template>

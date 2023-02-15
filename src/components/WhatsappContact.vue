@@ -4,7 +4,7 @@ import WhatsappButton from "./WhatsappButton.vue";
 
 <template>
   <section
-    class="whatsapp-contact container mx-auto flex max-w-xs flex-col items-center rounded-xl border px-8 py-16 lg:max-w-7xl lg:flex-row lg:justify-between"
+    class="whatsapp-contact container mx-auto flex max-w-xs flex-col items-center rounded-xl border px-8 py-16 lg:max-w-6xl lg:flex-row lg:justify-between"
   >
     <div class="flex flex-col items-center lg:flex-row">
       <img

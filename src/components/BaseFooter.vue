@@ -7,14 +7,12 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
 const emailAddress = import.meta.env.PUBLIC_EMAIL_ADDRESS;
 const igUrl = import.meta.env.PUBLIC_IG_URL;
 const youtubeUrl = import.meta.env.PUBLIC_YOUTUBE_URL;
-const youtubeWorkshopId = import.meta.env.PUBLIC_YOUTUBE_WORKSHOP_ID;
-const cibeunyingKaler = import.meta.env.PUBLIC_CIBEUNYING_KALER;
 const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
 </script>
 
 <template>
   <footer
-    class="mt-16 bg-repeat text-center text-base-content"
+    class="container mx-auto mt-8 max-w-6xl bg-repeat text-center text-base-content"
     role="contentinfo"
   >
     <div class="container mx-auto grid grid-cols-1 pb-8 lg:grid-cols-3 lg:pb-0">

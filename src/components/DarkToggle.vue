@@ -13,7 +13,7 @@ const toggleDark = useToggle(isDark.value);
   <label
     id="dark-toggle-label"
     for="dark-toggle"
-    class="swap-rotate btn-shadow swap btn-primary btn rounded-full shadow-inner"
+    class="btn-shadow swap-rotate swap btn-primary btn rounded-full shadow-inner"
     :class="{ 'label-disabled': $mainMenu }"
   >
     <!-- this hidden checkbox controls the state -->
