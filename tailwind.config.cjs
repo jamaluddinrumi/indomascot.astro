@@ -123,15 +123,51 @@ module.exports = {
           "warning-content": daisyUi["[data-theme=dark]"]["warning-content"],
           error: daisyUi["[data-theme=dark]"]["error"],
           "error-content": daisyUi["[data-theme=dark]"]["error-content"],
+          ".bg-gradient": {
+            "background-image":
+              "linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%)",
+          },
+          ".btn-gradient": {
+            background:
+              "linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%)",
+          },
         },
       },
       {
         light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          "base-content": "#0f172acc",
-          primary: require("daisyui/src/colors/themes")["[data-theme=light]"][
-            "base-content"
-          ],
+          primary: "#8532CE",
+          "primary-focus": "#A667E4",
+          "primary-content": daisyUi["[data-theme=light]"]["primary-content"],
+          secondary: "#878593",
+          "secondary-focus": daisyUi["[data-theme=light]"]["secondary-focus"],
+          "secondary-content":
+            daisyUi["[data-theme=light]"]["secondary-content"],
+          accent: daisyUi["[data-theme=light]"]["accent"],
+          "accent-focus": daisyUi["[data-theme=light]"]["accent-focus"],
+          "accent-content": daisyUi["[data-theme=light]"]["accent-content"],
+          neutral: daisyUi["[data-theme=light]"]["neutral"],
+          "neutral-focus": daisyUi["[data-theme=light]"]["neutral-focus"],
+          "neutral-content": daisyUi["[data-theme=light]"]["neutral-content"],
+          "base-100": daisyUi["[data-theme=light]"]["base-100"],
+          "base-200": daisyUi["[data-theme=light]"]["base-200"],
+          "base-300": daisyUi["[data-theme=light]"]["base-300"],
+          "base-content": daisyUi["[data-theme=light]"]["base-content"],
+          info: daisyUi["[data-theme=light]"]["info"],
+          "info-content": daisyUi["[data-theme=light]"]["info-content"],
+          success: daisyUi["[data-theme=light]"]["success"],
+          "success-content": daisyUi["[data-theme=light]"]["success-content"],
+          warning: daisyUi["[data-theme=light]"]["warning"],
+          "warning-content": daisyUi["[data-theme=light]"]["warning-content"],
+          error: daisyUi["[data-theme=light]"]["error"],
+          "error-content": daisyUi["[data-theme=light]"]["error-content"],
+          ".bg-gradient": {
+            "background-image":
+              "linear-gradient(38.73deg, rgba(204, 0, 187, 0.25) 0%, rgba(201, 32, 184, 0) 50%), linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.25) 100%)",
+          },
+          ".btn-gradient": {
+            background:
+              "linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%)",
+          },
         },
       },
     ],
