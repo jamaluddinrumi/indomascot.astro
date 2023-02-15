@@ -1,11 +1,12 @@
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const daisyUi = require("daisyui/src/colors/themes");
+const colorFunctions = require("daisyui/src/colors/functions");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: ["class", '[data-theme="dark"]'], // or 'media' or 'class'
   theme: {
     colors: {
       transparent: "transparent",
@@ -15,6 +16,7 @@ module.exports = {
       "indomascot-old-blue": "#003399",
       "whatsapp-green": "#25d366",
       "whatsapp-old-green": "#128c7e",
+      railway: "#8532CE",
       bca: "#4000a1",
       mandiri: "#003066",
       bni: "#f05921",
@@ -23,16 +25,13 @@ module.exports = {
       white: colors.white,
       black: colors.black,
       slate: colors.slate,
-      gray: colors.gray,
       zinc: colors.zinc,
       neutral: colors.neutral,
       stone: colors.stone,
       red: colors.red,
       orange: colors.orange,
       amber: colors.amber,
-      yellow: colors.yellow,
       lime: colors.lime,
-      green: colors.green,
       emerald: colors.emerald,
       teal: colors.teal,
       cyan: colors.cyan,
@@ -40,10 +39,13 @@ module.exports = {
       blue: colors.blue,
       indigo: colors.indigo,
       violet: colors.violet,
-      purple: colors.purple,
       fuchsia: colors.fuchsia,
-      pink: colors.pink,
       rose: colors.rose,
+      gray: colors.slate,
+      green: colors.emerald,
+      purple: colors.violet,
+      yellow: colors.amber,
+      pink: colors.fuchsia,
     },
     extend: {
       fontFamily: {
@@ -114,7 +116,7 @@ module.exports = {
           "base-100": daisyUi["[data-theme=dark]"]["base-100"],
           "base-200": daisyUi["[data-theme=dark]"]["base-200"],
           "base-300": "#13111C",
-          "base-content": "#FFFFFF",
+          "base-content": "#FEFEFE",
           info: daisyUi["[data-theme=dark]"]["info"],
           "info-content": daisyUi["[data-theme=dark]"]["info-content"],
           success: daisyUi["[data-theme=dark]"]["success"],
@@ -131,13 +133,18 @@ module.exports = {
             background:
               "linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%)",
           },
+          ".logo": {
+            fill: "#FEFEFE",
+            stroke: "#FEFEFE",
+            color: "#FEFEFE",
+          },
         },
       },
       {
         light: {
           primary: "#8532CE",
           "primary-focus": "#A667E4",
-          "primary-content": daisyUi["[data-theme=light]"]["primary-content"],
+          "primary-content": daisyUi["[data-theme=dark]"]["primary-content"],
           secondary: "#878593",
           "secondary-focus": daisyUi["[data-theme=light]"]["secondary-focus"],
           "secondary-content":
@@ -151,7 +158,7 @@ module.exports = {
           "base-100": daisyUi["[data-theme=light]"]["base-100"],
           "base-200": daisyUi["[data-theme=light]"]["base-200"],
           "base-300": daisyUi["[data-theme=light]"]["base-300"],
-          "base-content": daisyUi["[data-theme=light]"]["base-content"],
+          "base-content": "#6C6B7B",
           info: daisyUi["[data-theme=light]"]["info"],
           "info-content": daisyUi["[data-theme=light]"]["info-content"],
           success: daisyUi["[data-theme=light]"]["success"],
@@ -167,6 +174,11 @@ module.exports = {
           ".btn-gradient": {
             background:
               "linear-gradient(76.35deg, rgb(128, 26, 230) 15.89%, rgb(162, 26, 230) 89.75%)",
+          },
+          ".logo": {
+            fill: "#8532CE",
+            stroke: "#8532CE",
+            color: "#8532CE",
           },
         },
       },
