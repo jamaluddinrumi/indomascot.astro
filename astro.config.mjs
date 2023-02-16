@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 import compressor from "astro-compressor";
+import critters from "astro-critters";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
@@ -44,6 +45,7 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     vue({ appEntrypoint: "/src/_app" }),
+    critters(),
     compress(),
     compressor(),
   ],
