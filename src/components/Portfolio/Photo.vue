@@ -38,7 +38,7 @@ const caption = ref("");
         :src="`${blok.photo}/m/342x342`"
         :alt="blok.caption"
         :title="title"
-        :placeholder="[100, 100, 10]"
+        background="auto"
       />
     </a>
     <figcaption class="mb-2 hidden h-7 text-center text-sm lg:block">
