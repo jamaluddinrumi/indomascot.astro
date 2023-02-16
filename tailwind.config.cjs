@@ -1,7 +1,6 @@
 const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const daisyUi = require("daisyui/src/colors/themes");
-const colorFunctions = require("daisyui/src/colors/functions");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
