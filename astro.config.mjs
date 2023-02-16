@@ -7,7 +7,6 @@ import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
 import AutoImport from "unplugin-auto-import/vite";
 import { unheadVueComposablesImports } from "@unhead/vue";
-import purgecss from "astro-purgecss";
 
 import { loadEnv } from "vite";
 const env = loadEnv("", "", "");
@@ -45,6 +44,5 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     vue({ appEntrypoint: "/src/_app" }),
-    purgecss(),
   ],
 });

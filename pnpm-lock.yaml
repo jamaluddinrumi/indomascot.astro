@@ -26,7 +26,6 @@ specifiers:
   '@vueuse/motion': 2.0.0-beta.12
   astro: ^2.0.10
   astro-compress: ^1.1.32
-  astro-purgecss: ^2.0.0
   astro-robots-txt: ^0.3.12
   astro-seo-meta: ^2.0.0
   astro-seo-schema: ^2.0.0
@@ -86,7 +85,6 @@ devDependencies:
   '@vueuse/core': 9.12.0_vue@3.2.47
   '@vueuse/motion': 2.0.0-beta.12_vue@3.2.47
   astro-compress: 1.1.32
-  astro-purgecss: 2.0.0_astro@2.0.10
   astro-robots-txt: 0.3.12
   astro-seo-meta: 2.0.0_astro@2.0.10
   astro-seo-schema: 2.0.0_cymyu4rbdw37sjvn5lj2gsdjnq
@@ -2724,15 +2722,6 @@ packages:
       - supports-color
     dev: true
 
-  /astro-purgecss/2.0.0_astro@2.0.10:
-    resolution: {integrity: sha512-xt8Wvhkgp3Q3qgwGxtNPZ+KmnO29Rs7K2g2e4imIaWkNnXUMoCG7S0n8/m2ZwXRF9snI5h1DV8N80zZHj7Jx3A==}
-    peerDependencies:
-      astro: ^2.0.0
-    dependencies:
-      astro: 2.0.10_sass@1.58.0
-      purgecss: 5.0.0
-    dev: true
-
   /astro-robots-txt/0.3.12:
     resolution: {integrity: sha512-ydVbhyzxhoCzVCn0eqUdqCMaADG+GOBYE2YGk2unQ4EpqNlvy4HIGOy/XiAHu/n46suXUkYuxHFIOVd3r1zJvA==}
     dependencies:
@@ -4079,17 +4068,6 @@ packages:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: true
-
-  /glob/8.1.0:
-    resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 5.1.6
-      once: 1.4.0
     dev: true
 
   /globals/11.12.0:
@@ -5812,16 +5790,6 @@ packages:
   /punycode/2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
-    dev: true
-
-  /purgecss/5.0.0:
-    resolution: {integrity: sha512-RAnuxrGuVyLLTr8uMbKaxDRGWMgK5CCYDfRyUNNcaz5P3kGgD2b7ymQGYEyo2ST7Tl/ScwFgf5l3slKMxHSbrw==}
-    hasBin: true
-    dependencies:
-      commander: 9.5.0
-      glob: 8.1.0
-      postcss: 8.4.21
-      postcss-selector-parser: 6.0.11
     dev: true
 
   /queue-microtask/1.2.3:
