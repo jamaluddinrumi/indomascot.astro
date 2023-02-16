@@ -44,7 +44,7 @@ export default defineConfig({
     compress(),
     sitemap(),
     robotsTxt(),
-    vue({ appEntrypoint: "/src/pages/_app" }),
+    vue({ appEntrypoint: "/src/_app" }),
     purgecss(),
   ],
 });
