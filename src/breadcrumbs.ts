@@ -2,11 +2,10 @@ import type { BreadcrumbList, ListItem } from "schema-dts";
 import { startCase } from "lodash-es";
 
 export function generate(url: URL) {
-  console.log(url);
-
-  let itemList = [];
+  const itemList = new Array<ListItem>();
 
   const home: ListItem = {
+    "@context": "https://schema.org",
     "@type": "ListItem",
     position: 1,
     name: "Halaman Depan",
@@ -17,10 +16,11 @@ export function generate(url: URL) {
 
   if (url.pathname !== "/") {
     let thisPage: ListItem = {
+      "@context": "https://schema.org",
       "@type": "ListItem",
       position: 2,
       name: startCase(url.pathname),
-      item: url.origin,
+      item: url.href,
     };
 
     itemList.push(thisPage);
