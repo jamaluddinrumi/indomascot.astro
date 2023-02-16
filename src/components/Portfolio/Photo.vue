@@ -10,11 +10,25 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  title: {
+    type: String,
+    default: "",
+    required: false,
+  },
+  alt: {
+    type: String,
+    default: "",
+    required: false,
+  },
 });
 
+const caption = ref(props.blok.caption);
+
 const alt = ref("");
+alt.value += t("dollMascotCostume", [caption.value]);
+
 const title = ref("");
-const caption = ref("");
+title.value = t("fullSizePhoto", [caption.value]);
 </script>
 
 <template>
