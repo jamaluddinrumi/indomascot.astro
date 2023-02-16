@@ -26,6 +26,7 @@ specifiers:
   '@vueuse/motion': 2.0.0-beta.12
   astro: ^2.0.10
   astro-compress: ^1.1.32
+  astro-compressor: ^0.3.0
   astro-robots-txt: ^0.3.12
   astro-seo-meta: ^2.0.0
   astro-seo-schema: ^2.0.0
@@ -58,6 +59,7 @@ dependencies:
   '@unhead/addons': 1.0.21
   '@unhead/vue': 1.0.21_vue@3.2.47
   astro: 2.0.10_sass@1.58.0
+  astro-compressor: 0.3.0
   nanostores: 0.7.3
   tailwindcss: 3.2.6
   unplugin-auto-import: 0.14.2_@vueuse+core@9.12.0
@@ -2706,6 +2708,10 @@ packages:
       svgo: 3.0.2
       terser: 5.16.3
     dev: true
+
+  /astro-compressor/0.3.0:
+    resolution: {integrity: sha512-w2qdtUgd75RDSPX9m693VVr8bFSuLpTPxs/Toy6kEAsr082AOGRivOl/1pmjf6tDWaU07rlX5X5ZV90ZP6/RGg==}
+    dev: false
 
   /astro-eslint-parser/0.11.0:
     resolution: {integrity: sha512-vcz8KBQ20WNOot6qK6w7DQtz2hwg+aLLqlUa6nAnitJLqbR12GxJN/+96U3O+VI4da5Up+FMWqNoL9mywSENtA==}
