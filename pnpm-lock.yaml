@@ -26,7 +26,10 @@ specifiers:
   '@vueuse/motion': 2.0.0-beta.12
   astro: ^2.0.10
   astro-compress: ^1.1.32
+  astro-purgecss: ^2.0.0
   astro-robots-txt: ^0.3.12
+  astro-seo-meta: ^2.0.0
+  astro-seo-schema: ^2.0.0
   daisyui: ^2.50.0
   eslint: ^8.34.0
   eslint-config-prettier: ^8.6.0
@@ -40,6 +43,7 @@ specifiers:
   prettier-plugin-astro: ^0.8.0
   prettier-plugin-tailwindcss: ^0.2.2
   sass: ^1.58.0
+  schema-dts: ^1.1.0
   stylelint-config-prettier: ^9.0.5
   tailwindcss: ^3.2.6
   typescript: ^4.9.5
@@ -82,7 +86,10 @@ devDependencies:
   '@vueuse/core': 9.12.0_vue@3.2.47
   '@vueuse/motion': 2.0.0-beta.12_vue@3.2.47
   astro-compress: 1.1.32
+  astro-purgecss: 2.0.0_astro@2.0.10
   astro-robots-txt: 0.3.12
+  astro-seo-meta: 2.0.0_astro@2.0.10
+  astro-seo-schema: 2.0.0_cymyu4rbdw37sjvn5lj2gsdjnq
   daisyui: 2.50.0
   eslint: 8.34.0
   eslint-config-prettier: 8.6.0_eslint@8.34.0
@@ -95,6 +102,7 @@ devDependencies:
   prettier-plugin-astro: 0.8.0
   prettier-plugin-tailwindcss: 0.2.2_cfgkwvtfb3vmyej4cugnuognhu
   sass: 1.58.0
+  schema-dts: 1.1.0_typescript@4.9.5
   stylelint-config-prettier: 9.0.5
   typescript: 4.9.5
   vite: 4.1.1_sass@1.58.0
@@ -2716,12 +2724,40 @@ packages:
       - supports-color
     dev: true
 
+  /astro-purgecss/2.0.0_astro@2.0.10:
+    resolution: {integrity: sha512-xt8Wvhkgp3Q3qgwGxtNPZ+KmnO29Rs7K2g2e4imIaWkNnXUMoCG7S0n8/m2ZwXRF9snI5h1DV8N80zZHj7Jx3A==}
+    peerDependencies:
+      astro: ^2.0.0
+    dependencies:
+      astro: 2.0.10_sass@1.58.0
+      purgecss: 5.0.0
+    dev: true
+
   /astro-robots-txt/0.3.12:
     resolution: {integrity: sha512-ydVbhyzxhoCzVCn0eqUdqCMaADG+GOBYE2YGk2unQ4EpqNlvy4HIGOy/XiAHu/n46suXUkYuxHFIOVd3r1zJvA==}
     dependencies:
       deepmerge: 4.3.0
       valid-filename: 4.0.0
       zod: 3.20.6
+    dev: true
+
+  /astro-seo-meta/2.0.0_astro@2.0.10:
+    resolution: {integrity: sha512-T/c1nQQvmYz0Ub04UooYo6JLZux7OaVwYeolWDf9L7RhpaqyWX80lOczSIt19/9mNKZq1hNYRcJBXWOArI36ug==}
+    peerDependencies:
+      astro: ^2.0.0
+    dependencies:
+      astro: 2.0.10_sass@1.58.0
+    dev: true
+
+  /astro-seo-schema/2.0.0_cymyu4rbdw37sjvn5lj2gsdjnq:
+    resolution: {integrity: sha512-VMsoQr/v4VN3wLiVm4czfabQlQOKOVim45rwcYWVTuLZuksnE848F1GqejqSaUrCqVrUd8n31p6gLgS2yghw3A==}
+    peerDependencies:
+      astro: ^2.0.0
+    dependencies:
+      astro: 2.0.10_sass@1.58.0
+      schema-dts: 1.1.0_typescript@4.9.5
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /astro/2.0.10_sass@1.58.0:
@@ -4043,6 +4079,17 @@ packages:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
+    dev: true
+
+  /glob/8.1.0:
+    resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 5.1.6
+      once: 1.4.0
     dev: true
 
   /globals/11.12.0:
@@ -5767,6 +5814,16 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /purgecss/5.0.0:
+    resolution: {integrity: sha512-RAnuxrGuVyLLTr8uMbKaxDRGWMgK5CCYDfRyUNNcaz5P3kGgD2b7ymQGYEyo2ST7Tl/ScwFgf5l3slKMxHSbrw==}
+    hasBin: true
+    dependencies:
+      commander: 9.5.0
+      glob: 8.1.0
+      postcss: 8.4.21
+      postcss-selector-parser: 6.0.11
+    dev: true
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -6097,6 +6154,14 @@ packages:
 
   /sax/1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
+    dev: true
+
+  /schema-dts/1.1.0_typescript@4.9.5:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 4.9.5
     dev: true
 
   /scule/1.0.0:

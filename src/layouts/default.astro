@@ -17,12 +17,19 @@ import BaseFooter from "@components/BaseFooter.vue";
 import MainMenu from "@components/MainMenu.vue";
 import FloatingWhatsapp from "@components/FloatingWhatsapp.vue";
 import WhatsappContact from "@components/WhatsappContact.vue";
+import { generate as generateStructuredData } from "@src/structuredData";
+import { generate as generateBreadcrumbs } from "@src/breadcrumbs";
+import { Schema } from "astro-seo-schema";
+import { Seo } from "astro-seo-meta";
 
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+// breadcrumbs
+// const breadcrumbs = useBreadcrumbs()
 ---
 
 <!DOCTYPE html>
@@ -31,13 +38,20 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="index, follow" />
-    <meta
-      name="description"
-      content="INDOMASCOT melayani pembuatan kostum badut maskot untuk branding produk atau instansi anda dengan desain dari anda sendiri. (WA 0822-2155-6633)"
-    />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/svg+xml" href="/favicon-b.svg" />
-    <title>{title}</title>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#003399" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="prefetch" href="/loading-indicator.svg" />
+    <link rel="preconnect" href="https://a.storyblok.com/" />
+    <link rel="dns-prefetch" href="https://a.storyblok.com/" />
+    <Schema
+      item={generateStructuredData(generateBreadcrumbs(new URL(Astro.url)))}
+    />
+    <Seo title={title} description="ini description" />
   </head>
+
   <body class="bg-gradient bg-body">
     <FlashyBg />
     <BaseHeader client:only="vue" />
@@ -53,91 +67,90 @@ const { title } = Astro.props;
     <BaseFooter client:only="vue" />
     <MainMenu client:only="vue" pathname={new URL(Astro.url).pathname} />
     <FloatingWhatsapp client:only="vue" />
+    <style lang="scss" is:global>
+      $indomascot-yellow: #e59700;
+      $table-is-striped: false;
+      $indomascot-blue: #0033cc;
+      $indomascot-old-blue: #003399;
+      $whatsapp-green: #25d366;
+      $whatsapp-old-green: #128c7e;
+      $bca: #4000a1;
+      $mandiri: #003066;
+      $bni: #f05921;
+      $bri: #00529c;
+      $full-white: #ffffff;
+      $darkGradient: linear-gradient(
+        76.35deg,
+        rgb(128, 26, 230) 15.89%,
+        rgb(162, 26, 230) 89.75%
+      );
+
+      ::-moz-selection {
+        /* Code for Firefox */
+        color: #fefefe;
+        background: hsl(var(--p));
+      }
+
+      ::selection {
+        color: #fefefe;
+        background: hsl(var(--p));
+      }
+
+      ::-webkit-scrollbar {
+        width: 9px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(155, 155, 155, 0.5);
+        border-radius: 20px;
+        border: transparent;
+      }
+
+      // :root,
+      // [data-theme] {
+      //   background-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
+      //   color: hsla(var(--bc) / var(--tw-text-opacity, 1));
+      // }
+
+      // html[data-theme="light"] body {
+      //   background-image: linear-gradient(-180deg, $full-white 0%, #f1f7ff 100%);
+      // }
+
+      // html[data-theme="dark"] body,
+      // html[data-theme="auto"] body {
+      //   background-image: linear-gradient(-180deg, hsl(var(--b1)), hsl(var(--n)));
+      // }
+
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a {
+        font-family: "Josefin Sans", serif;
+      }
+
+      .josefin-sans {
+        font-family: "Josefin Sans", serif;
+      }
+
+      .bangers {
+        font-family: "Bangers", sans-serif;
+        @apply tracking-wide;
+      }
+
+      .btn-shadow {
+        box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
+      }
+    </style>
   </body>
 </html>
-
-<style lang="scss" is:global>
-  $indomascot-yellow: #e59700;
-  $table-is-striped: false;
-  $indomascot-blue: #0033cc;
-  $indomascot-old-blue: #003399;
-  $whatsapp-green: #25d366;
-  $whatsapp-old-green: #128c7e;
-  $bca: #4000a1;
-  $mandiri: #003066;
-  $bni: #f05921;
-  $bri: #00529c;
-  $full-white: #ffffff;
-  $darkGradient: linear-gradient(
-    76.35deg,
-    rgb(128, 26, 230) 15.89%,
-    rgb(162, 26, 230) 89.75%
-  );
-
-  ::-moz-selection {
-    /* Code for Firefox */
-    color: #fefefe;
-    background: hsl(var(--p));
-  }
-
-  ::selection {
-    color: #fefefe;
-    background: hsl(var(--p));
-  }
-
-  ::-webkit-scrollbar {
-    width: 9px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(155, 155, 155, 0.5);
-    border-radius: 20px;
-    border: transparent;
-  }
-
-  // :root,
-  // [data-theme] {
-  //   background-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
-  //   color: hsla(var(--bc) / var(--tw-text-opacity, 1));
-  // }
-
-  // html[data-theme="light"] body {
-  //   background-image: linear-gradient(-180deg, $full-white 0%, #f1f7ff 100%);
-  // }
-
-  // html[data-theme="dark"] body,
-  // html[data-theme="auto"] body {
-  //   background-image: linear-gradient(-180deg, hsl(var(--b1)), hsl(var(--n)));
-  // }
-
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  a {
-    font-family: "Josefin Sans", serif;
-  }
-
-  .josefin-sans {
-    font-family: "Josefin Sans", serif;
-  }
-
-  .bangers {
-    font-family: "Bangers", sans-serif;
-    @apply tracking-wide;
-  }
-
-  .btn-shadow {
-    box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
-  }
-</style>
