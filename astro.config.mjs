@@ -41,10 +41,10 @@ export default defineConfig({
   site: "https://astro.indomascot.com/",
   trailingSlash: "ignore",
   integrations: [
+    vue({ appEntrypoint: "/src/_app" }),
     tailwind(),
     sitemap(),
     robotsTxt(),
-    vue({ appEntrypoint: "/src/_app" }),
     critters(),
     compress(),
     compressor(),
