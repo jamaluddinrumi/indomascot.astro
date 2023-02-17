@@ -21,6 +21,7 @@ import { generate as generateStructuredData } from "@src/structuredData";
 import { generate as generateBreadcrumbs } from "@src/breadcrumbs";
 import { Schema } from "astro-seo-schema";
 import { Seo } from "astro-seo-meta";
+import { localizePath } from "astro-i18next";
 
 export interface Props {
   title: string;
@@ -32,11 +33,11 @@ const structuredData = generateStructuredData(
   generateBreadcrumbs(new URL(Astro.url))
 );
 
-
 // 1. implement breadcrumbs for articles DONE
 // 2. implement en i18n by hl=en params or astro-i18n
 // 3. add astrojs-service-worker for fast page loading
 
+console.log(localizePath(Astro.url.pathname));
 ---
 
 <!DOCTYPE html>
