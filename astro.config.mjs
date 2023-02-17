@@ -9,9 +9,11 @@ import robotsTxt from "astro-robots-txt";
 import vue from "@astrojs/vue";
 import AutoImport from "unplugin-auto-import/vite";
 import { unheadVueComposablesImports } from "@unhead/vue";
-
 import { loadEnv } from "vite";
+import prefetch from "@astrojs/prefetch";
 const env = loadEnv("", "", "");
+
+// https://astro.build/config
 
 // https://astro.build/config
 export default defineConfig({
@@ -41,12 +43,15 @@ export default defineConfig({
   site: "https://astro.indomascot.com/",
   trailingSlash: "ignore",
   integrations: [
-    vue({ appEntrypoint: "/src/_app" }),
+    vue({
+      appEntrypoint: "/src/_app",
+    }),
     tailwind(),
     sitemap(),
     robotsTxt(),
     critters(),
     compress(),
     compressor(),
+    prefetch(),
   ],
 });

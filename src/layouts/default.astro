@@ -31,6 +31,12 @@ const { title } = Astro.props;
 const structuredData = generateStructuredData(
   generateBreadcrumbs(new URL(Astro.url))
 );
+
+
+// 1. implement breadcrumbs for articles DONE
+// 2. implement en i18n by hl=en params or astro-i18n
+// 3. add astrojs-service-worker for fast page loading
+
 ---
 
 <!DOCTYPE html>

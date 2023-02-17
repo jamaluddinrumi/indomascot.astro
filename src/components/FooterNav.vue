@@ -52,6 +52,7 @@ const menus = [
         </li>
         <li v-for="menu in menus" :key="menu.href">
           <a
+            rel="prefetch"
             class="link font-bold uppercase no-underline lg:py-4 lg:pr-2 lg:pl-2"
             :href="menu.href"
           >

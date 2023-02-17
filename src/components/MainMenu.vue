@@ -92,6 +92,7 @@ onMounted(() => {
         <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
           <li v-for="menu in menus" :key="menu.href" class="my-0.5">
             <a
+              rel="prefetch"
               class="flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               :class="{
                 'btn-shadow btn-gradient active':
