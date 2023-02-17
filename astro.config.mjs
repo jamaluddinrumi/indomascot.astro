@@ -33,6 +33,15 @@ export default defineConfig({
             }
           : false,
     },
+    preview: {
+      https:
+        env.NODE_ENV === "development" && env.USE_LOCAL_HTTPS === "true"
+          ? {
+              key: fs.readFileSync("../127.0.0.1+7-key.pem"),
+              cert: fs.readFileSync("../127.0.0.1+7.pem"),
+            }
+          : false,
+    },
     plugins: [
       AutoImport({
         imports: [unheadVueComposablesImports],

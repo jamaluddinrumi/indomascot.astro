@@ -7,7 +7,7 @@
     "dev": "astro dev --host --port 3005",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview --host --port 4005",
+    "preview": "astro preview --host --port 4005 --https",
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
     "lint": "eslint . --fix",
