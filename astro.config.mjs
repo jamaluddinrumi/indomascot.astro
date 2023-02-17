@@ -11,9 +11,8 @@ import AutoImport from "unplugin-auto-import/vite";
 import { unheadVueComposablesImports } from "@unhead/vue";
 import { loadEnv } from "vite";
 import prefetch from "@astrojs/prefetch";
+import astroI18next from "astro-i18next";
 const env = loadEnv("", "", "");
-
-// https://astro.build/config
 
 // https://astro.build/config
 export default defineConfig({
@@ -52,6 +51,7 @@ export default defineConfig({
   site: "https://astro.indomascot.com/",
   trailingSlash: "ignore",
   integrations: [
+    astroI18next(),
     vue({
       appEntrypoint: "/src/_app",
     }),
