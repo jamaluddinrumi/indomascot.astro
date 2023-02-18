@@ -9,9 +9,9 @@ import Grid from "@components/Portfolio/Grid.vue";
 import Page from "@components/Portfolio/Page.vue";
 import Photo from "@components/Portfolio/Photo.vue";
 
-export const head = createHead();
+const head = createHead();
 
-export const i18n = createI18n({
+const i18n = createI18n({
   locale: "id",
   fallbackLocale: "en",
   legacy: true,
