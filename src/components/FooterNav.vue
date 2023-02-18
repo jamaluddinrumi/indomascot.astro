@@ -1,34 +1,22 @@
 <script setup lang="ts">
+import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n(/*{ useScope: 'global' }*/);
 
-const menus = [
-  {
-    text: t("portfolio"),
-    href: "/badut-maskot/",
+const props = defineProps({
+  menus: {
+    type: Array,
+    default: new Array(),
   },
-  {
-    text: t("howToOrder"),
-    href: "/cara-pemesanan/",
-  },
-  {
-    text: t("designFitting"),
-    href: "/#fitting",
-  },
-  {
-    text: t("termsAndConditions"),
-    href: "/syarat-ketentuan/",
-  },
-  {
-    text: t("aboutUs"),
-    href: "/tentang-kami/",
-  },
-  {
-    text: t("blog"),
-    href: "/blog/",
-  },
-];
+});
+
+const menus = ref(
+  props.menus.map((menu) => ({
+    text: menu.text ? computed(() => t(menu.text)) : "",
+    href: menu.href,
+  }))
+);
 </script>
 
 <template>

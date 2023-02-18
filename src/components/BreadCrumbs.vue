@@ -16,11 +16,14 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
+  locale: {
+    type: String,
+    default: undefined,
+  },
 });
 
 interface BreadcrumbsProps {
   indexText?: string;
-  mainBemClass?: string;
 }
 
 interface BreadcrumbItem {
@@ -30,9 +33,7 @@ interface BreadcrumbItem {
   alt: string;
 }
 
-const { indexText = "Home", mainBemClass = "c-breadcrumbs" } = ref(
-  props.props as BreadcrumbsProps
-);
+const { indexText = "Halaman Depan" } = ref(props.props as BreadcrumbsProps);
 
 // const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
 const paths = props.pathname.split("/").filter((crumb: any) => crumb);
@@ -46,7 +47,7 @@ const ariaCurrent = props.reqPathname === "/" ? "page" : undefined;
 let parts: Array<BreadcrumbItem> = [
   {
     text: indexText,
-    href: "/",
+    href: props.locale === "id" ? "/" : "/en",
     "aria-current": ariaCurrent,
     alt: "",
   },
@@ -68,11 +69,15 @@ paths.forEach((text: string, index: number) => {
     },
   ];
 });
+
+parts = parts.filter(function (item) {
+  return item.text !== "en";
+});
 </script>
 
 <template>
   <nav
-    v-if="pathname !== '/'"
+    v-if="pathname !== ('/' && '/en')"
     aria-label="Breadcrumbs"
     class="container navbar breadcrumbs mx-auto w-full max-w-sm px-5 lg:max-w-6xl"
     :class="{ 'blur-sm': $mainMenu }"
@@ -80,7 +85,7 @@ paths.forEach((text: string, index: number) => {
     <ul>
       <li v-for="(part, index) in parts" :key="part.href">
         <a :href="part.href" :alt="part.alt">
-          <template v-if="part.href === '/'">
+          <template v-if="part.href === '/' || part.href === '/en'">
             <font-awesome-layers class="fa-fw">
               <font-awesome-icon
                 class="logo !mb-0.5"

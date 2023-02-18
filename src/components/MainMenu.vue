@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import $device from "@src/device";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import InstallButton from "@components/InstallButton.vue";
 import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
-import { useI18n } from "vue-i18n";
+import { useI18n, UseI18nOptions } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 
 const props = defineProps({
@@ -13,46 +13,32 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
+  locale: {
+    type: String,
+    default: "id",
+  },
+  menus: {
+    type: Array,
+    default: new Array(),
+  },
 });
 
-const { t } = useI18n(/*{ useScope: 'global' }*/);
+const { t } = useI18n({
+  useScope: "global",
+});
 
 const $mainMenu = useStore(mainMenu);
 
 const menuHalaman = ref(null);
 
-onClickOutside(menuHalaman, (event) => mainMenu.set(false));
+onClickOutside(menuHalaman, () => mainMenu.set(false));
 
-const menus = ref([
-  {
-    text: "",
-    href: "/",
-  },
-  {
-    text: t("portfolio"),
-    href: "/badut-maskot/",
-  },
-  {
-    text: t("howToOrder"),
-    href: "/cara-pemesanan/",
-  },
-  {
-    text: t("designFitting"),
-    href: "/#fitting",
-  },
-  {
-    text: t("termsAndConditions"),
-    href: "/syarat-ketentuan/",
-  },
-  {
-    text: t("aboutUs"),
-    href: "/tentang-kami/",
-  },
-  {
-    text: t("blog"),
-    href: "/blog/",
-  },
-]);
+const menus = ref(
+  props.menus.map((menu) => ({
+    text: menu.text ? computed(() => t(menu.text)) : "",
+    href: menu.href,
+  }))
+);
 
 const browserDimension = ref<Dimension>(null);
 
@@ -100,7 +86,7 @@ onMounted(() => {
               }"
               :href="menu.href"
             >
-              <template v-if="menu.href === '/'">
+              <template v-if="!menu.text">
                 <font-awesome-layers class="fa-fw">
                   <font-awesome-icon
                     :icon="['fas', 'house-chimney']"
@@ -117,13 +103,13 @@ onMounted(() => {
               </template>
             </a>
           </li>
-          <li class="mx-auto mt-4 flex w-fit justify-center">
+          <li class="mx-auto mt-4 flex w-fit justify-center lg:hidden">
             <InstallButton :disabled="$device.isDesktop" icon="apple" />
           </li>
-          <li class="mx-auto mt-2 flex w-fit justify-center">
+          <li class="mx-auto mt-2 flex w-fit justify-center lg:hidden">
             <InstallButton :disabled="$device.isDesktop" icon="android" />
           </li>
-          <li class="mx-auto mt-2 mb-4 flex w-fit justify-center">
+          <li class="mx-auto mt-2 mb-4 flex w-fit justify-center lg:hidden">
             <InstallButton icon="chrome" />
           </li>
         </ul>

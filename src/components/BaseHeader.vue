@@ -6,6 +6,13 @@ import DarkToggle from "@components/DarkToggle.vue";
 import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
+const props = defineProps({
+  homeUrl: {
+    type: String,
+    default: "",
+  },
+});
+
 const $mainMenu = useStore(mainMenu);
 
 const $isDark = useStore(isDark);
@@ -40,13 +47,12 @@ useHead({
       class="supports-backdrop-blur:bg-white/60 navbar h-[72px] px-5 backdrop-blur transition will-change-[filter]"
     >
       <div class="flex-1">
-        <a href="/">
+        <a :href="homeUrl">
           <IconIndomascot />
         </a>
       </div>
       <!-- main menu button -->
       <div class="flex-none">
-        <DarkToggle client:only="vue" />
         <button
           class="btn-shadow btn-gradient btn-primary btn ml-2 rounded-full px-6 pt-1 shadow-inner"
           :class="{ 'btn-disabled': $mainMenu }"

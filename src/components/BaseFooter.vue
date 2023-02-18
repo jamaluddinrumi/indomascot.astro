@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FooterApps from "@components/FooterApps.vue";
 import FooterNav from "@components/FooterNav.vue";
+import { useI18n } from "vue-i18n";
 
 const waNo = import.meta.env.PUBLIC_WA_NO;
 const waUrl = import.meta.env.PUBLIC_WA_URL;
@@ -8,6 +9,17 @@ const emailAddress = import.meta.env.PUBLIC_EMAIL_ADDRESS;
 const igUrl = import.meta.env.PUBLIC_IG_URL;
 const youtubeUrl = import.meta.env.PUBLIC_YOUTUBE_URL;
 const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
+
+const props = defineProps({
+  menus: {
+    type: Array,
+    default: new Array(),
+  },
+});
+
+const { t } = useI18n({
+  useScope: "global",
+});
 </script>
 
 <template>
@@ -20,12 +32,13 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
         <h4
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
-          {{ $t("workshop") }}
+          {{ t("workshop") }}
         </h4>
         <address class="josefin-sans workshop leading-8">
-          Jl. Cukang Kawung Gang Bojong Mekar
-          <br />No. 53 RT 01 RW 15 Cibeunying Kaler, <br />Kec. Cimenyan,
-          Bandung, <br />Jawa Barat 40191
+          {{ t("address.cukangKawung") }}
+          <br />No. 53 RT 01 RW 15 Cibeunying Kaler, <br />{{
+            $t("address.cimenyan")
+          }}, Bandung, <br />{{ t("address.westJava") }} 40191
         </address>
         <div class="josefin-sans mb-0 mt-2 leading-3">
           <font-awesome-icon
@@ -40,7 +53,7 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
         <p class="josefin-sans mt-2 italic underline">
           <a :href="googleBusinessUrl" target="_blank" rel="noopener">
             <span class="font-sans text-xs">
-              {{ $t("seeAtGoogleMaps") }}
+              {{ t("seeAtGoogleMaps") }}
               <font-awesome-icon
                 :icon="['fas', 'external-link-alt']"
                 class="ml-0.5"
@@ -54,7 +67,7 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
         <h4
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
-          {{ $t("contact") }}
+          {{ t("contact") }}
         </h4>
         <div class="mx-auto w-fit">
           <ul class="fa-ul w-fit">
@@ -133,12 +146,12 @@ const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
         <h4
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
-          {{ $t("apps") }}
+          {{ t("apps") }}
         </h4>
         <FooterApps />
       </div>
     </div>
-    <FooterNav client:only="vue" />
+    <FooterNav :menus="menus" />
   </footer>
 </template>
 

@@ -14,7 +14,7 @@ export function generate(url: URL) {
 
   itemList.push(home);
 
-  if (url.pathname !== "/") {
+  if (url.pathname !== ("/" && "/en")) {
     let thisPage: ListItem = {
       "@context": "https://schema.org",
       "@type": "ListItem",
