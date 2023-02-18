@@ -1,5 +1,8 @@
 <script lang="ts" setup>
+import { useI18n } from "vue-i18n";
 import WhatsappButton from "./WhatsappButton.vue";
+
+const { t } = useI18n({ useScope: "global" });
 </script>
 
 <template>
@@ -22,10 +25,10 @@ import WhatsappButton from "./WhatsappButton.vue";
           <div
             class="text-center text-xl font-extrabold lg:text-left lg:text-3xl"
           >
-            {{ $t("forFastResponse") }}
+            {{ t("forFastResponse") }}
           </div>
           <div class="text-center">
-            {{ $t("aboutEstimatesEtc") }} {{ $t("pleaseContactUs") }}
+            {{ t("aboutEstimatesEtc") }} {{ t("pleaseContactUs") }}
           </div>
         </div>
       </div>
