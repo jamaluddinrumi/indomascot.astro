@@ -11,7 +11,8 @@
     "standalone": "HOST=0.0.0.0 SERVER_KEY_PATH=../127.0.0.1+7-key.pem SERVER_CERT_PATH=../127.0.0.1+7.pem node ./dist/server/entry.mjs",
     "astro": "astro",
     "lint": "eslint . --fix",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|astro|vue|md|*rc)\"",
+    "i18n:generate": "pnpx astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.1.2",
