@@ -206,4 +206,9 @@ export default {
   orSee: "atau lihat",
   seeAtGoogleMaps: "lihat di google maps",
   productionTeam: "Tim Produksi",
+  address: {
+    cukangKawung: "Jl. Cukang Kawung Gang Bojong Mekar",
+    cimenyan: "Kec. Cimenyan",
+    westJava: "Jawa Barat",
+  },
 };

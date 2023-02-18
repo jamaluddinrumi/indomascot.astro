@@ -207,4 +207,9 @@ export default {
   orSee: "or see",
   seeAtGoogleMaps: "see at Google Maps",
   productionTeam: "Production Team",
+  address: {
+    cukangKawung: "Cukang Kawung Street Bojong Mekar Alley",
+    cimenyan: "Cimenyan Subdistrict",
+    westJava: "West Java, Indonesia",
+  },
 };

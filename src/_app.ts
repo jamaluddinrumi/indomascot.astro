@@ -2,8 +2,8 @@ import type { App } from "vue";
 import { MotionPlugin } from "@vueuse/motion";
 import { createHead } from "@unhead/vue";
 import { createI18n } from "vue-i18n";
-import id from "@locales/id-ID";
-import en from "@locales/en-US";
+import id from "@locales/id";
+import en from "@locales/en";
 import { StoryblokVue, apiPlugin } from "@storyblok/vue";
 import Grid from "@components/Portfolio/Grid.vue";
 import Page from "@components/Portfolio/Page.vue";
@@ -16,8 +16,8 @@ const i18n = createI18n({
   fallbackLocale: "en",
   legacy: true,
   messages: {
-    id: id,
-    en: en,
+    "id": id,
+    "en": en,
   },
 });
 
