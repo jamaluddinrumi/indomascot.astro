@@ -1,11 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/default.astro";
-import ArticleList from "@components/Pages/Blog/ArticleList.vue";
+import WhoWeAre from "@components/Pages/About/WhoWeAre.vue";
 
 changeLanguage("en");
 ---
 
-<Layout title="Blog">
-  <ArticleList />
+<Layout title="Tentang Kami">
+  <WhoWeAre client:only="vue" />
 </Layout>

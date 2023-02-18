@@ -21,11 +21,19 @@ import { generate as generateStructuredData } from "@src/structuredData";
 import { generate as generateBreadcrumbs } from "@src/breadcrumbs";
 import { Schema } from "astro-seo-schema";
 import { Seo } from "astro-seo-meta";
-import { localizePath } from "astro-i18next";
+import { localizePath, detectLocaleFromPath, localizeUrl } from "astro-i18next";
+import InitApp from "@components/InitApp.vue";
+import { HeadHrefLangs } from "astro-i18next/components";
+import menu from "@src/menu";
 
 export interface Props {
   title: string;
 }
+
+const menus = menu.map((menuItem) => ({
+  text: menuItem.text,
+  href: localizePath(menuItem.href),
+}));
 
 const { title } = Astro.props;
 
@@ -36,8 +44,14 @@ const structuredData = generateStructuredData(
 // 1. implement breadcrumbs for articles DONE
 // 2. implement en i18n by hl=en params or astro-i18n
 // 3. add astrojs-service-worker for fast page loading
+// 4. retrieve seo html title, description, meta from storyblok
+// 5. language switcher & dark toggle below apps in main menu
 
-console.log(localizePath(Astro.url.pathname));
+const locale = detectLocaleFromPath(localizePath(Astro.url.pathname));
+
+const homeUrl = localizeUrl(Astro.url.origin);
+
+// console.log(Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -54,43 +68,34 @@ console.log(localizePath(Astro.url.pathname));
     <link rel="prefetch" href="/loading-indicator.svg" />
     <link rel="preconnect" href="https://a.storyblok.com/" />
     <link rel="dns-prefetch" href="https://a.storyblok.com/" />
+    <HeadHrefLangs />
     <Schema item={structuredData} />
     <Seo title={title} description="ini description" />
   </head>
 
   <body class="bg-gradient bg-body">
+    <InitApp client:only locale={locale} />
     <FlashyBg />
-    <BaseHeader client:only="vue" />
+    <BaseHeader client:only="vue" homeUrl={homeUrl} />
     <main class="container mx-auto min-h-screen">
       <BreadCrumbs
         client:only="vue"
         pathname={new URL(Astro.url).pathname}
         reqPathname={new URL(Astro.request.url).pathname}
+        locale={locale}
       />
       <slot />
     </main>
     <WhatsappContact client:only="vue" />
-    <BaseFooter client:only="vue" />
-    <MainMenu client:only="vue" pathname={new URL(Astro.url).pathname} />
+    <BaseFooter client:only="vue" menus={menus} />
+    <MainMenu
+      client:only="vue"
+      pathname={new URL(Astro.url).pathname}
+      locale={locale}
+      menus={menus}
+    />
     <FloatingWhatsapp client:only="vue" />
     <style lang="scss" is:global>
-      $indomascot-yellow: #e59700;
-      $table-is-striped: false;
-      $indomascot-blue: #0033cc;
-      $indomascot-old-blue: #003399;
-      $whatsapp-green: #25d366;
-      $whatsapp-old-green: #128c7e;
-      $bca: #4000a1;
-      $mandiri: #003066;
-      $bni: #f05921;
-      $bri: #00529c;
-      $full-white: #ffffff;
-      $darkGradient: linear-gradient(
-        76.35deg,
-        rgb(128, 26, 230) 15.89%,
-        rgb(162, 26, 230) 89.75%
-      );
-
       ::-moz-selection {
         /* Code for Firefox */
         color: #fefefe;

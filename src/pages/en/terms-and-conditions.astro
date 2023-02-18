@@ -1,11 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/default.astro";
-import ArticleList from "@components/Pages/Blog/ArticleList.vue";
+import TocList from "@components/Pages/Toc/TocList.vue";
 
 changeLanguage("en");
 ---
 
-<Layout title="Blog">
-  <ArticleList />
+<Layout title="Syarat & Ketentuan">
+  <TocList client:only="vue" />
 </Layout>

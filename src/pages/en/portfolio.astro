@@ -1,0 +1,13 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/default.astro";
+import SectionPortfolio from "@components/Pages/Portfolio/SectionPortfolio.vue";
+import SectionTitle from "@components/Pages/Portfolio/SectionTitle.vue";
+
+changeLanguage("en");
+---
+
+<Layout title="Portfolio">
+  <SectionTitle client:only="vue" />
+  <SectionPortfolio client:only="vue" />
+</Layout>
