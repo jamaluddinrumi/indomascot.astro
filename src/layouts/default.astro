@@ -63,7 +63,7 @@ const localizedPaths = {
 
 <!DOCTYPE html>
 <html>
-  <head>
+  <html lang={locale}>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="index, follow" />
@@ -78,7 +78,7 @@ const localizedPaths = {
     <HeadHrefLangs />
     <Schema item={structuredData} />
     <Seo title={title} description="ini description" />
-  </head>
+  </html>
 
   <body class="bg-gradient bg-body">
     <InitApp client:only locale={locale} />

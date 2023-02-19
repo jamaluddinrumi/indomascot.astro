@@ -34,6 +34,8 @@ const props = defineProps({
   },
 });
 
+const inheritLocaleRef = ref(props.inheritLocale);
+
 const { t, availableLocales, locale } = useI18n({
   useScope: "global",
 });
@@ -60,7 +62,10 @@ const switchTheme = ref(function (theme: string) {});
 onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
-  switchLanguage.value = function (lang: string) {
+  switchLanguage.value = function (event) {
+    const lang = event.target.value;
+    console.log(lang);
+
     // document.documentElement.setAttribute("lang", lang);
     window.location = props.localizedPaths[lang];
   };
@@ -146,14 +151,15 @@ onMounted(() => {
                 <span class="label-text">{{ t("chooseLanguage") }}:</span>
               </label>
               <select
-                v-model="locale"
-                @change="switchLanguage(locale)"
+                v-model="inheritLocaleRef"
+                @change="switchLanguage"
                 class="select-bordered select w-full max-w-xs"
               >
                 <option
                   v-for="availableLocale in availableLocales"
                   :key="availableLocale"
                   :value="availableLocale"
+                  :selected="availableLocale === inheritLocale ? true : false"
                 >
                   {{ t(`language.${availableLocale}`) }}
                 </option>
