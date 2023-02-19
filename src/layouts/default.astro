@@ -53,7 +53,7 @@ const locale = detectLocaleFromPath(localizePath(url.pathname));
 
 const homeUrl = localizeUrl(url.origin);
 
-const isHomepage = url.pathname === ("/" || "/en") ? true : false;
+const isHomepage = (url.pathname === "/" || url.pathname === "/en") ? true : false;
 
 const localizedPaths = {
   en: localizePath(url.pathname, "en"),
