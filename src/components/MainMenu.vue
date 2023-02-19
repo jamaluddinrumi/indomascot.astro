@@ -20,7 +20,7 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
-  locale: {
+  inheritLocale: {
     type: String,
     default: "id",
   },
@@ -49,10 +49,16 @@ const menus = ref(
 
 const browserDimension = ref<Dimension>(null);
 
+const switchLanguage = ref(function (locale: string) {});
+
 const switchTheme = ref(function (theme: string) {});
 
 onMounted(() => {
   browserDimension.value = getBrowserHeight();
+
+  switchLanguage.value = function (lang: string) {
+    document.documentElement.setAttribute("lang", lang);
+  };
 
   themeChange(false);
 
@@ -136,6 +142,7 @@ onMounted(() => {
               </label>
               <select
                 v-model="locale"
+                @change="switchLanguage(locale)"
                 class="select-bordered select w-full max-w-xs"
               >
                 <option

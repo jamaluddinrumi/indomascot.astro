@@ -97,7 +97,7 @@ const isHomepage = url.pathname === ("/" || "/en") ? true : false;
     <MainMenu
       client:only="vue"
       pathname={new URL(Astro.url).pathname}
-      locale={locale}
+      inheritLocale={locale}
       menus={menus}
     />
     <FloatingWhatsapp client:only="vue" />
