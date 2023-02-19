@@ -13,7 +13,7 @@ const $isDark = useStore(isDark);
 
 const themes = ref(["light", "dark"]);
 
-const theme = $isDark.value ? "dark" : "light";
+const theme = ref($isDark.value ? "dark" : "light");
 
 const props = defineProps({
   pathname: {
