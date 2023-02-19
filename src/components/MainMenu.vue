@@ -28,6 +28,10 @@ const props = defineProps({
     type: Array,
     default: new Array(),
   },
+  localizedPaths: {
+    type: Object,
+    default: new Object(),
+  },
 });
 
 const { t, availableLocales, locale } = useI18n({
@@ -57,7 +61,8 @@ onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
   switchLanguage.value = function (lang: string) {
-    document.documentElement.setAttribute("lang", lang);
+    // document.documentElement.setAttribute("lang", lang);
+    window.location = props.localizedPaths[lang];
   };
 
   themeChange(false);

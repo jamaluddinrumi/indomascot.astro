@@ -54,6 +54,11 @@ const locale = detectLocaleFromPath(localizePath(url.pathname));
 const homeUrl = localizeUrl(url.origin);
 
 const isHomepage = url.pathname === ("/" || "/en") ? true : false;
+
+const localizedPaths = {
+  en: localizePath(url.pathname, "en"),
+  id: localizePath(url.pathname, "id"),
+};
 ---
 
 <!DOCTYPE html>
@@ -99,6 +104,7 @@ const isHomepage = url.pathname === ("/" || "/en") ? true : false;
       pathname={new URL(Astro.url).pathname}
       inheritLocale={locale}
       menus={menus}
+      localizedPaths={localizedPaths}
     />
     <FloatingWhatsapp client:only="vue" />
     <style lang="scss" is:global>
