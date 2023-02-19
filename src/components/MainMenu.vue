@@ -3,16 +3,17 @@ import $device from "@src/device";
 import { ref, onMounted, computed } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import InstallButton from "@components/InstallButton.vue";
-import { useToggle } from "@vueuse/core";
 import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
-import { useI18n, UseI18nOptions } from "vue-i18n";
+import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
 
 const $isDark = useStore(isDark);
 
-const toggleDark = useToggle(isDark.value);
+const themes = ref(["light", "dark"]);
+
+const theme = $isDark.value ? "dark" : "light";
 
 const props = defineProps({
   pathname: {
@@ -48,10 +49,18 @@ const menus = ref(
 
 const browserDimension = ref<Dimension>(null);
 
+const switchTheme = ref(function (theme: string) {});
+
 onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
   themeChange(false);
+
+  switchTheme.value = function (theme: string) {
+    localStorage.setItem("vueuse-color-scheme", theme);
+
+    document.documentElement.setAttribute("data-theme", theme);
+  };
 });
 </script>
 
@@ -145,11 +154,18 @@ onMounted(() => {
                 <span class="label-text">{{ t("chooseTheme") }}:</span>
               </label>
               <select
-                data-choose-theme
+                v-model="theme"
+                @change="switchTheme(theme)"
                 class="select-bordered select w-full max-w-xs"
               >
-                <option value="light">{{ t("light") }}</option>
-                <option value="dark">{{ t("dark") }}</option>
+                <option
+                  v-for="theme in themes"
+                  :key="theme"
+                  :value="theme"
+                  :selected="theme === theme ? true : false"
+                >
+                  {{ t(theme) }}
+                </option>
               </select>
             </div>
           </li>
