@@ -3,10 +3,16 @@ import $device from "@src/device";
 import { ref, onMounted, computed } from "vue";
 import { onClickOutside } from "@vueuse/core";
 import InstallButton from "@components/InstallButton.vue";
-import { mainMenu } from "@src/states";
+import { useToggle } from "@vueuse/core";
+import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import { useI18n, UseI18nOptions } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
+import { themeChange } from "theme-change";
+
+const $isDark = useStore(isDark);
+
+const toggleDark = useToggle(isDark.value);
 
 const props = defineProps({
   pathname: {
@@ -23,7 +29,7 @@ const props = defineProps({
   },
 });
 
-const { t } = useI18n({
+const { t, availableLocales, locale } = useI18n({
   useScope: "global",
 });
 
@@ -44,6 +50,8 @@ const browserDimension = ref<Dimension>(null);
 
 onMounted(() => {
   browserDimension.value = getBrowserHeight();
+
+  themeChange(false);
 });
 </script>
 
@@ -73,7 +81,7 @@ onMounted(() => {
   >
     <div class="relative">
       <nav
-        class="grid min-h-screen place-content-center overflow-y-scroll pt-16 pb-16 lg:pb-20"
+        class="grid min-h-screen place-content-center overflow-y-scroll pt-16 pb-40 lg:pb-20"
       >
         <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
           <li v-for="menu in menus" :key="menu.href" class="my-0.5">
@@ -111,6 +119,39 @@ onMounted(() => {
           </li>
           <li class="mx-auto mt-2 mb-4 flex w-fit justify-center lg:hidden">
             <InstallButton icon="chrome" />
+          </li>
+          <li class="mt-2 mb-4">
+            <div class="form-control hover:bg-transparent">
+              <label class="label">
+                <span class="label-text">{{ t("chooseLanguage") }}:</span>
+              </label>
+              <select
+                v-model="locale"
+                class="select-bordered select w-full max-w-xs"
+              >
+                <option
+                  v-for="availableLocale in availableLocales"
+                  :key="availableLocale"
+                  :value="availableLocale"
+                >
+                  {{ t(`language.${availableLocale}`) }}
+                </option>
+              </select>
+            </div>
+          </li>
+          <li class="mt-2 mb-4">
+            <div class="form-control hover:bg-transparent">
+              <label class="label">
+                <span class="label-text">{{ t("chooseTheme") }}:</span>
+              </label>
+              <select
+                data-choose-theme
+                class="select-bordered select w-full max-w-xs"
+              >
+                <option value="light">{{ t("light") }}</option>
+                <option value="dark">{{ t("dark") }}</option>
+              </select>
+            </div>
           </li>
         </ul>
       </nav>

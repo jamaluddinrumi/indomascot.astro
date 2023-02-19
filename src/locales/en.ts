@@ -212,4 +212,12 @@ export default {
     cimenyan: "Cimenyan Subdistrict",
     westJava: "West Java, Indonesia",
   },
+  chooseLanguage: "Choose Language",
+  chooseTheme: "Choose Theme",
+  light: "Light",
+  dark: "Dark",
+  language: {
+    id: "Bahasa Indonesia",
+    en: "English",
+  },
 };

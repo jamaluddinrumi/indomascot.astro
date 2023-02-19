@@ -211,4 +211,12 @@ export default {
     cimenyan: "Kec. Cimenyan",
     westJava: "Jawa Barat",
   },
+  chooseLanguage: "Pilih Bahasa",
+  chooseTheme: "Pilih Tema",
+  light: "Terang",
+  dark: "Gelap",
+  language: {
+    id: "Bahasa Indonesia",
+    en: "English",
+  },
 };
