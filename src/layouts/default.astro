@@ -41,17 +41,19 @@ const structuredData = generateStructuredData(
   generateBreadcrumbs(new URL(Astro.url))
 );
 
+const url: URL = new URL(Astro.url);
+
 // 1. implement breadcrumbs for articles DONE
 // 2. implement en i18n by hl=en params or astro-i18n
 // 3. add astrojs-service-worker for fast page loading
 // 4. retrieve seo html title, description, meta from storyblok
 // 5. language switcher & dark toggle below apps in main menu
 
-const locale = detectLocaleFromPath(localizePath(Astro.url.pathname));
+const locale = detectLocaleFromPath(localizePath(url.pathname));
 
-const homeUrl = localizeUrl(Astro.url.origin);
+const homeUrl = localizeUrl(url.origin);
 
-// console.log(Astro.url);
+const isHomepage = url.pathname === ("/" || "/en") ? true : false;
 ---
 
 <!DOCTYPE html>
@@ -78,12 +80,16 @@ const homeUrl = localizeUrl(Astro.url.origin);
     <FlashyBg />
     <BaseHeader client:only="vue" homeUrl={homeUrl} />
     <main class="container mx-auto min-h-screen">
-      <BreadCrumbs
-        client:only="vue"
-        pathname={new URL(Astro.url).pathname}
-        reqPathname={new URL(Astro.request.url).pathname}
-        locale={locale}
-      />
+      {
+        !isHomepage && (
+          <BreadCrumbs
+            client:only="vue"
+            pathname={new URL(Astro.url).pathname}
+            reqPathname={new URL(Astro.request.url).pathname}
+            locale={locale}
+          />
+        )
+      }
       <slot />
     </main>
     <WhatsappContact client:only="vue" />
