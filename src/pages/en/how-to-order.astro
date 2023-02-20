@@ -16,7 +16,8 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
     version: "draft",
 });
 const stories = data.stories as Array<object>;
-const { content } = stories.find((story) => story.full_slug === storyPagesMapping[locale][url.pathname]);
+const storyPath = storyPagesMapping[locale][url.pathname];
+const { content } = stories.find((story) => story.full_slug === storyPath);
 const meta = content.meta;
 ---
 
