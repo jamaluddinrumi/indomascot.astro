@@ -13,6 +13,7 @@ import { loadEnv } from "vite";
 import prefetch from "@astrojs/prefetch";
 import astroI18next from "astro-i18next";
 const env = loadEnv("", "", "");
+import storyblok from "@storyblok/astro";
 
 // https://astro.build/config
 export default defineConfig({
@@ -54,6 +55,16 @@ export default defineConfig({
     astroI18next(),
     vue({
       appEntrypoint: "/src/_app",
+    }),
+    storyblok({
+      accessToken: env.PUBLIC_STORYBLOK_TOKEN,
+      components: {
+        // Add your components here
+      },
+      apiOptions: {
+        // Choose your Storyblok space region
+        // region: 'us', // optional,  or 'eu' (default)
+      },
     }),
     tailwind(),
     sitemap(),

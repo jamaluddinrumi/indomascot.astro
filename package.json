@@ -17,6 +17,8 @@
   "dependencies": {
     "@astrojs/prefetch": "^0.1.2",
     "@nanostores/vue": "^0.7.0",
+    "@storyblok/astro": "^2.0.5",
+    "@storyblok/js": "^2.0.16",
     "@unhead/addons": "^1.0.22",
     "@unhead/vue": "^1.0.22",
     "astro": "^2.0.14",

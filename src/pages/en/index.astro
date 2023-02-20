@@ -9,11 +9,26 @@ import SectionHero from "@components/Pages/Index/SectionHero.vue";
 import SectionLatestOrders from "@components/Pages/Index/SectionLatestOrders.vue";
 import SectionPortfolio from "@components/Pages/Index/SectionPortfolio.vue";
 import SectionVisionMision from "@components/Pages/Index/SectionVisionMision.vue";
+import { useStoryblokApi } from "@storyblok/astro";
+import { detectLocaleFromPath } from "astro-i18next";
+import storyPagesMapping from "@src/stories";
 
 changeLanguage("en");
+
+const url: URL = new URL(Astro.url);
+const locale = detectLocaleFromPath(url.pathname);
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get(`cdn/stories`, {
+    content_type: "page",
+    version: "draft",
+});
+const stories = data.stories as Array<object>;
+const storyPath = storyPagesMapping[locale][url.pathname];
+const { content } = stories.find((story) => story.full_slug === storyPath);
+const meta = content.meta;
 ---
 
-<Layout title="Halaman Depan">
+<Layout title={meta.title} description={meta.description}>
   <!-- <SectionHero client:only="vue" />
   <SectionClients client:only="vue" />
   <SectionDefinition client:only="vue" />

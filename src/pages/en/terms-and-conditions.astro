@@ -2,10 +2,24 @@
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/default.astro";
 import TocList from "@components/Pages/Toc/TocList.vue";
+import { useStoryblokApi } from "@storyblok/astro";
+import { detectLocaleFromPath } from "astro-i18next";
+import storyPagesMapping from "@src/stories";
 
 changeLanguage("en");
+
+const url: URL = new URL(Astro.url);
+const locale = detectLocaleFromPath(url.pathname);
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get(`cdn/stories`, {
+    content_type: "page",
+    version: "draft",
+});
+const stories = data.stories as Array<object>;
+const { content } = stories.find((story) => story.full_slug === storyPagesMapping[locale][url.pathname]);
+const meta = content.meta;
 ---
 
-<Layout title="Syarat & Ketentuan">
+<Layout title={meta.title} description={meta.description}>
   <TocList client:only="vue" />
 </Layout>
