@@ -9,11 +9,16 @@ import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
 
-const $isDark = useStore(isDark);
-
 const themes = ref(["light", "dark"]);
 
-const theme = ref($isDark.value ? "dark" : "light");
+const theme = computed({
+  get() {
+    return isDark.value.value ? "dark" : "light";
+  },
+  set(theme) {
+    isDark.value.value = theme === "dark" ? true : false;
+  },
+});
 
 const props = defineProps({
   pathname: {
@@ -55,24 +60,24 @@ const menus = ref(
 
 const browserDimension = ref<Dimension>(null);
 
-const switchLanguage = ref(function (locale: string) {});
+const switchLanguage = ref(function (event: Event) {});
 
-const switchTheme = ref(function (theme: string) {});
+const switchTheme = ref(function (event: Event) {});
 
 onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
-  switchLanguage.value = function (event) {
+  switchLanguage.value = function (event: Event) {
     const lang = event.target.value;
-    console.log(lang);
 
-    // document.documentElement.setAttribute("lang", lang);
     window.location = props.localizedPaths[lang];
   };
 
   themeChange(false);
 
-  switchTheme.value = function (theme: string) {
+  switchTheme.value = function (event: Event) {
+    const theme = event.target.value;
+
     localStorage.setItem("vueuse-color-scheme", theme);
 
     document.documentElement.setAttribute("data-theme", theme);
@@ -173,16 +178,16 @@ onMounted(() => {
               </label>
               <select
                 v-model="theme"
-                @change="switchTheme(theme)"
+                @change="switchTheme"
                 class="select-bordered select w-full max-w-xs"
               >
                 <option
-                  v-for="theme in themes"
-                  :key="theme"
-                  :value="theme"
-                  :selected="theme === theme ? true : false"
+                  v-for="themeItem in themes"
+                  :key="themeItem"
+                  :value="themeItem"
+                  :selected="themeItem === theme ? true : false"
                 >
-                  {{ t(theme) }}
+                  {{ t(themeItem) }}
                 </option>
               </select>
             </div>
