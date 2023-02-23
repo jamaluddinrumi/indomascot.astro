@@ -84,7 +84,7 @@ const isHomepage =
     <InitApp client:only locale={locale} />
     <FlashyBg />
     <BaseHeader client:only="vue" homeUrl={homeUrl} />
-    <main class="container mx-auto min-h-screen">
+    <main class="container mx-auto min-h-screen lg:max-w-6xl">
       {
         !isHomepage && (
           <BreadCrumbs
