@@ -5,6 +5,7 @@ import ArticleList from "@components/Pages/Blog/ArticleList.vue";
 import { useStoryblokApi } from "@storyblok/astro";
 import { detectLocaleFromPath } from "astro-i18next";
 import storyPagesMapping from "@src/stories";
+import { prependTrailingSlash } from "@src/utils";
 
 changeLanguage("id");
 

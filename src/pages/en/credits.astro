@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import { useStoryblokApi } from "@storyblok/astro";
 import { detectLocaleFromPath } from "astro-i18next";
 import storyPagesMapping from "@src/stories";
+import { prependTrailingSlash } from "@src/utils";
 import Layout from "@layouts/default.astro";
 
 changeLanguage("en");
@@ -15,7 +16,7 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
     version: "draft",
 });
 const stories = data.stories as Array<object>;
-const storyPath = storyPagesMapping[locale][url.pathname];
+const storyPath = storyPagesMapping[locale][prependTrailingSlash(url.pathname)];
 const { content } = stories.find((story) => story.full_slug === storyPath);
 const meta = content.meta;
 ---
