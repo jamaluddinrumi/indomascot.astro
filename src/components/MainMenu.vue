@@ -141,16 +141,7 @@ onMounted(() => {
               </template>
             </a>
           </li>
-          <li class="mx-auto mt-4 flex w-fit justify-center lg:hidden">
-            <InstallButton :disabled="$device.isDesktop" icon="apple" />
-          </li>
-          <li class="mx-auto mt-2 flex w-fit justify-center lg:hidden">
-            <InstallButton :disabled="$device.isDesktop" icon="android" />
-          </li>
-          <li class="mx-auto mt-2 mb-4 flex w-fit justify-center lg:hidden">
-            <InstallButton icon="chrome" />
-          </li>
-          <li class="mt-2 mb-4">
+          <li class="my-2">
             <div class="form-control hover:bg-transparent">
               <label class="label">
                 <span class="label-text">{{ t("chooseLanguage") }}:</span>
@@ -171,7 +162,7 @@ onMounted(() => {
               </select>
             </div>
           </li>
-          <li class="mt-2 mb-4">
+          <li class="my-2">
             <div class="form-control hover:bg-transparent">
               <label class="label">
                 <span class="label-text">{{ t("chooseTheme") }}:</span>
@@ -191,6 +182,15 @@ onMounted(() => {
                 </option>
               </select>
             </div>
+          </li>
+          <li class="mx-auto mt-11 flex w-fit justify-center lg:hidden">
+            <InstallButton :disabled="$device.isDesktop" icon="apple" />
+          </li>
+          <li class="mx-auto mt-2 flex w-fit justify-center lg:hidden">
+            <InstallButton :disabled="$device.isDesktop" icon="android" />
+          </li>
+          <li class="mx-auto mt-2 mb-4 flex w-fit justify-center lg:hidden">
+            <InstallButton icon="chrome" />
           </li>
         </ul>
       </nav>
