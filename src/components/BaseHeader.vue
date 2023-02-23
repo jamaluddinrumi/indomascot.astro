@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
-import DarkToggle from "@components/DarkToggle.vue";
 import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
