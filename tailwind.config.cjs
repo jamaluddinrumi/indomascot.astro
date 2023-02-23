@@ -7,6 +7,11 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: ["class", '[data-theme="dark"]'], // or 'media' or 'class'
   theme: {
+    screens: Object.fromEntries(
+      Object.entries(defaultTheme.screens).filter(([key, value]) =>
+        ["sm", "lg"].includes(key)
+      )
+    ),
     colors: {
       transparent: "transparent",
       current: "currentColor",
