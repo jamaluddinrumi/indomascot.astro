@@ -27,7 +27,7 @@ import { Image } from "@unpic/vue";
       >
         <div
           id="bg-blur-tim-produksi"
-          class="absolute h-[586px] w-[640px] rounded bg-[url(/public/tim-produksi-on-desktop.svg)] blur-3xl"
+          class="absolute h-[586px] w-[640px] rounded bg-[url(/tim-produksi-on-desktop.svg)] blur-3xl"
         ></div>
         <Image
           cdn="storyblok"
