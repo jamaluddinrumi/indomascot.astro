@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/prefetch": "^0.1.2",
     "@nanostores/vue": "^0.7.0",
-    "@storyblok/astro": "^2.0.5",
+    "@storyblok/astro": "^2.0.8",
     "@storyblok/js": "^2.0.16",
     "@unhead/addons": "^1.0.22",
     "@unhead/vue": "^1.0.22",
@@ -25,7 +25,7 @@
     "astro-compressor": "^0.3.0",
     "nanostores": "^0.7.4",
     "tailwindcss": "^3.2.7",
-    "unplugin-auto-import": "^0.14.3",
+    "unplugin-auto-import": "^0.14.4",
     "vue": "^3.2.47"
   },
   "devDependencies": {
@@ -44,7 +44,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.6",
-    "@typescript-eslint/parser": "^5.52.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "@unpic/vue": "^0.0.3",
     "@vite-pwa/astro": "^0.0.1",
     "@vueuse/core": "^9.13.0",
@@ -55,7 +55,7 @@
     "astro-robots-txt": "^0.3.12",
     "astro-seo-meta": "^2.0.0",
     "astro-seo-schema": "^2.0.0",
-    "daisyui": "^2.50.2",
+    "daisyui": "^2.51.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
@@ -73,7 +73,7 @@
     "stylelint-config-prettier": "^9.0.5",
     "theme-change": "^2.3.0",
     "typescript": "^4.9.5",
-    "vite": "^4.1.2",
+    "vite": "^4.1.4",
     "vite-plugin-pwa": "^0.14.4",
     "vue-i18n": "9",
     "workbox-window": "^6.5.4"
