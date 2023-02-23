@@ -49,7 +49,7 @@ useHead({
           :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
-          <span class="josefin-sans font-semibold shadow-inner">MENU</span>
+          <span class="josefin-sans font-bold shadow-inner">MENU</span>
         </button>
       </div>
       <!-- END main menu button -->
