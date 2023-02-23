@@ -41,10 +41,10 @@ const menus = ref(
         <li v-for="menu in menus" :key="menu.href">
           <a
             rel="prefetch"
-            class="link font-bold uppercase no-underline lg:py-4 lg:pr-2 lg:pl-2"
+            class="link uppercase no-underline lg:py-4 lg:pr-2 lg:pl-2"
             :href="menu.href"
           >
-            <span class="font-semibold">
+            <span class="font-bold">
               {{ menu.text }}
             </span>
           </a>

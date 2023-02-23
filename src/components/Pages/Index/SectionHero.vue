@@ -14,7 +14,7 @@ import { Image } from "@unpic/vue";
         </span>
       </h1>
       <h4
-        class="mb-0 px-4 text-center font-sans leading-8 sm:leading-9 lg:px-0"
+        class="mb-0 px-4 text-center font-sans font-semibold leading-8 sm:leading-9 lg:px-0"
       >
         "{{ $t("weProduce") }}"
       </h4>
