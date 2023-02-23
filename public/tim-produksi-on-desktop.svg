@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480px" height="456px" viewBox="0 0 480 456" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>tim-produksi-on-desktop copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="4.875%" x2="98.1959999%" y2="93.3329412%" id="linearGradient-1">
+            <stop stop-color="#478A64" offset="0%"></stop>
+            <stop stop-color="#EEEA66" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="95.125%" x2="100%" y2="4.875%" id="linearGradient-2">
+            <stop stop-color="#478A64" offset="0%"></stop>
+            <stop stop-color="#EDEAEC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="4.875%" x2="100%" y2="95.125%" id="linearGradient-3">
+            <stop stop-color="#EDECF4" offset="0%"></stop>
+            <stop stop-color="#948F9D" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="95.125%" x2="100%" y2="4.875%" id="linearGradient-4">
+            <stop stop-color="#C5C6CD" offset="0%"></stop>
+            <stop stop-color="#7B8E87" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="tim-produksi-on-desktop-copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="url(#linearGradient-1)" x="240" y="228" width="240" height="228"></rect>
+        <rect id="Rectangle-Copy" fill="url(#linearGradient-2)" x="240" y="0" width="240" height="228"></rect>
+        <rect id="Rectangle-Copy-2" fill="url(#linearGradient-3)" x="0" y="0" width="240" height="228"></rect>
+        <rect id="Rectangle-Copy-3" fill="url(#linearGradient-4)" x="0" y="228" width="240" height="228"></rect>
+    </g>
+</svg>
