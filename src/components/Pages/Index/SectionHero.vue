@@ -31,7 +31,7 @@ import { Image } from "@unpic/vue";
         ></div>
         <Image
           cdn="storyblok"
-          src="https://a.storyblok.com/f/118728/480x456/4004fe61f0/tim-produksi-on-desktop.png/m/"
+          src="https://a.storyblok.com/f/118728/480x456/70a7b547ec/tim-produksi-on-desktop.png/m/"
           class="absolute w-fit max-w-fit"
           width="480"
           height="456"
