@@ -13,11 +13,11 @@ import { Image } from "@unpic/vue";
           {{ $t("titleHero") }}
         </span>
       </h1>
-      <h4
+      <h2
         class="mb-0 px-4 text-center font-sans font-semibold leading-8 sm:leading-9 lg:px-0"
       >
         "{{ $t("weProduce") }}"
-      </h4>
+      </h2>
     </div>
     <div
       class="right z-10 order-1 flex w-screen justify-center lg:order-2 lg:w-auto"
