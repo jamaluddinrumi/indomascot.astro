@@ -20,8 +20,8 @@ const url: URL = new URL(Astro.url);
 const locale = detectLocaleFromPath(url.pathname);
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(`cdn/stories`, {
-    content_type: "page",
-    version: "draft",
+  content_type: "page",
+  version: "draft",
 });
 const stories = data.stories as Array<object>;
 const storyPath = storyPagesMapping[locale][prependTrailingSlash(url.pathname)];
@@ -31,8 +31,8 @@ const meta = content.meta;
 
 <Layout title={meta.title} description={meta.description}>
   <SectionHero client:only="vue" />
-  <!-- <SectionClients client:only="vue" />
-  <SectionDefinition client:only="vue" />
+  <SectionClients client:only="vue" />
+  <!-- <SectionDefinition client:only="vue" />
   <SectionVisionMision client:only="vue" />
   <SectionFeaturedService client:only="vue" />
   <SectionPortfolio client:only="vue" client:only="vue" />
