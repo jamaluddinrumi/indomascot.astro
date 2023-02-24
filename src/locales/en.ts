@@ -220,4 +220,7 @@ export default {
     id: "Bahasa Indonesia",
     en: "English",
   },
+  theSamples: "What it looks like?",
+  youCanSeeTheSamples: "Mascot costumes we have been created are shown in",
+  portfolioPage: "Porfolio Page",
 };

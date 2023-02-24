@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" setup>
 import { onMounted, nextTick, ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n();
 
 onMounted(() => {
   nextTick(() => {
@@ -14,9 +17,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
+  <section
     id="definisi"
-    class="definisi mt-10 grid grid-cols-1 gap-4 rounded-2xl bg-indomascot-old-blue p-4 text-center text-white shadow-2xl lg:mt-20 lg:grid-cols-2 lg:p-20"
+    class="definisi mt-14 grid grid-cols-1 gap-4 border p-4 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
   >
     <div id="left">
       <video
@@ -24,7 +27,7 @@ onMounted(() => {
         preload
         controls
         width="480"
-        class="mx-auto mt-0.5 rounded-lg border-4 border-white shadow-inner lg:mt-0"
+        class="mx-auto mt-0.5 rounded-lg border-4 border-small-title shadow-inner lg:mt-0"
         poster="https://a.storyblok.com/f/118728/720x1280/7cec6db713/maskot-roti-kapiten-sedang-nongkrong-di-depan-outlet.jpeg/m/480x854"
       >
         <source
@@ -38,29 +41,58 @@ onMounted(() => {
         >
       </video>
       <div class="mx-auto mt-2">
-        <span class="text-light text-xs italic text-slate-100/50"
-          >{{ $t("designBy") }} Roti Kapiten</span
+        <span class="text-light text-xs italic text-opacity-50"
+          >{{ t("designBy") }} Roti Kapiten</span
         >
       </div>
     </div>
 
-    <div id="right">
+    <div id="right" class="p-2">
       <h2
-        class="mx-auto my-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] lg:mt-0 lg:text-[1.75rem] lg:leading-[3rem]"
+        class="mx-auto my-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-0 lg:text-[1.75rem] lg:leading-[3rem]"
       >
-        {{ $t("whatIsMascotCostume") }}
+        {{ t("whatIsMascotCostume") }}
       </h2>
-      <p class="text-left">
-        {{ $t("accordingToWikipedia") }}
+      <p class="text-left leading-relaxed">
+        {{ t("accordingToWikipedia") }}
       </p>
       <h2
-        class="mx-auto mt-8 mb-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] lg:mt-16 lg:mb-4 lg:text-[1.75rem] lg:leading-[3rem]"
+        class="mx-auto mt-8 mb-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-16 lg:mb-4 lg:text-[1.75rem] lg:leading-[3rem]"
       >
-        {{ $t("whatIsTheDifferent") }}
+        {{ t("whatIsTheDifferent") }}
       </h2>
-      <p class="mb-0 text-left">
-        {{ $t("itsJustTheSame") }}
+      <p class="mb-0 text-left leading-relaxed">
+        {{ t("itsJustTheSame") }}
+      </p>
+      <h2
+        class="mx-auto mt-8 mb-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-16 lg:mb-4 lg:text-[1.75rem] lg:leading-[3rem]"
+      >
+        {{ t("theSamples") }}
+      </h2>
+      <p class="mb-0 text-left leading-relaxed">
+        {{ t("youCanSeeTheSamples") }}
+        <a
+          :href="`${locale === 'en' ? 'en' : ''}/portfolio`"
+          class="blocktracking-wide underline"
+          >{{ t("portfolioPage") }}</a
+        >.
       </p>
     </div>
-  </div>
+  </section>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #definisi {
+    border-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+[data-theme="light"] {
+  #definisi {
+    border-color: rgba(82, 41, 122, 0.05);
+    background-color: rgba(82, 41, 122, 0.1);
+  }
+}
+</style>

@@ -21,6 +21,7 @@ module.exports = {
       "whatsapp-green": "#25d366",
       "whatsapp-old-green": "#128c7e",
       railway: "#8532CE",
+      "small-title": "hsl(270,70%,75%)",
       bca: "#4000a1",
       mandiri: "#003066",
       bni: "#f05921",
@@ -145,10 +146,6 @@ module.exports = {
             stroke: "#FEFEFE",
             color: "#FEFEFE",
           },
-          ".whatsapp-contact": {
-            "border-color": "rgba(255, 255, 255, 0.05)",
-            "background-color": "rgba(255, 255, 255, 0.1)",
-          },
         },
       },
       {
@@ -193,10 +190,6 @@ module.exports = {
             fill: "#8532CE",
             stroke: "#8532CE",
             color: "#8532CE",
-          },
-          ".whatsapp-contact": {
-            "border-color": "rgba(82, 41, 122, 0.05)",
-            "background-color": "rgba(82, 41, 122, 0.1)",
           },
         },
       },
