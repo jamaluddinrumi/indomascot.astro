@@ -4,29 +4,29 @@ import { ref } from "vue";
 const clients = ref({
   client1: {
     id: "grab",
-    src: "https://a.storyblok.com/f/118728/120x55/fc122308dc/grab.png",
-    width: "120",
+    src: "https://a.storyblok.com/f/118728/129x55/844456bd71/grab.svg",
+    width: "129",
     height: "55",
     sizes: "xs:120px lg:120px",
   },
   client2: {
     id: "konimex",
-    src: "https://a.storyblok.com/f/118728/214x55/cdaf31b2aa/konimex.png",
-    width: "213",
-    height: "55",
+    src: "https://a.storyblok.com/f/118728/207x56/7158aece7e/konimex.svg",
+    width: "207",
+    height: "56",
     sizes: "xs:213px lg:213px",
   },
   client3: {
     id: "lazada",
-    src: "https://a.storyblok.com/f/118728/170x55/7d98053c86/lazada.png",
+    src: "https://a.storyblok.com/f/118728/170x55/52730f0309/lazada.svg",
     width: "170",
     height: "55",
     sizes: "xs:170px lg:170px",
   },
   client4: {
     id: "ojk",
-    src: "https://a.storyblok.com/f/118728/137x55/d59535918b/ojk.png",
-    width: "137",
+    src: "https://a.storyblok.com/f/118728/184x55/99380a6a72/ojk.svg",
+    width: "184",
     height: "55",
     sizes: "xs:137px lg:137px",
   },
@@ -37,12 +37,12 @@ const clients = ref({
   <div class="mt-8 lg:mt-0">
     <div class="mx-auto w-full">
       <h3 class="title mb-0 text-center">
-        <span class="text-base font-bold uppercase">
+        <span class="font-bold uppercase">
           {{ $t("featuredClients") }}
         </span>
       </h3>
     </div>
-    <div class="mt-0 grid grid-rows-1 opacity-50 lg:mt-8 lg:grid-cols-5">
+    <div class="mt-0 grid grid-rows-1 lg:mt-8 lg:grid-cols-5">
       <img
         v-for="(client, index) in clients"
         :key="index"
@@ -55,19 +55,15 @@ const clients = ref({
         :height="client.height"
         :sizes="client.sizes"
       />
-      <div
-        class="wp-block-column mt-4 flex items-center justify-center lg:mt-0"
-      >
-        <p class="has-text-align-center mt-4 leading-4">
+      <div class="mt-4 flex items-center justify-center lg:mt-0">
+        <span
+          class="has-text-align-center mt-4 font-sans leading-4 text-base-200"
+        >
           {{ $t("andManyMore") }}
-        </p>
+        </span>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-[data-theme="light"] .title {
-  @apply opacity-50;
-}
-</style>
+<style lang="scss" scoped></style>
