@@ -6,9 +6,12 @@ const { t } = useI18n({ useScope: "global" });
 </script>
 
 <template>
-  <section class="container mx-auto mt-20 max-w-sm px-5 lg:max-w-6xl lg:px-0">
+  <section
+    id="whatsapp-contact"
+    class="container mx-auto mt-20 max-w-sm px-5 lg:max-w-6xl lg:px-0"
+  >
     <div
-      class="whatsapp-contact flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between"
+      class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between"
     >
       <div class="flex flex-col items-center lg:flex-row">
         <img
@@ -21,7 +24,7 @@ const { t } = useI18n({ useScope: "global" });
           sizes="xs:63px lg:63px"
           class="lg:mr-2"
         />
-        <div id="kontak-kata-kata" class="">
+        <div>
           <div
             class="text-center text-xl font-extrabold lg:text-left lg:text-3xl"
           >
@@ -36,3 +39,19 @@ const { t } = useI18n({ useScope: "global" });
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #whatsapp-contact > div {
+    border-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+[data-theme="light"] {
+  #whatsapp-contact > div {
+    border-color: rgba(82, 41, 122, 0.05);
+    background-color: rgba(82, 41, 122, 0.1);
+  }
+}
+</style>
