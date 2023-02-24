@@ -6,7 +6,7 @@ const { t } = useI18n({ useScope: "global" });
 </script>
 
 <template>
-  <section class="container mx-auto max-w-sm px-5 lg:max-w-6xl">
+  <section class="container mx-auto mt-20 max-w-sm px-5 lg:max-w-6xl lg:px-0">
     <div
       class="whatsapp-contact flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between"
     >
