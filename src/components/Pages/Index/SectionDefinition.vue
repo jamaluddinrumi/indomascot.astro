@@ -19,15 +19,19 @@ onMounted(() => {
 <template>
   <section
     id="definisi"
-    class="definisi mt-14 grid grid-cols-1 gap-4 border p-4 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
+    class="definisi mt-14 grid grid-cols-1 gap-4 overflow-hidden border p-4 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
   >
-    <div id="left">
+    <div id="left relative">
+      <div
+        id="video-bg-blur"
+        class="absolute overflow-hidden bg-small-title/30 blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
+      ></div>
       <video
         id="inilahmaskot"
-        preload
+        preload="true"
         controls
         width="480"
-        class="mx-auto mt-0.5 rounded-lg border-4 border-small-title shadow-inner lg:mt-0"
+        class="mx-auto mt-0.5 rounded-lg border-4 border-small-title shadow-inner lg:relative lg:mt-0"
         poster="https://a.storyblok.com/f/118728/720x1280/7cec6db713/maskot-roti-kapiten-sedang-nongkrong-di-depan-outlet.jpeg/m/480x854"
       >
         <source
