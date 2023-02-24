@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { Image } from "@unpic/vue";
+</script>
+
 <template>
   <div
     class="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-center overflow-hidden"
@@ -10,11 +14,13 @@
           "
           type="image/avif"
         />
-        <img
+        <Image
           provider="storyblok"
           src="https://a.storyblok.com/f/118728/2296x668/ade06609f7/new-flashy-light.png/m/"
           alt="dark flashy background"
           class="w-[71.75rem] max-w-none flex-none"
+          width="1440"
+          height="616"
           sizes="xs:414px lg:1280px"
           placeholder="true"
           decoding="async"
@@ -27,11 +33,13 @@
           "
           type="image/avif"
         />
-        <img
+        <Image
           provider="storyblok"
           src="https://a.storyblok.com/f/118728/2880x1232/60cf2ac49f/new-flashy-dark.png/m/"
           alt="dark flashy background"
           class="w-[90rem] max-w-none flex-none"
+          width="1440"
+          height="616"
           sizes="xs:414px lg:1280px"
           placeholder="true"
           decoding="async"
