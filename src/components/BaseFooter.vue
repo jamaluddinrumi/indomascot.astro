@@ -29,11 +29,11 @@ const { t } = useI18n({
   >
     <div class="container mx-auto grid grid-cols-1 pb-8 lg:grid-cols-3 lg:pb-0">
       <div class="mt-16">
-        <h4
+        <h3
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
           {{ t("workshop") }}
-        </h4>
+        </h3>
         <address class="josefin-sans workshop leading-8">
           {{ t("address.cukangKawung") }}
           <br />No. 53 RT 01 RW 15 Cibeunying Kaler, <br />{{
@@ -64,11 +64,11 @@ const { t } = useI18n({
         </p>
       </div>
       <div class="mt-16 pb-16 lg:pb-0">
-        <h4
+        <h3
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
           {{ t("contact") }}
-        </h4>
+        </h3>
         <div class="mx-auto w-fit">
           <ul class="fa-ul w-fit">
             <li class="mb-3 w-fit">
@@ -143,11 +143,11 @@ const { t } = useI18n({
         </div>
       </div>
       <div class="mt-16 hidden lg:block">
-        <h4
+        <h3
           class="widgettitle mb-8 text-[1.125rem] text-sm font-light uppercase lg:text-base"
         >
           {{ t("apps") }}
-        </h4>
+        </h3>
         <FooterApps />
       </div>
     </div>
