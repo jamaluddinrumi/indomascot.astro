@@ -1,6 +1,6 @@
 export default [
   {
-    text: "",
+    text: "homepage",
     href: "/",
   },
   {

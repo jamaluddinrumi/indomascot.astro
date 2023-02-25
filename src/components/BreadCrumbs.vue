@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { toRefs, toRaw, ref, onMounted } from "vue";
+import { ref } from "vue";
 import { startCase } from "lodash-es";
+import menu from "@src/menu";
+import { useI18n } from "vue-i18n";
+import { prependTrailingSlash } from "@src/utils";
 
-import { mainMenu } from "@src/states";
-import { useStore } from "@nanostores/vue";
-
-const $mainMenu = useStore(mainMenu);
+const { t } = useI18n();
 
 const props = defineProps({
   pathname: {
@@ -57,11 +57,14 @@ let parts: Array<BreadcrumbItem> = [
  */
 paths.forEach((text: string, index: number) => {
   const href = `/${paths.slice(0, index + 1).join("/")}`;
+  const menuText: Array = menu.filter(
+    (item) => item.href === prependTrailingSlash(href)
+  )[0]["text"];
 
   parts = [
     ...parts,
     {
-      text: text.replace(/[-_]/g, " "),
+      text: menuText,
       href,
       "aria-current": ariaCurrent,
       alt: startCase(text),
@@ -79,7 +82,6 @@ parts = parts.filter(function (item) {
     v-if="pathname !== ('/' && '/en')"
     aria-label="Breadcrumbs"
     class="container navbar breadcrumbs mx-auto w-full max-w-sm px-5 lg:max-w-6xl"
-    :class="{ 'blur-sm': $mainMenu }"
   >
     <ul>
       <li v-for="(part, index) in parts" :key="part.href">
@@ -98,8 +100,8 @@ parts = parts.filter(function (item) {
             </font-awesome-layers>
           </template>
           <template v-else>
-            <span class="logo">
-              {{ startCase(part.text) }}
+            <span>
+              {{ t(part.text) }}
             </span>
           </template>
         </a>
