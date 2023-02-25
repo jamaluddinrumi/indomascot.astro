@@ -48,7 +48,6 @@ let parts: Array<BreadcrumbItem> = [
   {
     text: indexText,
     href: props.locale === "id" ? "/" : "/en",
-    "aria-current": ariaCurrent,
     alt: "",
   },
 ];
@@ -84,7 +83,11 @@ parts = parts.filter(function (item) {
   >
     <ul>
       <li v-for="(part, index) in parts" :key="part.href">
-        <a :href="part.href" :alt="part.alt">
+        <a
+          :href="part.href"
+          :alt="part.alt"
+          :aria-current="index === parts.length - 1 ? 'page' : false"
+        >
           <template v-if="part.href === '/' || part.href === '/en'">
             <font-awesome-layers class="fa-fw">
               <font-awesome-icon
