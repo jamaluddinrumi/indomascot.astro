@@ -12,23 +12,24 @@ const props = defineProps({
 });
 
 const menus = ref(
-  props.menus.map((menu) => ({
-    text: menu.text ? computed(() => t(menu.text)) : "",
-    href: menu.href,
-  }))
+  props.menus
+    .filter((item) => item.text !== "homepage")
+    .map((menu) => ({
+      text: menu.text ? computed(() => t(menu.text)) : "",
+      href: menu.href,
+    }))
 );
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <nav role="navigation" class="mt-16 hidden pb-8 lg:block">
-      <ul id="menu-bawah" class="flex flex-col justify-center lg:flex-row">
+  <div class="container mx-auto hidden lg:block">
+    <nav role="navigation" class="mt-16 pb-8">
+      <ul
+        id="menu-bawah"
+        class="flex flex-col justify-center lg:flex-row lg:space-x-4"
+      >
         <li>
-          <a
-            class="link no-underline lg:pr-2 lg:pl-2"
-            href="/"
-            :aria-label="t('homepage')"
-          >
+          <a class="link no-underline" href="/" :aria-label="t('homepage')">
             <font-awesome-layers class="fa-fw lg:mr-1">
               <font-awesome-icon
                 class="!mb-0.5"
@@ -41,7 +42,7 @@ const menus = ref(
         <li v-for="menu in menus" :key="menu.href">
           <a
             rel="prefetch"
-            class="link uppercase no-underline lg:py-4 lg:pr-2 lg:pl-2"
+            class="link uppercase no-underline"
             :href="menu.href"
             :aria-label="menu.text"
           >
