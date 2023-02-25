@@ -16,58 +16,60 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
-  locale: {
+  inheritLocale: {
     type: String,
     default: undefined,
   },
+  menus: {
+    type: Array,
+    default: [],
+  },
 });
 
-interface BreadcrumbsProps {
-  indexText?: string;
-}
+console.log(props.menus);
 
 interface BreadcrumbItem {
   text: string;
   href: string;
-  "aria-current"?: string;
   alt: string;
+  "aria-label": string
 }
-
-const { indexText = "Halaman Depan" } = ref(props.props as BreadcrumbsProps);
 
 // const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
 const paths = props.pathname.split("/").filter((crumb: any) => crumb);
-// const ariaCurrent = Astro.request.url.pathname === "/" ? "page" : undefined;
-const ariaCurrent = props.reqPathname === "/" ? "page" : undefined;
+
+console.log("pathsy", paths);
 
 /**
  * Array of breadcrumb items.
  * The first item is the index page.
  */
-let parts: Array<BreadcrumbItem> = [
-  {
-    text: indexText,
-    href: props.locale === "id" ? "/" : "/en",
-    alt: "",
-  },
-];
+let parts: Array<BreadcrumbItem> = [];
+
+if (props.inheritLocale === "id") {
+  parts.push({
+    text: t("homepage"),
+    href: "/",
+    alt: t("homepage"),
+    "aria-label": t("homepage"),
+  });
+}
 
 /**
  * Loop through the paths and create a breadcrumb item for each.
  */
 paths.forEach((text: string, index: number) => {
   const href = `/${paths.slice(0, index + 1).join("/")}`;
-  const menuText: Array = menu.filter(
-    (item) => item.href === prependTrailingSlash(href)
-  )[0]["text"];
+
+  const menuText = props.menus.filter((item) => item.href === href)[0]["text"];
 
   parts = [
     ...parts,
     {
       text: menuText,
       href,
-      "aria-current": ariaCurrent,
       alt: startCase(text),
+      "aria-label": startCase(text),
     },
   ];
 });
@@ -88,7 +90,8 @@ parts = parts.filter(function (item) {
         <a
           :href="part.href"
           :alt="part.alt"
-          :aria-current="index === parts.length - 1 ? 'page' : false"
+          :aria-label="part['aria-label']"
+          :aria-current="index === parts.length - 1 ? 'page' : null"
         >
           <template v-if="part.href === '/' || part.href === '/en'">
             <font-awesome-layers class="fa-fw">

@@ -30,9 +30,9 @@ export interface Props {
   description: string;
 }
 
-const menus = menu.map((menuItem) => ({
-  text: menuItem.text,
-  href: localizePath(menuItem.href),
+const menus = menu.map((item) => ({
+  text: item.text,
+  href: localizePath(item.href),
 }));
 
 const { title, description } = Astro.props;
@@ -93,6 +93,7 @@ const isHomepage =
             pathname={new URL(Astro.url).pathname}
             reqPathname={new URL(Astro.request.url).pathname}
             inheritLocale={inheritLocale}
+            menus={menus}
           />
         )
       }
