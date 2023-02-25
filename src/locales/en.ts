@@ -222,5 +222,5 @@ export default {
   },
   theSamples: "What it looks like?",
   youCanSeeTheSamples: "Mascot costumes we have been created are shown in",
-  portfolioPage: "Porfolio Page",
+  portfolioPage: "Portfolio Page",
 };

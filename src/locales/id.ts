@@ -222,5 +222,5 @@ export default {
   theSamples: "Bisa lihat contoh-contohnya?",
   youCanSeeTheSamples:
     "Hasil pembuatan kostum badut maskot yang pernah kami kerjakan dapat dilihat di",
-  portfolioPage: "Halaman Porfolio",
+  portfolioPage: "Halaman Portfolio",
 };
