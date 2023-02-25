@@ -27,7 +27,7 @@ const menus = ref(
           <a
             class="link no-underline lg:pr-2 lg:pl-2"
             href="/"
-            aria-label="Homepage"
+            :aria-label="t('homepage')"
           >
             <font-awesome-layers class="fa-fw lg:mr-1">
               <font-awesome-icon
@@ -43,6 +43,7 @@ const menus = ref(
             rel="prefetch"
             class="link uppercase no-underline lg:py-4 lg:pr-2 lg:pl-2"
             :href="menu.href"
+            :aria-label="menu.text"
           >
             <span class="font-bold">
               {{ menu.text }}

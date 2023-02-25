@@ -224,4 +224,5 @@ export default {
     "Hasil pembuatan kostum badut maskot yang pernah kami kerjakan dapat dilihat di",
   portfolioPage: "Halaman Portfolio",
   chatUsonWhatsapp: "Chat kami di WhatsApp",
+  homepage: "Halaman Depan",
 };

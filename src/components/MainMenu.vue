@@ -123,6 +123,7 @@ onMounted(() => {
                   menu.href === pathname || menu.href === `${pathname}/`,
               }"
               :href="menu.href"
+              :aria-label="menu.href === '/' ? t('homepage') : menu.text"
             >
               <template v-if="!menu.text">
                 <font-awesome-layers class="fa-fw">
