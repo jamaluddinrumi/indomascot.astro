@@ -37,7 +37,7 @@ const { t } = useI18n({
         <address class="josefin-sans workshop leading-8">
           {{ t("address.cukangKawung") }}
           <br />No. 53 RT 01 RW 15 Cibeunying Kaler, <br />{{
-            $t("address.cimenyan")
+            t("address.cimenyan")
           }}, Bandung, <br />{{ t("address.westJava") }} 40191
         </address>
         <div class="josefin-sans mb-0 mt-2 leading-3">

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import $device from "@src/device";
 import { Image } from "@unpic/vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -10,12 +13,12 @@ import { Image } from "@unpic/vue";
         <span
           class="animate-text overflow-x-hidden bg-gradient-to-r from-[#0066FF] via-[#CC66FF] to-[#66CCFF] bg-clip-text text-xl font-bold uppercase text-transparent lg:text-2xl"
         >
-          {{ $t("titleHero") }}
+          {{ t("titleHero") }}
         </span>
       </h1>
       <h2 class="mb-0 px-4 text-center leading-8 sm:leading-9 lg:px-0">
         <span class="font-sans font-semibold text-base-200">
-          {{ $t("weProduce") }}
+          {{ t("weProduce") }}
         </span>
       </h2>
     </div>
@@ -37,7 +40,7 @@ import { Image } from "@unpic/vue";
           height="456"
           :priority="$device.isDesktop ? true : false"
           :preload="$device.isDesktop"
-          :alt="$t('productionTeam')"
+          :alt="t('productionTeam')"
         />
       </div>
       <Image
@@ -47,7 +50,7 @@ import { Image } from "@unpic/vue";
         src="https://a.storyblok.com/f/118728/414x414/b9bdd0ccf5/tim-produksi-on-mobile.jpg/m/"
         class="block bg-auto lg:hidden"
         :priority="$device.isMobile ? true : false"
-        :alt="$t('productionTeam')"
+        :alt="t('productionTeam')"
         background="auto"
       />
     </div>

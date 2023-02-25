@@ -27,7 +27,7 @@ const props = defineProps({
   },
   inheritLocale: {
     type: String,
-    default: "id",
+    default: undefined,
   },
   menus: {
     type: Array,

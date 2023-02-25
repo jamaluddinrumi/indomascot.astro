@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, onBeforeUnmount } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const keunggulanBahan = ref(null);
 const keunggulanWaktu = ref(null);
@@ -91,7 +94,7 @@ function onIntersecting(entries, observer) {
           class="my-0 mx-auto text-center"
         >
           <img
-            provider="storyblok"
+            cdn="storyblok"
             src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png"
             width="655"
             height="553"
@@ -104,7 +107,7 @@ function onIntersecting(entries, observer) {
       <div class="right">
         <figure class="oval-hijau hide-for-small-only mb-6">
           <img
-            provider="storyblok"
+            cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png"
             width="80"
             height="80"
@@ -117,7 +120,7 @@ function onIntersecting(entries, observer) {
           <span
             class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent"
           >
-            {{ $t("qualityMaterial") }}
+            {{ t("qualityMaterial") }}
           </span>
         </h3>
         <i18n-t
@@ -129,22 +132,22 @@ function onIntersecting(entries, observer) {
           <template #firstGrade> 1<sup class="-ml-0.5"> st </sup> </template>
           <template #velboa>
             <span class="italic">
-              {{ $t("velboa") }}
+              {{ t("velboa") }}
             </span>
           </template>
           <template #drill>
             <span class="italic">
-              {{ $t("drill") }}
+              {{ t("drill") }}
             </span>
           </template>
           <template #lotto>
             <span class="italic">
-              {{ $t("lotto") }}
+              {{ t("lotto") }}
             </span>
           </template>
           <template #furing>
             <span class="italic">
-              {{ $t("furing") }}
+              {{ t("furing") }}
             </span>
           </template>
         </i18n-t>
@@ -156,7 +159,7 @@ function onIntersecting(entries, observer) {
       <div class="left order-2">
         <figure class="oval-orange hide-for-small-only mb-6">
           <img
-            provider="storyblok"
+            cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png"
             width="80"
             height="80"
@@ -168,11 +171,11 @@ function onIntersecting(entries, observer) {
         <h3 class="mb-2 text-center text-lg lg:mb-6 lg:text-left lg:text-4xl">
           <span
             class="bg-gradient-to-r from-[#f6a600] via-[#0081fc] to-[#F04649] bg-clip-text text-transparent"
-            >{{ $t("fast") }}</span
+            >{{ t("fast") }}</span
           >
         </h3>
         <p class="px-4 text-left lg:px-0">
-          {{ $t("inOurProcess") }}<sup>*</sup>
+          {{ t("inOurProcess") }}<sup>*</sup>
         </p>
       </div>
       <div
@@ -198,7 +201,7 @@ function onIntersecting(entries, observer) {
             class="my-0 mx-auto text-center"
           >
             <img
-              provider="storyblok"
+              cdn="storyblok"
               src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png"
               width="635"
               height="469"
@@ -232,7 +235,7 @@ function onIntersecting(entries, observer) {
           class="my-0 mx-auto text-center"
         >
           <img
-            provider="storyblok"
+            cdn="storyblok"
             src="https://a.storyblok.com/f/118728/588x434/4a07f5493f/kipas-angin.png"
             alt="head fan (kipas angin) illustration"
             width="588"
@@ -244,7 +247,7 @@ function onIntersecting(entries, observer) {
       <div class="right">
         <figure class="oval-merah hide-for-small-only mb-6">
           <img
-            provider="storyblok"
+            cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png"
             width="80"
             height="80"
@@ -256,7 +259,7 @@ function onIntersecting(entries, observer) {
         <h3 class="mb-2 text-center text-lg lg:mb-6 lg:text-left lg:text-4xl">
           <span
             class="bg-gradient-to-r from-[#16bc54] via-[#00a4fc] to-[#4fb8fe] bg-clip-text text-transparent"
-            >{{ $t("freeBonusHeadFanAndMask") }}</span
+            >{{ t("freeBonusHeadFanAndMask") }}</span
           >
         </h3>
         <i18n-t

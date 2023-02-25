@@ -11,21 +11,19 @@ import "@fontsource/josefin-sans/300.css";
 import "@fontsource/josefin-sans/400.css";
 import "@fontsource/josefin-sans/600.css";
 import "@fontsource/josefin-sans/700.css";
-import BaseHeader from "@components/BaseHeader.vue";
-import FlashyBg from "@components/FlashyBg.vue";
 import BreadCrumbs from "@components/BreadCrumbs.vue";
-import BaseFooter from "@components/BaseFooter.vue";
-import MainMenu from "@components/MainMenu.vue";
-import FloatingWhatsapp from "@components/FloatingWhatsapp.vue";
-import WhatsappContact from "@components/WhatsappContact.vue";
 import { generate as generateStructuredData } from "@src/structuredData";
 import { generate as generateBreadcrumbs } from "@src/breadcrumbs";
 import { Schema } from "astro-seo-schema";
 import { Seo } from "astro-seo-meta";
 import { localizePath, detectLocaleFromPath, localizeUrl } from "astro-i18next";
-import InitApp from "@components/InitApp.vue";
 import { HeadHrefLangs } from "astro-i18next/components";
 import menu from "@src/menu";
+import InitHeader from "@components/InitHeader.vue";
+import BaseFooter from "@components/BaseFooter.vue";
+import MainMenu from "@components/MainMenu.vue";
+import FloatingWhatsapp from "@components/FloatingWhatsapp.vue";
+import WhatsappContact from "@components/WhatsappContact.vue";
 
 export interface Props {
   title: string;
@@ -51,7 +49,7 @@ const url: URL = new URL(Astro.url);
 // 4. retrieve seo html title, description, meta from storyblok
 // 5. language switcher & dark toggle below apps in main menu
 
-const locale = detectLocaleFromPath(localizePath(url.pathname));
+const inheritLocale = detectLocaleFromPath(url.pathname);
 
 const homeUrl = localizeUrl(url.origin);
 
@@ -65,7 +63,7 @@ const isHomepage =
 ---
 
 <!DOCTYPE html>
-<html lang={locale}>
+<html lang={inheritLocale}>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="robots" content="index, follow" />
@@ -82,9 +80,11 @@ const isHomepage =
   <Seo title={title} description={description} />
 
   <body class="bg-body bg-gradient">
-    <InitApp client:only locale={locale} />
-    <FlashyBg />
-    <BaseHeader client:only="vue" homeUrl={homeUrl} />
+    <InitHeader
+      client:only="vue"
+      inheritLocale={inheritLocale}
+      homeUrl={homeUrl}
+    />
     <main class="container mx-auto min-h-screen lg:max-w-6xl">
       {
         !isHomepage && (
@@ -92,7 +92,7 @@ const isHomepage =
             client:only="vue"
             pathname={new URL(Astro.url).pathname}
             reqPathname={new URL(Astro.request.url).pathname}
-            locale={locale}
+            inheritLocale={inheritLocale}
           />
         )
       }
@@ -103,7 +103,7 @@ const isHomepage =
     <MainMenu
       client:only="vue"
       pathname={new URL(Astro.url).pathname}
-      inheritLocale={locale}
+      inheritLocale={inheritLocale}
       menus={menus}
       localizedPaths={localizedPaths}
     />

@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
 const waUrl = import.meta.env.WA_URL;
 </script>
 
@@ -17,7 +21,7 @@ const waUrl = import.meta.env.WA_URL;
       />
     </font-awesome-layers>
     <span class="tracking-wide">
-      {{ $t("whatsAppNo") }}
+      {{ t("whatsAppNo") }}
     </span>
   </a>
 </template>

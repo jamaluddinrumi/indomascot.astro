@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const clients = ref({
   client1: {
@@ -38,7 +41,7 @@ const clients = ref({
     <div class="mx-auto w-full">
       <h3 class="title mb-0 text-center">
         <span class="font-bold uppercase">
-          {{ $t("featuredClients") }}
+          {{ t("featuredClients") }}
         </span>
       </h3>
     </div>
@@ -46,7 +49,7 @@ const clients = ref({
       <img
         v-for="(client, index) in clients"
         :key="index"
-        provider="storyblok"
+        cdn="storyblok"
         preload
         class="mx-auto mt-4 max-h-[55px] lg:mt-0"
         :src="client.src"
@@ -59,7 +62,7 @@ const clients = ref({
         <span
           class="has-text-align-center mt-4 font-sans leading-4 text-base-200"
         >
-          {{ $t("andManyMore") }}
+          {{ t("andManyMore") }}
         </span>
       </div>
     </div>

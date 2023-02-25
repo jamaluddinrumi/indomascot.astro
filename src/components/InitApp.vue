@@ -3,13 +3,13 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps<{
-  locale?: string;
+  inheritLocale?: string;
 }>();
 
 const { t, locale } = useI18n({ useScope: "global" });
 
 try {
-  locale.value = <string>props.locale;
+  locale.value = <string>props.inheritLocale;
 } catch (error) {
   console.log(error);
 } finally {

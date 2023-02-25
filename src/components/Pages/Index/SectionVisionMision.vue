@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+</script>
+
 <template>
   <div
     id="visi-misi"
@@ -9,15 +15,15 @@
       <h3
         class="px-4 text-center text-base leading-8 lg:px-8 lg:text-2xl lg:leading-10"
       >
-        {{ $t("yourSuccess") }}
+        {{ t("yourSuccess") }}
       </h3>
       <p class="peran-kami-produsen-kostum-badut-maskot px-4 text-left lg:px-8">
-        {{ $t("brandMarketingIsImportant") }}
+        {{ t("brandMarketingIsImportant") }}
       </p>
     </div>
     <div class="right order-1 lg:order-2">
       <img
-        provider="storyblok"
+        cdn="storyblok"
         class="rounded-none lg:rounded-tr-lg"
         loading="lazy"
         src="https://a.storyblok.com/f/118728/973x903/647fab1977/all-grab-mascots-gradient.jpg"

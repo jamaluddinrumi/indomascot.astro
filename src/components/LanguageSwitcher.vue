@@ -4,9 +4,7 @@ import { useI18n } from "vue-i18n";
 
 const localeChanger = ref("");
 
-const i18n = useI18n();
-
-localeChanger.value = i18n.locale;
+const { t, locale } = useI18n();
 </script>
 
 <template>
@@ -20,6 +18,6 @@ localeChanger.value = i18n.locale;
         {{ locale }}
       </option>
     </select>
-    {{ $t("title") }}
+    {{ t("title") }}
   </div>
 </template>
