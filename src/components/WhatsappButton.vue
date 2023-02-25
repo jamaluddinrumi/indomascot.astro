@@ -8,7 +8,6 @@ const waUrl = import.meta.env.WA_URL;
 
 <template>
   <a
-    rel="noopener"
     target="_blank"
     class="whatsapp button float-center w-fit whitespace-nowrap rounded-full px-6 py-3 text-center text-white no-underline shadow-md"
     :href="waUrl"
