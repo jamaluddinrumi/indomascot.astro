@@ -4,7 +4,7 @@ const config: AstroI18nextConfig = {
   defaultLocale: "id",
   locales: ["id", "en"],
   i18nextServer: {
-    debug: true,
+    debug: false,
   },
   routes: {
     en: {
