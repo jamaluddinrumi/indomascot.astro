@@ -15,7 +15,7 @@ import { Image } from "@unpic/vue";
           type="image/avif"
         />
         <Image
-          provider="storyblok"
+          cdn="storyblok"
           src="https://a.storyblok.com/f/118728/2296x668/ade06609f7/new-flashy-light.png/m/"
           alt="dark flashy background"
           class="w-[71.75rem] max-w-none flex-none"
@@ -34,7 +34,7 @@ import { Image } from "@unpic/vue";
           type="image/avif"
         />
         <Image
-          provider="storyblok"
+          cdn="storyblok"
           src="https://a.storyblok.com/f/118728/2880x1232/60cf2ac49f/new-flashy-dark.png/m/"
           alt="dark flashy background"
           class="w-[90rem] max-w-none flex-none"

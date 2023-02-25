@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import WhatsappButton from "./WhatsappButton.vue";
+import { Image } from "@unpic/vue";
 
 const { t } = useI18n({ useScope: "global" });
 </script>
@@ -14,15 +15,15 @@ const { t } = useI18n({ useScope: "global" });
       class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between"
     >
       <div class="flex flex-col items-center lg:flex-row">
-        <img
+        <Image
           id="whatsapp-logo"
-          provider="storyblok"
-          src="https://a.storyblok.com/f/118728/x/99230adb4b/whatsapp.svg"
+          cdn="storyblok"
+          src="https://a.storyblok.com/f/118728/800x800/1fcef2ccc9/whatsapp-symbol-logo.svg"
           alt="whatsapp icon"
-          width="63"
-          height="63"
+          width="60"
+          height="60"
           sizes="xs:63px lg:63px"
-          class="lg:mr-2"
+          class="mb-1 lg:mb-0 lg:mr-3"
         />
         <div>
           <div
