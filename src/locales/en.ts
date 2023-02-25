@@ -223,4 +223,5 @@ export default {
   theSamples: "What it looks like?",
   youCanSeeTheSamples: "Mascot costumes we have been created are shown in",
   portfolioPage: "Portfolio Page",
+  chatUsonWhatsapp: "Chat us on WhatsApp",
 };

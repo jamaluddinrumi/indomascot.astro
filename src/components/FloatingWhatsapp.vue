@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const props = defineProps({
   hide: {
@@ -23,6 +26,7 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
     :class="[hide ? classHide : classShow]"
     target="_blank"
     alt="kontak whatsapp"
+    :aria-label="t('chatUsonWhatsapp')"
   >
     <font-awesome-layers class="fa-fw my-floating-whatsapp mt-[14px]">
       <font-awesome-icon :icon="['fab', 'whatsapp']" aria-hidden="true" />
