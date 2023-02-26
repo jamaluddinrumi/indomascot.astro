@@ -17,7 +17,7 @@ const { t } = useI18n();
         </span>
       </h1>
       <h2 class="mb-0 px-4 text-center lg:px-0">
-        <span class="font-sans leading-loose text-base-200">
+        <span class="description font-sans leading-loose">
           {{ t("weProduce") }}
         </span>
       </h2>
@@ -58,11 +58,21 @@ const { t } = useI18n();
 </template>
 
 <style lang="scss" scoped>
-[data-theme="light"] #bg-blur-tim-produksi {
-  @apply opacity-80;
+[data-theme="light"] {
+  #bg-blur-tim-produksi {
+    @apply opacity-80;
+  }
+  .description {
+    @apply text-idm-base-300;
+  }
 }
 
-[data-theme="dark"] #bg-blur-tim-produksi {
-  @apply opacity-20;
+[data-theme="dark"] {
+  #bg-blur-tim-produksi {
+    @apply opacity-20;
+  }
+  .description {
+    @apply text-idm-base-200;
+  }
 }
 </style>

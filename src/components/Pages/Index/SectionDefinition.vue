@@ -100,7 +100,7 @@ onMounted(() => {
     border-color: rgba(255, 255, 255, 0.05);
     background-color: rgba(255, 255, 255, 0.1);
     .description {
-      @apply text-base-100;
+      @apply text-idm-base-100;
     }
   }
 }
@@ -110,7 +110,7 @@ onMounted(() => {
     border-color: rgba(82, 41, 122, 0.05);
     background-color: rgba(82, 41, 122, 0.1);
     .description {
-      @apply text-base-200;
+      @apply text-idm-base-300;
     }
   }
 }
