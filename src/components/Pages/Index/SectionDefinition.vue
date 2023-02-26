@@ -77,7 +77,7 @@ onMounted(() => {
           <i18n-t
             keypath="youCanSeeTheSamples"
             tag="p"
-            class="text-left leading-loose text-base-100"
+            class="description text-left leading-loose"
           >
             <a class="link-accent link hover:text-accent" href="/portfolio">{{
               $t("portfolioPage")
@@ -85,7 +85,7 @@ onMounted(() => {
           </i18n-t>
         </template>
         <template v-else>
-          <p class="text-left leading-loose text-base-100">
+          <p class="description text-left leading-loose">
             {{ t(paragraph.description) }}
           </p>
         </template>
@@ -99,6 +99,9 @@ onMounted(() => {
   #definisi {
     border-color: rgba(255, 255, 255, 0.05);
     background-color: rgba(255, 255, 255, 0.1);
+    .description {
+      @apply text-base-100;
+    }
   }
 }
 
@@ -106,6 +109,9 @@ onMounted(() => {
   #definisi {
     border-color: rgba(82, 41, 122, 0.05);
     background-color: rgba(82, 41, 122, 0.1);
+    .description {
+      @apply text-base-200;
+    }
   }
 }
 </style>
