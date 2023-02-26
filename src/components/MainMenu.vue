@@ -8,10 +8,8 @@ import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
-import { menus, inheritLocale, url } from "@src/states";
+import { menus, url } from "@src/states";
 import { prependTrailingSlash } from "@src/utils";
-
-const inheritLocaleRef = ref(inheritLocale.get());
 
 const themes = ref(["light", "dark"]);
 
@@ -29,9 +27,15 @@ const props = defineProps({
     type: Object,
     default: new Object(),
   },
+  inheritLocale: {
+    type: String,
+    default: "",
+  },
 });
 
-const { t, availableLocales, locale } = useI18n();
+const inheritLocaleRef = ref(props.inheritLocale);
+
+const { t, availableLocales } = useI18n();
 
 const $mainMenu = useStore(mainMenu);
 
@@ -127,9 +131,7 @@ onMounted(() => {
                   v-for="availableLocale in availableLocales"
                   :key="availableLocale"
                   :value="availableLocale"
-                  :selected="
-                    availableLocale === inheritLocale.get() ? true : false
-                  "
+                  :selected="availableLocale === inheritLocaleRef ? true : false"
                 >
                   {{ t(`language.${availableLocale}`) }}
                 </option>

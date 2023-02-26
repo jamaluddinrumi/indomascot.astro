@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
-import InitApp from "@components/InitApp.vue";
 import { menus, inheritLocale, url } from "@src/states";
 import { useI18n } from "vue-i18n";
 

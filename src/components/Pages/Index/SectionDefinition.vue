@@ -7,7 +7,7 @@ const portfolioLink = ref(
   menus.get().find((item) => item.text === "portfolio").href
 );
 
-const { t, locale } = useI18n();
+const { t } = useI18n();
 
 const paragraphs = ref([
   {
