@@ -125,21 +125,9 @@ onMounted(() => {
               :href="menu.href"
               :aria-label="menu.href === '/' ? t('homepage') : menu.text"
             >
-              <template v-if="!menu.text">
-                <font-awesome-layers class="fa-fw">
-                  <font-awesome-icon
-                    :icon="['fas', 'house-chimney']"
-                    aria-hidden="true"
-                    class="shadow-inner"
-                  />
-                </font-awesome-layers>
-              </template>
-
-              <template v-else>
-                <span class="josefin-sans text-base font-bold uppercase">
-                  {{ menu.text }}
-                </span>
-              </template>
+              <span class="josefin-sans text-base font-bold uppercase">
+                {{ menu.text }}
+              </span>
             </a>
           </li>
           <li class="my-2">
