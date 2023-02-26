@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
-import { mainMenu, isDark, menus } from "@src/states";
+import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
+import menus from "@src/menu";
 
-const homeUrl = menus.get().find((item) => item.text === "homepage").href;
+const homeUrl = menus.find((item) => item.text === "homepage").href;
 
 const $mainMenu = useStore(mainMenu);
 

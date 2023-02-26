@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
-import { menus, inheritLocale, url } from "@src/states";
+import { inheritLocale, url } from "@src/states";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps<{
@@ -11,7 +11,6 @@ const props = defineProps<{
 }>();
 
 inheritLocale.set(props.inheritLocale);
-menus.set(props.menus);
 url.set(props.url);
 
 const { t, locale } = useI18n({ useScope: "global" });

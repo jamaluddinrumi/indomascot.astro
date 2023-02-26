@@ -8,8 +8,9 @@ import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
-import { menus, url } from "@src/states";
+import { url } from "@src/states";
 import { prependTrailingSlash } from "@src/utils";
+import menus from "@src/menu";
 
 const themes = ref(["light", "dark"]);
 
@@ -99,7 +100,7 @@ onMounted(() => {
         class="grid min-h-screen place-content-center overflow-y-scroll pt-16 pb-40 lg:pb-20"
       >
         <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
-          <li v-for="menu in menus.get()" :key="menu.text" class="my-0.5">
+          <li v-for="menu in menus" :key="menu.text" class="my-0.5">
             <a
               rel="prefetch"
               class="flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
@@ -131,7 +132,9 @@ onMounted(() => {
                   v-for="availableLocale in availableLocales"
                   :key="availableLocale"
                   :value="availableLocale"
-                  :selected="availableLocale === inheritLocaleRef ? true : false"
+                  :selected="
+                    availableLocale === inheritLocaleRef ? true : false
+                  "
                 >
                   {{ t(`language.${availableLocale}`) }}
                 </option>
