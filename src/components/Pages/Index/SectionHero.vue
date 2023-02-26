@@ -3,6 +3,24 @@ import $device from "@src/device";
 import { Image } from "@unpic/vue";
 import { useI18n } from "vue-i18n";
 
+import device from "@src/device";
+import { useHead } from "@unhead/vue";
+
+if (device.isDesktopOrTablet) {
+  console.log("yes it's desktop or tablet");
+  useHead({
+    link: [
+      {
+        rel: "preload",
+        fetchpriority: "high",
+        as: "image",
+        href: "/tim-produksi-on-desktop.svg",
+        type: "image/svg+xml",
+      },
+    ],
+  });
+}
+
 const { t } = useI18n();
 </script>
 
