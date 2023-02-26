@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 
-const waUrl = import.meta.env.WA_URL;
+const waUrl = import.meta.env.PUBLIC_WA_URL;
 </script>
 
 <template>
