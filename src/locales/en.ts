@@ -224,6 +224,6 @@ export default {
   youCanSeeTheSamples:
     "Some mascot costumes we have been produced so far are able to seen in {0}.",
   portfolioPage: "Portfolio Page",
-  chatUsonWhatsapp: "Chat us on WhatsApp",
+  chatUsonWhatsapp: "Chat us on WhatsApp +62 822-2155-6633",
   homepage: "Homepage",
 };

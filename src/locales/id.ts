@@ -223,6 +223,6 @@ export default {
   youCanSeeTheSamples:
     "Beberapa hasil pembuatan kostum badut maskot yang pernah kami kerjakan dapat dilihat di {0}.",
   portfolioPage: "Halaman Portfolio",
-  chatUsonWhatsapp: "Chat kami di WhatsApp",
+  chatUsonWhatsapp: "Chat kami di WhatsApp 0822-2155-6633",
   homepage: "Halaman Depan",
 };

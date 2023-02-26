@@ -36,7 +36,7 @@ const { t } = useI18n({ useScope: "global" });
           </div>
         </div>
       </div>
-      <WhatsappButton :kontak="true" class="mt-2 lg:mt-0" />
+      <WhatsappButton class="mt-2 lg:mt-0" />
     </div>
   </section>
 </template>

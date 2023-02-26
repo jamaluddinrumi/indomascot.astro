@@ -10,6 +10,7 @@ const waUrl = import.meta.env.WA_URL;
   <a
     target="_blank"
     class="whatsapp button float-center w-fit whitespace-nowrap rounded-full px-6 py-3 text-center text-white no-underline shadow-md"
+    :aria-label="t('chatUsonWhatsapp')"
     :href="waUrl"
   >
     <font-awesome-layers class="fa-fw">
