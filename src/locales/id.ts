@@ -24,7 +24,7 @@ export default {
   accountNo: "No Rekening",
   contact: "kontak",
   workshop: "workshop",
-  howToOrder: "cara pemesanan",
+  howToOrder: "Cara Pemesanan",
   forFastResponse: "untuk respons cepat",
   aboutEstimatesEtc: "mengenai surat penawaran dan lain-lainnya, ",
   pleaseContactUs: "mohon hubungi",

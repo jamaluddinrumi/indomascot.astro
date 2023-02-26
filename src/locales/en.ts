@@ -24,7 +24,7 @@ export default {
   accountNo: "Account No.",
   contact: "contact",
   workshop: "workshop",
-  howToOrder: "how to order",
+  howToOrder: "How to Order",
   forFastResponse: "for fast response",
   aboutEstimatesEtc: "about estimates, etc, ",
   pleaseContactUs: "please contact us",

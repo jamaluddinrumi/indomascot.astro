@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { startCase } from "lodash-es";
-import menu from "@src/menu";
 import { useI18n } from "vue-i18n";
-import { prependTrailingSlash } from "@src/utils";
 
 const { t } = useI18n();
 
@@ -26,19 +23,15 @@ const props = defineProps({
   },
 });
 
-console.log(props.menus);
-
 interface BreadcrumbItem {
   text: string;
   href: string;
   alt: string;
-  "aria-label": string
+  "aria-label": string;
 }
 
 // const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
 const paths = props.pathname.split("/").filter((crumb: any) => crumb);
-
-console.log("pathsy", paths);
 
 /**
  * Array of breadcrumb items.
