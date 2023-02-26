@@ -221,7 +221,8 @@ export default {
     en: "English",
   },
   theSamples: "What it looks like?",
-  youCanSeeTheSamples: "Mascot costumes we have been created are shown in",
+  youCanSeeTheSamples:
+    "Some mascot costumes we have been created are shown in {0}.",
   portfolioPage: "Portfolio Page",
   chatUsonWhatsapp: "Chat us on WhatsApp",
   homepage: "Homepage",

@@ -16,8 +16,8 @@ const { t } = useI18n();
           {{ t("titleHero") }}
         </span>
       </h1>
-      <h2 class="mb-0 px-4 text-center leading-8 sm:leading-9 lg:px-0">
-        <span class="font-sans font-semibold text-base-200">
+      <h2 class="mb-0 px-4 text-center lg:px-0">
+        <span class="font-sans leading-loose text-base-200">
           {{ t("weProduce") }}
         </span>
       </h2>

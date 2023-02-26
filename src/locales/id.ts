@@ -221,7 +221,7 @@ export default {
   },
   theSamples: "Bisa lihat contoh-contohnya?",
   youCanSeeTheSamples:
-    "Hasil pembuatan kostum badut maskot yang pernah kami kerjakan dapat dilihat di",
+    "Beberapa hasil pembuatan kostum badut maskot yang pernah kami kerjakan dapat dilihat di {0}.",
   portfolioPage: "Halaman Portfolio",
   chatUsonWhatsapp: "Chat kami di WhatsApp",
   homepage: "Halaman Depan",

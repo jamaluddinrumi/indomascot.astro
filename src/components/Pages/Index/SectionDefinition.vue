@@ -4,6 +4,21 @@ import { useI18n } from "vue-i18n";
 
 const { t, locale } = useI18n();
 
+const paragraphs = ref([
+  {
+    title: "whatIsMascotCostume",
+    description: "accordingToWikipedia",
+  },
+  {
+    title: "whatIsTheDifferent",
+    description: "itsJustTheSame",
+  },
+  {
+    title: "theSamples",
+    description: "youCanSeeTheSamples",
+  },
+]);
+
 onMounted(() => {
   nextTick(() => {
     const video = ref(document.getElementById("inilahmaskot"));
@@ -52,35 +67,29 @@ onMounted(() => {
     </div>
 
     <div id="right" class="p-2">
-      <h2
-        class="mx-auto my-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-0 lg:text-[1.75rem] lg:leading-[3rem]"
-      >
-        {{ t("whatIsMascotCostume") }}
-      </h2>
-      <p class="text-left leading-relaxed">
-        {{ t("accordingToWikipedia") }}
-      </p>
-      <h2
-        class="mx-auto mt-8 mb-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-16 lg:mb-4 lg:text-[1.75rem] lg:leading-[3rem]"
-      >
-        {{ t("whatIsTheDifferent") }}
-      </h2>
-      <p class="mb-0 text-left leading-relaxed">
-        {{ t("itsJustTheSame") }}
-      </p>
-      <h2
-        class="mx-auto mt-8 mb-4 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-16 lg:mb-4 lg:text-[1.75rem] lg:leading-[3rem]"
-      >
-        {{ t("theSamples") }}
-      </h2>
-      <p class="mb-0 text-left leading-relaxed">
-        {{ t("youCanSeeTheSamples") }}
-        <a
-          :href="`${locale === 'en' ? 'en' : ''}/portfolio`"
-          class="blocktracking-wide underline"
-          >{{ t("portfolioPage") }}</a
-        >.
-      </p>
+      <template v-for="(paragraph, index) in paragraphs" :key="index">
+        <h2
+          class="mx-auto mb-4 mt-8 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-10 lg:text-[1.75rem] lg:leading-[3rem] lg:first:mt-0"
+        >
+          {{ t(paragraph.title) }}
+        </h2>
+        <template v-if="paragraph.description === 'youCanSeeTheSamples'">
+          <i18n-t
+            keypath="youCanSeeTheSamples"
+            tag="p"
+            class="text-left leading-loose text-base-100"
+          >
+            <a class="link-accent link hover:text-accent" href="/portfolio">{{
+              $t("portfolioPage")
+            }}</a>
+          </i18n-t>
+        </template>
+        <template v-else>
+          <p class="text-left leading-loose text-base-100">
+            {{ t(paragraph.description) }}
+          </p>
+        </template>
+      </template>
     </div>
   </section>
 </template>
