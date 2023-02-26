@@ -51,8 +51,6 @@ const url: URL = new URL(Astro.url);
 
 const inheritLocale = detectLocaleFromPath(url.pathname);
 
-const homeUrl = localizeUrl(url.origin);
-
 const localizedPaths = {
   en: localizePath(url.pathname, "en"),
   id: localizePath(url.pathname, "id"),
@@ -83,7 +81,8 @@ const isHomepage =
     <InitHeader
       client:only="vue"
       inheritLocale={inheritLocale}
-      homeUrl={homeUrl}
+      menus={menus}
+      url={url}
     />
     <main class="container mx-auto min-h-screen lg:max-w-6xl">
       {
@@ -100,14 +99,8 @@ const isHomepage =
       <slot />
     </main>
     <WhatsappContact client:only="vue" />
-    <BaseFooter client:only="vue" menus={menus} />
-    <MainMenu
-      client:only="vue"
-      pathname={new URL(Astro.url).pathname}
-      inheritLocale={inheritLocale}
-      menus={menus}
-      localizedPaths={localizedPaths}
-    />
+    <BaseFooter client:only="vue" />
+    <MainMenu client:only="vue" localizedPaths={localizedPaths} />
     <FloatingWhatsapp client:only="vue" />
 
     <style lang="scss" is:global>

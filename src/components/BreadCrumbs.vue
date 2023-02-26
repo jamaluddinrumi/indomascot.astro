@@ -19,7 +19,7 @@ const props = defineProps({
   },
   menus: {
     type: Array,
-    default: [],
+    default: undefined,
   },
 });
 
@@ -54,12 +54,10 @@ if (props.inheritLocale === "id") {
 paths.forEach((text: string, index: number) => {
   const href = `/${paths.slice(0, index + 1).join("/")}`;
 
-  const menuText = props.menus.filter((item) => item.href === href)[0]["text"];
-
   parts = [
     ...parts,
     {
-      text: menuText,
+      text: props.menus.find((item) => item.href === href).text,
       href,
       alt: startCase(text),
       "aria-label": startCase(text),
@@ -84,7 +82,7 @@ parts = parts.filter(function (item) {
           :href="part.href"
           :alt="part.alt"
           :aria-label="part['aria-label']"
-          :aria-current="index === parts.length - 1 ? 'page' : null"
+          :aria-current="index === parts.length - 1 ? 'page' : false"
         >
           <template v-if="part.href === '/' || part.href === '/en'">
             <font-awesome-layers class="fa-fw">

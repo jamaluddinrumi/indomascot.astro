@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 import { onMounted, nextTick, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { menus } from "@src/states";
+
+const portfolioLink = ref(
+  menus.get().find((item) => item.text === "portfolio").href
+);
 
 const { t, locale } = useI18n();
 
@@ -79,9 +84,11 @@ onMounted(() => {
             tag="p"
             class="description text-left leading-loose"
           >
-            <a class="link-accent link hover:text-accent" href="/portfolio">{{
-              $t("portfolioPage")
-            }}</a>
+            <a
+              class="link-accent link hover:text-accent"
+              :href="portfolioLink"
+              >{{ $t("portfolioPage") }}</a
+            >
           </i18n-t>
         </template>
         <template v-else>

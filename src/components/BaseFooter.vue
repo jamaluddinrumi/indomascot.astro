@@ -10,16 +10,7 @@ const igUrl = import.meta.env.PUBLIC_IG_URL;
 const youtubeUrl = import.meta.env.PUBLIC_YOUTUBE_URL;
 const googleBusinessUrl = import.meta.env.PUBLIC_GOOGLE_BUSINESS_URL;
 
-const props = defineProps({
-  menus: {
-    type: Array,
-    default: new Array(),
-  },
-});
-
-const { t } = useI18n({
-  useScope: "global",
-});
+const { t } = useI18n();
 </script>
 
 <template>
@@ -151,7 +142,7 @@ const { t } = useI18n({
         <FooterApps />
       </div>
     </div>
-    <FooterNav :menus="menus" />
+    <FooterNav />
   </footer>
 </template>
 

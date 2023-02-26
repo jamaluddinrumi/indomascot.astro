@@ -60,7 +60,7 @@ const clients = ref({
       />
       <div class="mt-4 flex items-center justify-center lg:mt-0">
         <span
-          class="has-text-align-center mt-4 font-sans leading-4 text-base-200"
+          class="has-text-align-center mt-4 font-sans leading-4 text-idm-base-200"
         >
           {{ t("andManyMore") }}
         </span>

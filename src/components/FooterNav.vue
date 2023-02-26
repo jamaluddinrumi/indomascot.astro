@@ -1,24 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
+import { menus } from "@src/states";
 
 const { t } = useI18n(/*{ useScope: 'global' }*/);
-
-const props = defineProps({
-  menus: {
-    type: Array,
-    default: new Array(),
-  },
-});
-
-const menus = ref(
-  props.menus
-    .filter((item) => item.text !== "homepage")
-    .map((menu) => ({
-      text: menu.text ? computed(() => t(menu.text)) : "",
-      href: menu.href,
-    }))
-);
 </script>
 
 <template>
@@ -28,27 +12,27 @@ const menus = ref(
         id="menu-bawah"
         class="flex flex-col justify-center lg:flex-row lg:space-x-4"
       >
-        <li>
-          <a class="link no-underline" href="/" :aria-label="t('homepage')">
-            <font-awesome-layers class="fa-fw lg:mr-1">
-              <font-awesome-icon
-                class="!mb-0.5"
-                :icon="['fas', 'house-chimney']"
-                aria-hidden="true"
-              />
-            </font-awesome-layers>
-          </a>
-        </li>
-        <li v-for="menu in menus" :key="menu.href">
+        <li v-for="menu in menus.get()" :key="menu.href">
           <a
             rel="prefetch"
             class="link uppercase no-underline"
             :href="menu.href"
-            :aria-label="menu.text"
+            :aria-label="t(menu.text)"
           >
-            <span class="font-bold">
-              {{ menu.text }}
-            </span>
+            <template v-if="menu.text === 'homepage'">
+              <font-awesome-layers class="fa-fw lg:mr-1">
+                <font-awesome-icon
+                  class="!mb-0.5"
+                  :icon="['fas', 'house-chimney']"
+                  aria-hidden="true"
+                />
+              </font-awesome-layers>
+            </template>
+            <template v-else>
+              <span class="font-bold">
+                {{ t(menu.text) }}
+              </span>
+            </template>
           </a>
         </li>
       </ul>
