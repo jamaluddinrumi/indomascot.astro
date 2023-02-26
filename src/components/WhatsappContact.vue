@@ -20,9 +20,9 @@ const { t } = useI18n({ useScope: "global" });
           cdn="storyblok"
           src="https://a.storyblok.com/f/118728/800x800/1fcef2ccc9/whatsapp-symbol-logo.svg"
           alt="whatsapp icon"
-          width="60"
-          height="60"
-          sizes="xs:63px lg:63px"
+          width="50"
+          height="50"
+          sizes="xs:50px lg:50px"
           class="mb-1 lg:mb-0 lg:mr-3"
         />
         <div>

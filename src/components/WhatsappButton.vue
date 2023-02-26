@@ -20,7 +20,7 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
         class="mr-0 h-4 w-4 lg:h-5 lg:w-5"
       />
     </font-awesome-layers>
-    <span class="tracking-wide">
+    <span class="ml-0.5 tracking-wide">
       {{ t("whatsAppNo") }}
     </span>
   </a>
