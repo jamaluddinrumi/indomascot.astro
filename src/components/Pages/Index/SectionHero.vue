@@ -7,7 +7,6 @@ import device from "@src/device";
 import { useHead } from "@unhead/vue";
 
 if (device.isDesktopOrTablet) {
-  console.log("yes it's desktop or tablet");
   useHead({
     link: [
       {
