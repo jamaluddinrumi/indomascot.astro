@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { useStoryblok } from "@storyblok/vue";
 import { useI18n } from "vue-i18n";
+import $device from "@src/device";
 
 const { t } = useI18n();
 const content = ref(new Object());
@@ -16,7 +17,15 @@ useStoryblok("halaman-depan", { version: "draft" })
 <template>
   <div id="portfolio-homepage" class="mt-10 lg:mt-16">
     <div class="relative mx-auto w-fit">
-      <div id="bg-blur" class="absolute h-10 w-60 blur-lg"></div>
+      <div
+        id="bg-blur"
+        class="absolute h-10 w-60 blur-lg"
+        :class="[
+          $device.isDesktopOrTablet
+            ? 'h-[40px] w-[240px]'
+            : 'h-[24px] w-[145px]',
+        ]"
+      ></div>
       <h2 id="portfolio-title" class="relative mb-4 lg:mb-12">
         <span
           id="title-text"
@@ -45,7 +54,7 @@ useStoryblok("halaman-depan", { version: "draft" })
     @apply text-small-title-darken;
   }
   #bg-blur {
-    @apply bg-gradient-to-t from-railway/20 to-small-title/30;
+    @apply bg-gradient-to-t from-railway/10 to-small-title/10;
   }
 }
 </style>
