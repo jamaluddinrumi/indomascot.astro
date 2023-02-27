@@ -21,5 +21,5 @@ const props = defineProps<{
   <SectionFeaturedService client:only="vue" />
   <SectionPortfolio client:only="vue" />
   <SectionLatestOrders client:only="vue" />
-  <!-- <SectionFitting client:only="vue"  /> -->
+  <SectionFitting client:only="vue" />
 </template>

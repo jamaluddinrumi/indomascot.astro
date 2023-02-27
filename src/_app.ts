@@ -16,8 +16,8 @@ const i18n = createI18n({
   fallbackLocale: "en",
   legacy: true,
   messages: {
-    "id": id,
-    "en": en,
+    id: id,
+    en: en,
   },
 });
 
@@ -38,6 +38,8 @@ import {
   faMoon,
   faMapMarkerAlt,
   faHouseChimney,
+  faCheckCircle,
+  faCloudUploadAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -73,7 +75,9 @@ export default (app: App) => {
     faApple,
     faAndroid,
     faChrome,
-    faHouseChimney
+    faHouseChimney,
+    faCheckCircle,
+    faCloudUploadAlt
   );
 
   app.component("font-awesome-icon", FontAwesomeIcon);
