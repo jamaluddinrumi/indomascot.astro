@@ -1,4 +1,5 @@
 ---
+import "@assets/css/railway.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@fontsource/bangers/400.css";
 import "@fontsource/inter/300.css";
@@ -99,7 +100,11 @@ const isHomepage =
     </main>
     <WhatsappContact client:only="vue" />
     <BaseFooter client:only="vue" />
-    <MainMenu client:only="vue" localizedPaths={localizedPaths} inheritLocale={inheritLocale} />
+    <MainMenu
+      client:only="vue"
+      localizedPaths={localizedPaths}
+      inheritLocale={inheritLocale}
+    />
     <FloatingWhatsapp client:only="vue" />
 
     <style lang="scss" is:global>
