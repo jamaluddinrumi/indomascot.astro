@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import menus from "@src/menu";
+import { menus } from "@src/states";
 
 const { t } = useI18n(/*{ useScope: 'global' }*/);
 </script>
@@ -12,7 +12,7 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
         id="menu-bawah"
         class="flex flex-col justify-center lg:flex-row lg:space-x-4"
       >
-        <li v-for="menu in menus" :key="menu.href">
+        <li v-for="menu in menus.get()" :key="menu.href">
           <a
             rel="prefetch"
             class="link uppercase no-underline"
