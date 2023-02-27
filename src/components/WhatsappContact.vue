@@ -12,7 +12,7 @@ const { t } = useI18n({ useScope: "global" });
     class="container mx-auto mt-20 max-w-sm px-5 lg:max-w-6xl lg:px-0"
   >
     <div
-      class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between"
+      class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between lg:px-16"
     >
       <div class="flex flex-col items-center lg:flex-row">
         <Image
@@ -25,18 +25,18 @@ const { t } = useI18n({ useScope: "global" });
           sizes="xs:50px lg:50px"
           class="mb-1 lg:mb-0 lg:mr-3"
         />
-        <div>
+        <div class="mt-2 lg:mt-0">
           <div
             class="text-center text-xl font-extrabold lg:text-left lg:text-3xl"
           >
             {{ t("forFastResponse") }}
           </div>
-          <div class="text-center">
+          <div class="mt-1 text-center lg:mt-0">
             {{ t("aboutEstimatesEtc") }} {{ t("pleaseContactUs") }}
           </div>
         </div>
       </div>
-      <WhatsappButton class="mt-2 lg:mt-0" />
+      <WhatsappButton class="mt-4 lg:mt-0" />
     </div>
   </section>
 </template>
