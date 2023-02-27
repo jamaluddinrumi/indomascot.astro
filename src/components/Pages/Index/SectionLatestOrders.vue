@@ -12,6 +12,7 @@ import { useStoryblok } from "@storyblok/vue";
 import { Image } from "@unpic/vue";
 import { useI18n } from "vue-i18n";
 import $device from "@src/device";
+import PortfolioButton from "@components/PortfolioButton.vue";
 
 const { t } = useI18n();
 
@@ -142,7 +143,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
     <div class="swiper-button-next right-[4%] -mt-16 lg:right-[2%]" />
     <div class="swiper-pagination" />
   </swiper>
-  <!-- END OF swiper -->
+  <PortfolioButton />
 </template>
 
 <style lang="scss" scoped>
