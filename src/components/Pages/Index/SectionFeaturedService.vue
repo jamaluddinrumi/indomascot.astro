@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
+import { Image } from "@unpic/vue";
 
 const { t } = useI18n();
 
@@ -72,7 +73,7 @@ function onIntersecting(entries, observer) {
 <template>
   <div class="mt-0 lg:mt-20">
     <div
-      class="mt-0 -ml-5 grid w-screen grid-cols-1 overflow-hidden lg:-ml-0 lg:w-auto lg:grid-cols-2"
+      class="mt-0 grid w-screen grid-cols-1 overflow-hidden lg:w-auto lg:grid-cols-2"
     >
       <div
         id="keunggulan-bahan"
@@ -93,7 +94,7 @@ function onIntersecting(entries, observer) {
           :class="{ levitate: showKeunggulanBahan }"
           class="my-0 mx-auto text-center"
         >
-          <img
+          <Image
             cdn="storyblok"
             src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png"
             width="655"
@@ -105,8 +106,8 @@ function onIntersecting(entries, observer) {
         </figure>
       </div>
       <div class="right">
-        <figure class="oval-hijau hide-for-small-only mb-6">
-          <img
+        <figure class="oval-hijau mb-6 hidden lg:block">
+          <Image
             cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png"
             width="80"
@@ -116,9 +117,9 @@ function onIntersecting(entries, observer) {
             :placeholder="[100, 100, 10]"
           />
         </figure>
-        <h3 class="mb-2 text-center text-lg lg:mb-6 lg:text-left lg:text-4xl">
+        <h3 class="mb-2 text-center lg:mb-6 lg:text-left">
           <span
-            class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-2xl font-semibold text-transparent lg:text-4xl"
           >
             {{ t("qualityMaterial") }}
           </span>
@@ -127,7 +128,7 @@ function onIntersecting(entries, observer) {
           keypath="toSatisfy"
           tag="p"
           scope="global"
-          class="px-4 text-left lg:px-0"
+          class="px-4 text-left leading-loose lg:px-0"
         >
           <template #firstGrade> 1<sup class="-ml-0.5"> st </sup> </template>
           <template #velboa>
@@ -154,11 +155,11 @@ function onIntersecting(entries, observer) {
       </div>
     </div>
     <div
-      class="mt-6 -ml-5 grid w-screen grid-cols-1 overflow-hidden lg:mt-0 lg:-ml-0 lg:w-auto lg:grid-cols-2"
+      class="mt-6 grid w-screen grid-cols-1 overflow-hidden lg:mt-0 lg:w-auto lg:grid-cols-2"
     >
       <div class="left order-2">
-        <figure class="oval-orange hide-for-small-only mb-6">
-          <img
+        <figure class="oval-orange mb-6 hidden lg:block">
+          <Image
             cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png"
             width="80"
@@ -168,13 +169,13 @@ function onIntersecting(entries, observer) {
             :placeholder="[100, 100, 10]"
           />
         </figure>
-        <h3 class="mb-2 text-center text-lg lg:mb-6 lg:text-left lg:text-4xl">
+        <h3 class="mb-2 text-center lg:mb-6 lg:text-left">
           <span
-            class="bg-gradient-to-r from-[#f6a600] via-[#0081fc] to-[#F04649] bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-[#f6a600] via-[#0081fc] to-[#F04649] bg-clip-text text-2xl font-semibold text-transparent lg:text-4xl"
             >{{ t("fast") }}</span
           >
         </h3>
-        <p class="px-4 text-left lg:px-0">
+        <p class="px-4 text-left leading-loose lg:px-0">
           {{ t("inOurProcess") }}<sup>*</sup>
         </p>
       </div>
@@ -200,7 +201,7 @@ function onIntersecting(entries, observer) {
             :class="{ levitate: showKeunggulanWaktu }"
             class="my-0 mx-auto text-center"
           >
-            <img
+            <Image
               cdn="storyblok"
               src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png"
               width="635"
@@ -213,7 +214,7 @@ function onIntersecting(entries, observer) {
       </div>
     </div>
     <div
-      class="mt-0 -ml-5 grid w-screen grid-cols-1 overflow-hidden lg:mt-8 lg:-ml-0 lg:w-auto lg:grid-cols-2"
+      class="mt-0 grid w-screen grid-cols-1 overflow-hidden lg:mt-8 lg:w-auto lg:grid-cols-2"
     >
       <div
         id="keunggulan-masker"
@@ -232,21 +233,21 @@ function onIntersecting(entries, observer) {
               : ''
           "
           :class="{ levitate: showKeunggulanMasker }"
-          class="my-0 mx-auto text-center"
+          class="mx-auto my-0 text-center"
         >
-          <img
+          <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/588x434/4a07f5493f/kipas-angin.png"
+            src="https://a.storyblok.com/f/118728/580x430/21e6d6fb2c/kipas-angin.png"
             alt="head fan (kipas angin) illustration"
-            width="588"
-            height="434"
-            sizes="xs:275px lg:588px"
+            width="580"
+            height="430"
+            sizes="xs:275px lg:580px"
           />
         </figure>
       </div>
       <div class="right">
-        <figure class="oval-merah hide-for-small-only mb-6">
-          <img
+        <figure class="oval-merah mb-6 hidden lg:block">
+          <Image
             cdn="storyblok"
             src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png"
             width="80"
@@ -256,9 +257,9 @@ function onIntersecting(entries, observer) {
             :placeholder="[100, 100, 10]"
           />
         </figure>
-        <h3 class="mb-2 text-center text-lg lg:mb-6 lg:text-left lg:text-4xl">
+        <h3 class="mb-2 text-center lg:mb-6 lg:text-left">
           <span
-            class="bg-gradient-to-r from-[#16bc54] via-[#00a4fc] to-[#4fb8fe] bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-[#16bc54] via-[#00a4fc] to-[#4fb8fe] bg-clip-text text-2xl font-semibold text-transparent lg:text-4xl"
             >{{ t("freeBonusHeadFanAndMask") }}</span
           >
         </h3>
@@ -266,7 +267,7 @@ function onIntersecting(entries, observer) {
           keypath="performerIsSweating"
           tag="p"
           scope="global"
-          class="px-4 text-left lg:px-0"
+          class="px-4 text-left leading-loose lg:px-0"
         >
           <template #performer>
             <span class="italic">Performer</span>
