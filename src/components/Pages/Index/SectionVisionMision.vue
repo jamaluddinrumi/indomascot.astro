@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
 import { Image } from "@unpic/vue";
+import { startCase } from "lodash-es";
 
 const { t } = useI18n();
 </script>
@@ -19,12 +20,29 @@ const { t } = useI18n();
       >
         {{ t("yourSuccess") }}
       </h3>
-      <p
+      <i18n-t
         id="peran-kami-produsen-kostum-badut-maskot"
+        keypath="brandMarketingIsImportant"
+        tag="p"
+        scope="global"
         class="mt-2 px-4 text-left leading-loose lg:mt-4 lg:px-8"
       >
-        {{ t("brandMarketingIsImportant") }}
-      </p>
+        <template #marketing>
+          <span class="italic">
+            {{ startCase(t("marketing")) }}
+          </span>
+        </template>
+        <template #challenging>
+          <span class="italic">
+            {{ t("challenging") }}
+          </span>
+        </template>
+        <template #eventMarketing>
+          <span class="italic">
+            {{ t("eventMarketing") }}
+          </span>
+        </template>
+      </i18n-t>
     </div>
     <div class="right order-1 lg:order-2">
       <Image
