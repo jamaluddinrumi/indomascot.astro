@@ -15,12 +15,37 @@ useStoryblok("halaman-depan", { version: "draft" })
 
 <template>
   <div id="portfolio-homepage" class="mt-10 lg:mt-16">
-    <h2
-      id="portfolio-title"
-      class="min-h has-text-align-center mb-4 text-[1.5rem] uppercase leading-8 lg:mb-12 lg:min-h-fit lg:text-[2.5rem] lg:leading-[3rem]"
-    >
-      {{ t("portfolio") }}
-    </h2>
+    <div class="relative mx-auto w-fit">
+      <div id="bg-blur" class="absolute h-10 w-60 blur-lg"></div>
+      <h2 id="portfolio-title" class="relative mb-4 lg:mb-12">
+        <span
+          id="title-text"
+          class="text-[1.5rem] font-semibold uppercase leading-8 lg:text-[2.5rem] lg:leading-[3rem]"
+        >
+          {{ t("portfolio") }}
+        </span>
+      </h2>
+    </div>
     <StoryblokComponent v-if="content" :blok="content" />
   </div>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #title-text {
+    @apply text-small-title;
+  }
+  #bg-blur {
+    @apply bg-gradient-to-t from-small-title/20 to-railway/30;
+  }
+}
+
+[data-theme="light"] {
+  #title-text {
+    @apply text-small-title-darken;
+  }
+  #bg-blur {
+    @apply bg-gradient-to-t from-railway/20 to-small-title/30;
+  }
+}
+</style>

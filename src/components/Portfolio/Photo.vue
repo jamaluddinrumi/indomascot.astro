@@ -34,7 +34,7 @@ title.value = t("fullSizePhoto", [caption.value]);
 <template>
   <figure
     v-editable="blok"
-    class="portfolio-item mx-auto max-w-full border border-slate-200 bg-white shadow lg:max-w-fit"
+    class="portfolio-item border-[hsl(246, 18%, 15%)] mx-auto max-w-full border bg-white lg:max-w-fit lg:rounded-md"
   >
     <a
       :href="`${blok.photo}/m/628x628`"
@@ -53,16 +53,15 @@ title.value = t("fullSizePhoto", [caption.value]);
         :alt="blok.caption"
         :title="title"
         background="auto"
+        class="lg:rounded-t-md"
       />
     </a>
-    <figcaption class="mb-2 hidden h-7 text-center text-sm lg:block">
+    <figcaption
+      class="mb-2 hidden h-7 text-center text-sm text-small-title-darken lg:block"
+    >
       {{ blok.caption }}
     </figcaption>
   </figure>
 </template>
 
-<style scoped>
-figure.portfolio-item.wp-block-image > a img {
-  border-radius: 4px;
-}
-</style>
+<style scoped></style>
