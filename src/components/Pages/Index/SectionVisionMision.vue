@@ -49,10 +49,10 @@ const { t } = useI18n();
         cdn="storyblok"
         class="mt-2 lg:mt-0 lg:rounded-xl lg:rounded-tr-lg lg:border-4 lg:border-small-title lg:shadow-2xl lg:shadow-small-title/80"
         loading="lazy"
-        src="https://a.storyblok.com/f/118728/973x903/647fab1977/all-grab-mascots-gradient.jpg"
+        src="https://a.storyblok.com/f/118728/973x903/647fab1977/all-grab-mascots-gradient.jpg/m/576x513"
         alt="all grab mascots"
-        width="622"
-        height="578"
+        width="576"
+        height="513"
         sizes="xs:320px"
         background="auto"
       />

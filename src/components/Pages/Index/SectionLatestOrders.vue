@@ -123,9 +123,9 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
       >
         <Image
           cdn="storyblok"
-          width="369"
-          height="369"
-          :src="photo.photo"
+          width="371"
+          height="371"
+          :src="`${photo.photo}/m/371x371`"
           :alt="`${photo.caption} ${photo.caption !== '' ? '-' : ''}
           ${new Date(photo.uploaded_date).toLocaleDateString(
             $i18n.locale,
