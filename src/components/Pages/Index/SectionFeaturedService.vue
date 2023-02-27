@@ -128,7 +128,7 @@ function onIntersecting(entries, observer) {
           keypath="toSatisfy"
           tag="p"
           scope="global"
-          class="px-4 text-left leading-loose lg:px-0"
+          class="description px-4 text-left leading-loose lg:px-0"
         >
           <template #firstGrade> 1<sup class="-ml-0.5"> st </sup> </template>
           <template #velboa>
@@ -175,7 +175,7 @@ function onIntersecting(entries, observer) {
             >{{ t("fast") }}</span
           >
         </h3>
-        <p class="px-4 text-left leading-loose lg:px-0">
+        <p class="description px-4 text-left leading-loose lg:px-0">
           {{ t("inOurProcess") }}<sup>*</sup>
         </p>
       </div>
@@ -267,7 +267,7 @@ function onIntersecting(entries, observer) {
           keypath="performerIsSweating"
           tag="p"
           scope="global"
-          class="px-4 text-left leading-loose lg:px-0"
+          class="description px-4 text-left leading-loose lg:px-0"
         >
           <template #performer>
             <span class="italic">Performer</span>
@@ -330,5 +330,13 @@ function onIntersecting(entries, observer) {
   100% {
     -webkit-transform: translateY(-25px);
   }
+}
+
+[data-theme="dark"] .description {
+  @apply text-idm-base-100;
+}
+
+[data-theme="light"] .description {
+  @apply text-idm-base-300;
 }
 </style>
