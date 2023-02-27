@@ -91,8 +91,11 @@ export default {
   itsJustTheSame:
     "Sama saja. Hanya sebutannya saja kadang saat ini masyarakat lebih suka menyebutnya baju badut atau kostum badut. Baju badut ini berukuran all-size yang artinya proporsional dipakai oleh orang dewasa yang tinggi umumnya 170-190cm. Untuk desainnya juga bisa diambil dari boneka maskot yang terlebih dahulu disesuaikan dengan proporsional tubuh manusia.",
   yourSuccess: "Keberhasilan Marketing dan Sosialisasi Anda Adalah Misi Kami",
+  marketing: "marketing",
+  challenging: "challenging",
+  eventMarketing: "event marketing",
   brandMarketingIsImportant:
-    "Marketing suatu brand atau produk adalah sesuatu yang challenging bagi suatu perusahaan. Bahkan, menyampaikan pesan sosialisasi pun terkadang masih sulit tercapai bagi suatu instansi yang sudah dikenal luas oleh masyarakat. Di sini lah kami ada untuk membantu dengan memproduksi kostum badut maskot untuk membantu kesuksesan event marketing anda!",
+    "{marketing} suatu brand atau produk adalah sesuatu yang {challenging} bagi suatu perusahaan. Bahkan, menyampaikan pesan sosialisasi pun terkadang masih sulit tercapai bagi suatu instansi yang sudah dikenal luas oleh masyarakat. Di sini lah kami ada untuk membantu dengan memproduksi kostum badut maskot untuk membantu kesuksesan {eventMarketing} anda!",
   qualityMaterial: "Material Berkualitas",
   velboa: "velboa",
   drill: "drill",

@@ -109,7 +109,7 @@ module.exports = {
     themes: [
       {
         dark: {
-          primary: "#8532CE",
+          primary: "hsl(270, 60%, 52%)",
           "primary-focus": "#A667E4",
           "primary-content": daisyUi["[data-theme=dark]"]["primary-content"],
           secondary: "#878593",
@@ -154,7 +154,7 @@ module.exports = {
       },
       {
         light: {
-          primary: "#8532CE",
+          primary: "hsl(270, 60%, 52%)",
           "primary-focus": "#A667E4",
           "primary-content": daisyUi["[data-theme=dark]"]["primary-content"],
           secondary: "#878593",
