@@ -9,7 +9,7 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
 <template>
   <a
     target="_blank"
-    class="whatsapp button float-center w-fit whitespace-nowrap rounded-full px-6 py-3 text-center text-white no-underline shadow-md"
+    class="whatsapp button float-center w-fit whitespace-nowrap rounded-full px-6 py-3 text-center text-white no-underline"
     :aria-label="t('chatUsonWhatsapp')"
     :href="waUrl"
   >

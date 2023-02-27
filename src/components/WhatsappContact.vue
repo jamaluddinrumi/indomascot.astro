@@ -27,11 +27,12 @@ const { t } = useI18n({ useScope: "global" });
         />
         <div class="mt-2 lg:mt-0">
           <div
+            id="title"
             class="text-center text-xl font-extrabold lg:text-left lg:text-3xl"
           >
             {{ t("forFastResponse") }}
           </div>
-          <div class="mt-1 text-center lg:mt-0">
+          <div id="subtitle" class="mt-1 text-center lg:mt-0">
             {{ t("aboutEstimatesEtc") }} {{ t("pleaseContactUs") }}
           </div>
         </div>
@@ -47,12 +48,20 @@ const { t } = useI18n({ useScope: "global" });
     border-color: rgba(255, 255, 255, 0.05);
     background-color: rgba(255, 255, 255, 0.1);
   }
+  #title,
+  #subtitle {
+    @apply text-idm-base-100;
+  }
 }
 
 [data-theme="light"] {
   #whatsapp-contact > div {
     border-color: rgba(82, 41, 122, 0.05);
     background-color: rgba(82, 41, 122, 0.1);
+  }
+  #title,
+  #subtitle {
+    @apply text-idm-base-300;
   }
 }
 </style>

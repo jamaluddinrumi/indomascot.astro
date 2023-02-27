@@ -22,6 +22,7 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
             <template v-if="menu.text === 'homepage'">
               <font-awesome-layers class="fa-fw lg:mr-1">
                 <font-awesome-icon
+                  id="nav-text"
                   class="!mb-0.5"
                   :icon="['fas', 'house-chimney']"
                   aria-hidden="true"
@@ -29,7 +30,7 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
               </font-awesome-layers>
             </template>
             <template v-else>
-              <span class="font-bold">
+              <span id="nav-text" class="font-bold">
                 {{ t(menu.text) }}
               </span>
             </template>
@@ -39,3 +40,17 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
     </nav>
   </div>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #nav-text {
+    @apply text-idm-base-100;
+  }
+}
+
+[data-theme="light"] {
+  #nav-text {
+    @apply text-idm-base-300;
+  }
+}
+</style>
