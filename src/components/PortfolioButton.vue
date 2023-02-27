@@ -12,7 +12,7 @@ const portfolioLink = ref(
 </script>
 
 <template>
-  <div class="my-8 grid grid-cols-1 lg:mt-12">
+  <div class="mb-8 mt-4 grid grid-cols-1 lg:mt-12">
     <div class="relative flex justify-center">
       <a
         class="bg-gradient flex cursor-pointer justify-center rounded-full bg-primary px-6 py-4 uppercase tracking-wide shadow-2xl"

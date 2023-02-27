@@ -49,7 +49,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
 </script>
 
 <template>
-  <div class="relative mx-auto mt-24 mb-4 w-fit lg:mb-8">
+  <div class="relative mx-auto mt-12 mb-0 w-fit lg:mb-8">
     <div
       id="bg-blur"
       class="absolute blur-lg"
@@ -57,7 +57,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
         $device.isDesktopOrTablet ? 'h-[40px] w-[190px]' : 'h-[24px] w-[125px]',
       ]"
     ></div>
-    <h2 id="portfolio-title" class="relative mb-4 lg:mb-0">
+    <h2 id="portfolio-title" class="relative mb-0">
       <span
         id="title-text"
         class="text-[1.5rem] font-semibold uppercase leading-8 lg:text-[2.5rem] lg:leading-[3rem]"

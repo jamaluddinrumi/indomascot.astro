@@ -15,7 +15,7 @@ useStoryblok("halaman-depan", { version: "draft" })
 </script>
 
 <template>
-  <div id="portfolio-homepage" class="mt-10 lg:mt-16">
+  <div id="portfolio-homepage" class="mt-16">
     <div class="relative mx-auto w-fit">
       <div
         id="bg-blur"
