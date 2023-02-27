@@ -11,5 +11,6 @@ export const isDark = atom(
   })
 );
 export const mainMenu = atom(false);
+export const menus = atom([]);
 export const inheritLocale = atom("");
 export const url = atom(new URL("https://www.indomascot.com"));
