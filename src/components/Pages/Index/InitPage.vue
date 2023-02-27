@@ -18,8 +18,8 @@ const props = defineProps<{
   <SectionHero client:only="vue" />
   <SectionClients client:only="vue" />
   <SectionDefinition client:only="vue" />
-  <!-- <SectionVisionMision client:only="vue" />
-  <SectionFeaturedService client:only="vue" />
+  <SectionVisionMision client:only="vue" />
+  <!-- <SectionFeaturedService client:only="vue" />
   <SectionPortfolio client:only="vue" client:only="vue" />
   <SectionLatestOrders client:only="vue" client:only="vue" />
   <SectionFitting client:only="vue" client:only="vue" /> -->

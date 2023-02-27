@@ -22,6 +22,7 @@ module.exports = {
       "whatsapp-old-green": "#128c7e",
       railway: "#8532CE",
       "small-title": "hsl(270,70%,75%)",
+      "small-title-darken": "hsl(270,70%,65%)",
       "idm-base-100": "hsl(246,  6%, 78%)",
       "idm-base-200": "hsl(246,  6%, 55%)",
       "idm-base-300": "hsl(246,  8%, 35%)",
