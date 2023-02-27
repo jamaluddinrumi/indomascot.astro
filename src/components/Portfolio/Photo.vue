@@ -57,7 +57,7 @@ title.value = t("fullSizePhoto", [caption.value]);
       />
     </a>
     <figcaption
-      class="mb-2 hidden h-7 text-center text-sm text-small-title-darken lg:block"
+      class="mb-2 hidden h-7 text-center text-sm text-[hsl(270,55%,43%)] lg:block"
     >
       {{ blok.caption }}
     </figcaption>
