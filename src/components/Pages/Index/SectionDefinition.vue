@@ -10,15 +10,15 @@ const { t } = useI18n();
 const paragraphs = ref([
   {
     title: "whatIsMascotCostume",
-    description: "accordingToWikipedia",
+    answer: "accordingToWikipedia",
   },
   {
     title: "whatIsTheDifferent",
-    description: "itsJustTheSame",
+    answer: "itsJustTheSame",
   },
   {
     title: "theSamples",
-    description: "youCanSeeTheSamples",
+    answer: "youCanSeeTheSamples",
   },
 ]);
 
@@ -72,15 +72,15 @@ onMounted(() => {
     <div id="right" class="p-2">
       <template v-for="(paragraph, index) in paragraphs" :key="index">
         <h2
-          class="mx-auto mb-4 mt-8 text-center text-[1.15rem] font-semibold leading-[1.75rem] text-small-title lg:mt-10 lg:text-[1.75rem] lg:leading-[3rem] lg:first:mt-0"
+          class="question mx-auto mt-8 text-center text-[1.15rem] font-semibold leading-[1.75rem] lg:mt-10 lg:text-[1.75rem] lg:leading-[3rem] lg:first:mt-0"
         >
           {{ t(paragraph.title) }}
         </h2>
-        <template v-if="paragraph.description === 'youCanSeeTheSamples'">
+        <template v-if="paragraph.answer === 'youCanSeeTheSamples'">
           <i18n-t
             keypath="youCanSeeTheSamples"
             tag="p"
-            class="description text-left leading-loose"
+            class="answer mb-4 text-left leading-loose lg:mb-0"
           >
             <a
               class="link-accent link hover:text-accent"
@@ -90,8 +90,8 @@ onMounted(() => {
           </i18n-t>
         </template>
         <template v-else>
-          <p class="description text-left leading-loose">
-            {{ t(paragraph.description) }}
+          <p class="answer text-left leading-loose">
+            {{ t(paragraph.answer) }}
           </p>
         </template>
       </template>
@@ -101,20 +101,26 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 [data-theme="dark"] {
+  .question {
+    @apply text-small-title;
+  }
   #definisi {
     border-color: rgba(255, 255, 255, 0.05);
     background-color: rgba(255, 255, 255, 0.1);
-    .description {
+    .answer {
       @apply text-idm-base-100;
     }
   }
 }
 
 [data-theme="light"] {
+  .question {
+    @apply text-small-title-darken;
+  }
   #definisi {
     border-color: rgba(82, 41, 122, 0.05);
     background-color: rgba(82, 41, 122, 0.1);
-    .description {
+    .answer {
       @apply text-idm-base-300;
     }
   }
