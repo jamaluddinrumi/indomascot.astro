@@ -3,6 +3,9 @@ import { Image as UnpicImage } from "@unpic/vue";
 import Moveable, { VueMoveableInstance } from "vue3-moveable";
 import $device from "@src/device";
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const target = ref(null);
 
@@ -51,6 +54,23 @@ function drawCanvasImage(img) {
 </script>
 
 <template>
+  <div class="relative mx-auto mt-24 mb-4 w-fit lg:mb-8">
+    <div
+      id="bg-blur"
+      class="absolute blur-lg"
+      :class="[
+        $device.isDesktopOrTablet ? 'h-[40px] w-[157px]' : 'h-[24px] w-[97px]',
+      ]"
+    ></div>
+    <h2 id="portfolio-title" class="relative mb-4 lg:mb-0">
+      <span
+        id="title-text"
+        class="text-[1.5rem] font-semibold uppercase leading-8 lg:text-[2.5rem] lg:leading-[3rem]"
+      >
+        {{ t("fitting") }}
+      </span>
+    </h2>
+  </div>
   <section id="fitting" class="mt-4">
     <div class="grid grid-cols-1 gap-0 px-0 lg:grid-cols-2 lg:px-8">
       <div
@@ -193,6 +213,12 @@ function drawCanvasImage(img) {
 
 <style lang="scss" scoped>
 [data-theme="dark"] {
+  #title-text {
+    @apply text-small-title;
+  }
+  #bg-blur {
+    @apply bg-gradient-to-t from-indigo-700/20 to-small-title-darken/20;
+  }
   #instructions {
     @apply text-idm-base-100;
     .icon {
@@ -202,6 +228,12 @@ function drawCanvasImage(img) {
 }
 
 [data-theme="light"] {
+  #title-text {
+    @apply text-small-title-darken;
+  }
+  #bg-blur {
+    @apply bg-gradient-to-t from-indigo-600/10 to-small-title/20;
+  }
   #instructions {
     @apply text-idm-base-300;
 

@@ -12,7 +12,6 @@ import { useStoryblok } from "@storyblok/vue";
 import { Image } from "@unpic/vue";
 import { useI18n } from "vue-i18n";
 import $device from "@src/device";
-import { title } from "process";
 
 const { t } = useI18n();
 
@@ -152,7 +151,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
     @apply text-small-title;
   }
   #bg-blur {
-    @apply bg-gradient-to-t from-indigo-600/20 to-small-title-darken/30;
+    @apply bg-gradient-to-t from-indigo-600/20 to-small-title-darken/20;
   }
 }
 
