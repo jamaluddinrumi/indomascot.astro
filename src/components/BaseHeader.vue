@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
-import menus from "@src/menu";
+import { menus } from "@src/states";
 
-const homeUrl = menus.find((item) => item.text === "homepage").href;
+const homeLink = ref(menus.get().find((item) => item.text === "homepage"));
+const homeLinkHref = homeLink.value.href;
 
 const $mainMenu = useStore(mainMenu);
 
@@ -34,7 +35,7 @@ useHead({
       class="supports-backdrop-blur:bg-white/60 navbar h-[72px] px-5 backdrop-blur transition will-change-[filter]"
     >
       <div class="flex-1">
-        <a :href="homeUrl">
+        <a :href="homeLinkHref">
           <IconIndomascot />
         </a>
       </div>
