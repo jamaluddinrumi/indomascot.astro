@@ -108,7 +108,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
         class="relative z-10"
       >
         <span
-          class="label absolute top-0 right-0 rounded bg-indigo-500 px-3 shadow-inner"
+          class="label absolute top-0 right-0 rounded bg-primary px-3 shadow-inner"
         >
           <IconOnFinal />
           <span class="ml-1 text-xs font-bold text-white">Final</span>
