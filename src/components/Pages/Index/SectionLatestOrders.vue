@@ -21,6 +21,9 @@ const portfolioLink = ref(
   menus.get().find((item) => item.text === "portfolio")
 );
 
+const portfolioHref = ref(portfolioLink.value.href);
+const portfolioText = ref(portfolioLink.value.text);
+
 const props = defineProps<{
   modelValue?: boolean;
 }>();
@@ -37,8 +40,8 @@ const photos = ref(new Array());
 
 useStoryblok("badut-maskot", { version: "draft" })
   .then(async (data) => {
-    content.value = await data.value.content;
-    photos.value = content.value.body[0].columns;
+    content.value = data.value.content;
+    photos.value = await content.value.body[0].columns;
     photos.value = photos.value.reverse();
     photos.value.length = 10;
   })
@@ -152,8 +155,8 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
     <div class="relative flex justify-center">
       <a
         class="bg-gradient flex cursor-pointer justify-center rounded-full bg-primary px-6 py-4 uppercase tracking-wide shadow-2xl"
-        :href="portfolioLink.href"
-        :aria-label="t(portfolioLink.text)"
+        :href="portfolioHref"
+        :aria-label="t(portfolioText)"
       >
         <div class="fa-fw fa-layers">
           <Human />
