@@ -9,7 +9,7 @@ const content = ref(new Object());
 
 useStoryblok("halaman-depan", { version: "draft" })
   .then(async (data) => {
-    content.value = await data.value.content;
+    content.value = data.value.content;
   })
   .catch((error) => console.log(error));
 </script>
