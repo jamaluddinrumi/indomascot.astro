@@ -58,6 +58,9 @@ export default (app: App) => {
   app.use(i18n);
   app.use(StoryblokVue, {
     accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN,
+    apiOptions: {
+      timeout: 60,
+    },
     use: [apiPlugin],
   });
   app.use(MotionPlugin);
