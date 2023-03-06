@@ -31,8 +31,9 @@ export default {
   weProduce:
     "Sudah lebih dari ratusan UMKM, startup, komunitas hingga institusi pemerintahan telah memercayakan kami untuk memproduksikan kostum badut maskot mereka dengan desain dari mereka sendiri untuk mensukseskan kegiatan event, sosialiasi, promosi hingga brandingnya.",
   andManyMore: "dan masih banyak lagi",
+  allSize: "all-size",
   mascotCostumeSubtitle:
-    "Kostum badut maskot ini berukuran all-size yang artinya proporsional dipakai oleh orang dewasa yang tinggi umumnya 170-190cm.",
+    "Kostum badut maskot ini berukuran {allSize} yang artinya proporsional dipakai oleh orang dewasa yang tinggi umumnya 170-190cm.",
   showMore: "lihat selengkapnya",
   potentialCustomer: "potential customer",
   aboutUsParagraph: {
@@ -85,11 +86,12 @@ export default {
   },
   lastEdited: "Terakhir diedit: ",
   whatIsMascotCostume: "Apa itu kostum badut maskot?",
+  brandAwareness: "brand awareness",
   accordingToWikipedia:
-    "Menurut WikiPedia , kostum badut maskot adalah kostum yang dibuat oleh suatu perusahaan untuk menjadikan nyata maskot/logo perusahaan mereka kepada publik. Kostum ini sering digunakan untuk sosialisasi merek, promosi perusahaan, pameran, atau meningkatkan suatu brand awareness tim dalam suatu acara olahraga. Karena akan dipakai oleh manusia, maka desainnya harus menyesuaikan proporsional tubuh manusia.",
+    "Menurut WikiPedia , kostum badut maskot adalah kostum yang dibuat oleh suatu perusahaan untuk menjadikan nyata maskot/logo perusahaan mereka kepada publik. Kostum ini sering digunakan untuk sosialisasi merek, promosi perusahaan, pameran, atau meningkatkan suatu {brandAwareness} tim dalam suatu acara olahraga. Karena akan dipakai oleh manusia, maka desainnya harus menyesuaikan proporsional tubuh manusia.",
   whatIsTheDifferent: "Bedanya dengan baju badut?",
   itsJustTheSame:
-    "Sama saja. Hanya sebutannya saja kadang saat ini masyarakat lebih suka menyebutnya baju badut atau kostum badut. Baju badut ini berukuran all-size yang artinya proporsional dipakai oleh orang dewasa yang tinggi umumnya 170-190cm. Untuk desainnya juga bisa diambil dari boneka maskot yang terlebih dahulu disesuaikan dengan proporsional tubuh manusia.",
+    "Sama saja. Hanya sebutannya saja kadang saat ini masyarakat lebih suka menyebutnya baju badut atau kostum badut. Baju badut ini berukuran {allSize} yang artinya proporsional dipakai oleh orang dewasa yang tinggi umumnya 170-190cm. Untuk desainnya juga bisa diambil dari boneka maskot yang terlebih dahulu disesuaikan dengan proporsional tubuh manusia.",
   yourSuccess: "Keberhasilan Marketing dan Sosialisasi Anda Adalah Misi Kami",
   marketing: "marketing",
   challenging: "challenging",
