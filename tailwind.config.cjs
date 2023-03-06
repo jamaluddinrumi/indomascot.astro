@@ -6,6 +6,8 @@ const daisyUi = require("daisyui/src/colors/themes");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: ["class", '[data-theme="dark"]'], // or 'media' or 'class'
+  // darkMode: ['[data-theme="dark"]'],
+  // darkMode: "media",
   theme: {
     screens: Object.fromEntries(
       Object.entries(defaultTheme.screens).filter(([key, value]) =>
@@ -21,11 +23,10 @@ module.exports = {
       "whatsapp-green": "#25d366",
       "whatsapp-old-green": "#128c7e",
       railway: "#8532CE",
-      "small-title": "hsl(270,70%,75%)",
-      "small-title-darken": "hsl(270,70%,65%)",
-      "idm-base-100": "hsl(246,  6%, 78%)",
-      "idm-base-200": "hsl(246,  6%, 55%)",
-      "idm-base-300": "hsl(246,  8%, 35%)",
+      "idm-title": "var(--idm-title)",
+      "idm-base-100": "var(--idm-base-100)",
+      "idm-base-200": "var(--idm-base-200)",
+      "idm-base-300": "var(--idm-base-300)",
       bca: "#4000a1",
       mandiri: "#003066",
       bni: "#f05921",
@@ -106,6 +107,7 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
+    darkTheme: false,
     themes: [
       {
         dark: {
@@ -125,7 +127,7 @@ module.exports = {
           "base-100": daisyUi["[data-theme=dark]"]["base-100"],
           "base-200": daisyUi["[data-theme=dark]"]["base-200"],
           "base-300": daisyUi["[data-theme=dark]"]["base-300"],
-          "base-content": "#FEFEFE",
+          "base-content": "hsl(246,6%,95%)",
           info: daisyUi["[data-theme=dark]"]["info"],
           "info-content": daisyUi["[data-theme=dark]"]["info-content"],
           success: daisyUi["[data-theme=dark]"]["success"],
@@ -150,13 +152,18 @@ module.exports = {
             stroke: "#FEFEFE",
             color: "#FEFEFE",
           },
+          "--idm-base-100": "hsl(246,  6%, 78%)",
+          "--idm-base-200": "hsl(246,  6%, 55%)",
+          "--idm-base-300": "hsl(246,  8%, 35%)",
+          "--idm-title": "hsl(270, 70%, 75%)",
+          "--idm-swiper": "hsl(270, 70%, 75%)",
         },
       },
       {
         light: {
           primary: "hsl(270, 60%, 52%)",
           "primary-focus": "#A667E4",
-          "primary-content": daisyUi["[data-theme=dark]"]["primary-content"],
+          "primary-content": daisyUi["[data-theme=light]"]["primary-content"],
           secondary: "#878593",
           "secondary-focus": daisyUi["[data-theme=light]"]["secondary-focus"],
           "secondary-content":
@@ -170,7 +177,7 @@ module.exports = {
           "base-100": daisyUi["[data-theme=light]"]["base-100"],
           "base-200": daisyUi["[data-theme=light]"]["base-200"],
           "base-300": daisyUi["[data-theme=light]"]["base-300"],
-          "base-content": "#6C6B7B",
+          "base-content": "hsl(246,8%,35%)",
           info: daisyUi["[data-theme=light]"]["info"],
           "info-content": daisyUi["[data-theme=light]"]["info-content"],
           success: daisyUi["[data-theme=light]"]["success"],
@@ -195,9 +202,13 @@ module.exports = {
             stroke: "#8532CE",
             color: "#8532CE",
           },
+          "--idm-base-100": "hsl(246,  8%, 35%)",
+          "--idm-base-200": "hsl(246,  6%, 55%)",
+          "--idm-base-300": "hsl(246,  6%, 78%)",
+          "--idm-title": "hsl(270, 70%, 65%)",
+          "--idm-swiper": "hsl(270, 60%, 52%)",
         },
       },
     ],
   },
-  darkTheme: false,
 };
