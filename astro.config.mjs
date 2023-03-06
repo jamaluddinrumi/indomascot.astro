@@ -15,7 +15,6 @@ import astroI18next from "astro-i18next";
 const env = loadEnv("", "", "");
 import storyblok from "@storyblok/astro";
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     logLevel: "info",
@@ -58,10 +57,13 @@ export default defineConfig({
     }),
     storyblok({
       accessToken: env.PUBLIC_STORYBLOK_TOKEN,
-      components: {
-        // Add your components here
-      },
+      // components: {
+      //   page: "storyblok/Page",
+      //   grid: "storyblok/Grid",
+      //   photo: "storyblok/Photo",
+      // },
       apiOptions: {
+        timeout: 180,
         // Choose your Storyblok space region
         // region: 'us', // optional,  or 'eu' (default)
       },
@@ -72,5 +74,6 @@ export default defineConfig({
     critters(),
     compress(),
     compressor(),
+    prefetch(),
   ],
 });
