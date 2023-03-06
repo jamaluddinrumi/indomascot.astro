@@ -40,6 +40,7 @@ import {
   faHouseChimney,
   faCheckCircle,
   faCloudUploadAlt,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -59,7 +60,7 @@ export default (app: App) => {
   app.use(StoryblokVue, {
     accessToken: import.meta.env.PUBLIC_STORYBLOK_TOKEN,
     apiOptions: {
-      timeout: 60,
+      timeout: 180,
     },
     use: [apiPlugin],
   });
@@ -80,7 +81,8 @@ export default (app: App) => {
     faChrome,
     faHouseChimney,
     faCheckCircle,
-    faCloudUploadAlt
+    faCloudUploadAlt,
+    faBars
   );
 
   app.component("font-awesome-icon", FontAwesomeIcon);

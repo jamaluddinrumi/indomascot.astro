@@ -46,7 +46,14 @@ useHead({
           :class="{ 'btn-disabled': $mainMenu }"
           @click="openMainMenu()"
         >
-          <span class="josefin-sans font-bold shadow-inner">MENU</span>
+          <font-awesome-icon
+            :icon="['fas', 'bars']"
+            aria-hidden="true"
+            class="mb-1 mr-px h-4 w-4 opacity-75"
+          ></font-awesome-icon>
+          <span class="josefin-sans font-bold text-neutral-content shadow-inner"
+            >MENU</span
+          >
         </button>
       </div>
       <!-- END main menu button -->
