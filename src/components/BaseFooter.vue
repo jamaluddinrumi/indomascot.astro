@@ -154,16 +154,4 @@ footer .inner-footer > .cell:not(:last-child) {
 footer .inner-footer > .cell:last-child {
   @apply pt-4 pb-8;
 }
-
-[data-theme="dark"] {
-  footer > .container {
-    @apply text-idm-base-100;
-  }
-}
-
-[data-theme="light"] {
-  footer > .container {
-    @apply text-idm-base-300;
-  }
-}
 </style>

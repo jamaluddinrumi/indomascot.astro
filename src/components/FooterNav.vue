@@ -6,7 +6,7 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
 </script>
 
 <template>
-  <div class="container mx-auto hidden lg:block">
+  <div class="container mx-auto sm:hidden lg:block">
     <nav role="navigation" class="mt-16 pb-8">
       <ul
         id="menu-bawah"
@@ -40,17 +40,3 @@ const { t } = useI18n(/*{ useScope: 'global' }*/);
     </nav>
   </div>
 </template>
-
-<style lang="scss" scoped>
-[data-theme="dark"] {
-  #nav-text {
-    @apply text-idm-base-100;
-  }
-}
-
-[data-theme="light"] {
-  #nav-text {
-    @apply text-idm-base-300;
-  }
-}
-</style>

@@ -17,7 +17,7 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
       <font-awesome-icon
         :icon="['fab', 'whatsapp']"
         aria-hidden="true"
-        class="mr-0 h-4 w-4 lg:h-5 lg:w-5"
+        class="mt-0.5 mr-0 h-4 w-4 lg:h-5 lg:w-5"
       />
     </font-awesome-layers>
     <span class="ml-0.5 tracking-wide">
