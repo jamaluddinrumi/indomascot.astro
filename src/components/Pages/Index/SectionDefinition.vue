@@ -1,9 +1,18 @@
 <script lang="ts" setup>
 import { onMounted, nextTick, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import { menus, type menu } from "@src/states";
+import type { Menu } from "@src/menu";
 
-const portfolio: menu = menus.get().find((item) => item.text === "portfolio");
+const props = defineProps({
+  menus: {
+    type: Array(),
+    default: new Array(),
+  },
+});
+
+const portfolio: Menu = props.menus.find(
+  (item: Menu) => item.text === "portfolio"
+);
 
 const portfolioLink = portfolio.href;
 
@@ -39,7 +48,7 @@ onMounted(() => {
 <template>
   <section
     id="definisi"
-    class="definisi mt-14 grid grid-cols-1 gap-4 overflow-hidden border p-4 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
+    class="definisi mt-14 grid grid-cols-1 gap-4 p-2 overflow-hidden border text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
   >
     <div id="left relative">
       <div

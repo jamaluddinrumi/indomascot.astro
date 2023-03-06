@@ -1,3 +1,8 @@
+export type Menu = {
+  href: string;
+  text: string;
+};
+
 export default [
   {
     text: "homepage",

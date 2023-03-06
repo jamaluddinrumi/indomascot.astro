@@ -13,9 +13,15 @@ import SectionHero from "@components/Pages/Index/SectionHero.vue";
 import SectionLatestOrders from "@components/Pages/Index/SectionLatestOrders.vue";
 import SectionPortfolio from "@components/Pages/Index/SectionPortfolio.vue";
 import SectionVisionMision from "@components/Pages/Index/SectionVisionMision.vue";
+import menu from "@src/menu";
+import { localizePath } from "astro-i18next";
 
 changeLanguage("id");
 
+const menus = menu.map((item) => ({
+    text: item.text,
+    href: localizePath(item.href),
+}));
 const url: URL = new URL(Astro.url);
 const locale = detectLocaleFromPath(url.pathname);
 const storyblokApi = useStoryblokApi();
@@ -32,7 +38,7 @@ const meta = content.meta;
 <Layout title={meta.title} description={meta.description}>
   <SectionHero client:only="vue" />
   <SectionClients client:only="vue" />
-  <SectionDefinition client:only="vue" />
+  <SectionDefinition client:only="vue" menus={menus} />
   <SectionVisionMision client:only="vue" />
   <SectionFeaturedService client:only="vue" />
   <SectionPortfolio client:only="vue" />

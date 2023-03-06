@@ -9,7 +9,7 @@ const { t } = useI18n({ useScope: "global" });
 <template>
   <section
     id="whatsapp-contact"
-    class="container mx-auto mt-20 max-w-sm px-5 lg:max-w-6xl lg:px-0"
+    class="container mx-auto mt-20 max-w-sm px-4 lg:max-w-6xl lg:px-0"
   >
     <div
       class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between lg:px-16"

@@ -8,8 +8,8 @@ import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
-import { url, menus } from "@src/states";
 import { prependTrailingSlash } from "@src/utils";
+import type { Menu } from "@src/menu";
 
 const themes = ref(["light", "dark"]);
 
@@ -31,7 +31,17 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  menus: {
+    type: Array<Menu>,
+    default: new Array<Menu>(),
+  },
+  url: {
+    type: URL,
+    default: new URL("https://www.indomascot.com"),
+  },
 });
+
+const menusRef = ref(props.menus);
 
 const inheritLocaleRef = ref(props.inheritLocale);
 
@@ -43,7 +53,7 @@ const menuHalaman = ref(null);
 
 onClickOutside(menuHalaman, () => mainMenu.set(false));
 
-const browserDimension = ref<Dimension>(null);
+const browserDimension = ref<Dimension>({ width: 0, height: 0 });
 
 const switchLanguage = ref(function (event: Event) {});
 
@@ -99,15 +109,14 @@ onMounted(() => {
         class="grid min-h-screen place-content-center overflow-y-scroll pt-16 pb-40 lg:pb-20"
       >
         <ul id="menu-halaman" ref="menuHalaman" class="vertical justify menu">
-          <li v-for="menu in menus.get()" :key="menu.text" class="my-0.5">
+          <li v-for="menu in menusRef" :key="menu.text" class="my-0.5">
             <a
               rel="prefetch"
               class="flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
               :class="{
                 'btn-shadow btn-gradient active':
                   menu.href ===
-                  (url.get().pathname ||
-                    prependTrailingSlash(url.get().pathname)),
+                  (url.pathname || prependTrailingSlash(url.pathname)),
               }"
               :href="menu.href"
               :aria-label="menu.href === '/' ? t('homepage') : menu.text"

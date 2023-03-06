@@ -5,10 +5,23 @@ import { useStoryblokApi } from "@storyblok/astro";
 import { detectLocaleFromPath } from "astro-i18next";
 import storyPagesMapping from "@src/stories";
 import { prependTrailingSlash } from "@src/utils";
-import InitPage from "@components/Pages/Index/InitPage.vue";
+import SectionClients from "@components/Pages/Index/SectionClients.vue";
+import SectionDefinition from "@components/Pages/Index/SectionDefinition.vue";
+import SectionFeaturedService from "@components/Pages/Index/SectionFeaturedService.vue";
+import SectionFitting from "@components/Pages/Index/SectionFitting.vue";
+import SectionHero from "@components/Pages/Index/SectionHero.vue";
+import SectionLatestOrders from "@components/Pages/Index/SectionLatestOrders.vue";
+import SectionPortfolio from "@components/Pages/Index/SectionPortfolio.vue";
+import SectionVisionMision from "@components/Pages/Index/SectionVisionMision.vue";
+import menu from "@src/menu";
+import { localizePath } from "astro-i18next";
 
 changeLanguage("en");
 
+const menus = menu.map((item) => ({
+    text: item.text,
+    href: localizePath(item.href),
+}));
 const url: URL = new URL(Astro.url);
 const locale = detectLocaleFromPath(url.pathname);
 const storyblokApi = useStoryblokApi();
@@ -23,5 +36,12 @@ const meta = content.meta;
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <InitPage client:only="vue" />
+  <SectionHero client:only="vue" />
+  <SectionClients client:only="vue" />
+  <SectionDefinition client:only="vue" menus={menus} />
+  <SectionVisionMision client:only="vue" />
+  <SectionFeaturedService client:only="vue" />
+  <SectionPortfolio client:only="vue" />
+  <SectionLatestOrders client:only="vue" />
+  <SectionFitting client:only="vue" />
 </Layout>

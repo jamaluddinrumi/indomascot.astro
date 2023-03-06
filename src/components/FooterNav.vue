@@ -1,18 +1,25 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { menus } from "@src/states";
+import type { Menu } from "@src/menu";
+
+const props = defineProps({
+  menus: {
+    type: Array<Menu>,
+    default: new Array<Menu>(),
+  },
+});
 
 const { t } = useI18n(/*{ useScope: 'global' }*/);
 </script>
 
 <template>
-  <div class="container mx-auto sm:hidden lg:block">
+  <div class="container mx-auto hidden lg:block">
     <nav role="navigation" class="mt-16 pb-8">
       <ul
         id="menu-bawah"
         class="flex flex-col justify-center lg:flex-row lg:space-x-4"
       >
-        <li v-for="menu in menus.get()" :key="menu.href">
+        <li v-for="menu in menus" :key="menu.href">
           <a
             rel="prefetch"
             class="link uppercase no-underline"

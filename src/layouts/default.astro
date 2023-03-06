@@ -16,7 +16,7 @@ import { generate as generateStructuredData } from "@src/structuredData";
 import { generate as generateBreadcrumbs } from "@src/breadcrumbs";
 import { Schema } from "astro-seo-schema";
 import { Seo } from "astro-seo-meta";
-import { localizePath, detectLocaleFromPath, localizeUrl } from "astro-i18next";
+import { localizePath, detectLocaleFromPath } from "astro-i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 import menu from "@src/menu";
 import InitHeader from "@components/InitHeader.vue";
@@ -41,7 +41,7 @@ const structuredData = generateStructuredData(
   generateBreadcrumbs(new URL(Astro.url))
 );
 
-const url: URL = new URL(Astro.url);
+const url: URL = Astro.url;
 
 // 1. implement breadcrumbs for articles DONE
 // 2. implement en i18n by hl=en params or astro-i18n
@@ -88,7 +88,7 @@ const isHomepage =
         !isHomepage && (
           <BreadCrumbs
             client:only="vue"
-            pathname={new URL(Astro.url).pathname}
+            pathname={Astro.url.pathname}
             reqPathname={new URL(Astro.request.url).pathname}
             inheritLocale={inheritLocale}
             menus={menus}
@@ -98,11 +98,13 @@ const isHomepage =
       <slot />
     </main>
     <WhatsappContact client:only="vue" />
-    <BaseFooter client:only="vue" />
+    <BaseFooter client:only="vue" menus={menus} />
     <MainMenu
       client:only="vue"
       localizedPaths={localizedPaths}
       inheritLocale={inheritLocale}
+      url={url}
+      menus={menus}
     />
     <FloatingWhatsapp client:only="vue" />
 

@@ -1,18 +1,23 @@
 <script setup lang="ts">
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
-import { inheritLocale, url, menus } from "@src/states";
+import { inheritLocale, menus } from "@src/states";
 import { useI18n } from "vue-i18n";
+import type { Menu } from "@src/menu";
 
-const props = defineProps<{
-  inheritLocale?: string;
-  menus?: Array<Object>;
-  url?: URL;
-}>();
+const props = defineProps({
+  inheritLocale: {
+    type: String,
+    default: "id",
+  },
+  menus: {
+    type: Array<Menu>,
+    default: new Array<Menu>(),
+  },
+});
 
 inheritLocale.set(props.inheritLocale);
 menus.set(props.menus);
-url.set(props.url);
 
 const { t, locale } = useI18n({ useScope: "global" });
 
@@ -27,5 +32,5 @@ try {
 
 <template>
   <FlashyBg />
-  <BaseHeader client:only="vue" />
+  <BaseHeader client:only="vue" :menus="menus.value" />
 </template>

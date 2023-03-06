@@ -52,7 +52,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
 </script>
 
 <template>
-  <div class="relative mx-auto mt-24 mb-0 w-fit lg:mt-32 lg:mb-8">
+  <div class="relative mx-auto mt-20 mb-0 w-fit lg:mt-32 lg:mb-8">
     <div
       id="bg-blur"
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"

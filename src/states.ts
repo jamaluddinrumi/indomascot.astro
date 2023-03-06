@@ -1,10 +1,6 @@
 import { atom } from "nanostores";
 import { useDark } from "@vueuse/core";
-
-export type menu = {
-  href: String;
-  text: String;
-};
+import type { Menu } from "@src/menu";
 
 export const isDark = atom(
   useDark({
@@ -16,6 +12,5 @@ export const isDark = atom(
   })
 );
 export const mainMenu = atom(false);
-export const menus = atom(new Array<menu>());
+export const menus = atom(new Array<Menu>());
 export const inheritLocale = atom("");
-export const url = atom(new URL("https://www.indomascot.com"));

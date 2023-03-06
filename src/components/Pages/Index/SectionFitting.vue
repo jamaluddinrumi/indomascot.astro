@@ -71,12 +71,12 @@ function drawCanvasImage(img) {
       </span>
     </h2>
   </div>
-  <section id="fitting" class="mt-4">
+  <section id="fitting" class="mt-4 px-2">
     <div class="grid grid-cols-1 gap-0 px-0 lg:grid-cols-2 lg:px-8">
       <div
         class="order-2 mt-4 flex flex-col justify-self-center lg:order-1 lg:mt-0"
       >
-        <div class="relative flex justify-center">
+        <div class="relative mt-4 flex justify-center lg:mt-0">
           <UnpicImage
             cdn="storyblok"
             loading="lazy"
@@ -117,7 +117,7 @@ function drawCanvasImage(img) {
               <font-awesome-icon
                 :icon="['fas', 'cloud-upload-alt']"
                 aria-hidden="true"
-                class="mt-px h-4 w-4 fill-neutral-content/90 text-neutral-content/90 lg:mt-1 lg:h-5 lg:w-5"
+                class="h-4 w-4 fill-neutral-content/90 text-neutral-content/90 lg:mt-1 lg:h-5 lg:w-5"
               />
               <span
                 class="ml-1 mr-0.5 text-xs font-bold uppercase leading-normal lg:ml-2 lg:text-base"

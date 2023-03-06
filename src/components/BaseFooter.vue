@@ -2,6 +2,14 @@
 import FooterApps from "@components/FooterApps.vue";
 import FooterNav from "@components/FooterNav.vue";
 import { useI18n } from "vue-i18n";
+import type { Menu } from "@src/menu";
+
+const props = defineProps({
+  menus: {
+    type: Array<Menu>,
+    default: new Array<Menu>(),
+  },
+});
 
 const waNo = import.meta.env.PUBLIC_WA_NO;
 const waUrl = import.meta.env.PUBLIC_WA_URL;
@@ -142,7 +150,7 @@ const { t } = useI18n();
         <FooterApps />
       </div>
     </div>
-    <FooterNav />
+    <FooterNav :menus="menus" />
   </footer>
 </template>
 

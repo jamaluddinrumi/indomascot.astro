@@ -3,10 +3,17 @@ import { computed, ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
 import { mainMenu, isDark } from "@src/states";
 import { useStore } from "@nanostores/vue";
-import { menus } from "@src/states";
+import type { Menu } from "@src/menu";
 
-const homeLink = ref(menus.get().find((item) => item.text === "homepage"));
-const homeLinkHref = homeLink.value.href;
+const props = defineProps({
+  menus: {
+    type: Array<Menu>,
+    default: new Array<Menu>(),
+  },
+});
+
+const homeLink: Menu = props.menus.find((item) => item.text === "homepage");
+const homeLinkHref = homeLink.href;
 
 const $mainMenu = useStore(mainMenu);
 
@@ -29,7 +36,7 @@ useHead({
 <template>
   <header
     id="main-header"
-    class="container sticky top-0 z-50 mx-auto grid max-w-sm flex-none content-center lg:max-w-6xl"
+    class="container sticky top-0 z-[9999] mx-auto grid max-w-sm flex-none content-center lg:max-w-6xl"
   >
     <div
       class="supports-backdrop-blur:bg-white/60 navbar h-[72px] px-5 backdrop-blur transition will-change-[filter]"
