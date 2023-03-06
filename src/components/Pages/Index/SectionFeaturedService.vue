@@ -96,7 +96,7 @@ function onIntersecting(entries, observer) {
         >
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png"
+            src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png/m/"
             width="655"
             height="553"
             sizes="xs:275px lg:588px"
@@ -109,7 +109,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-hijau mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png"
+            src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png/m/"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
@@ -125,9 +125,9 @@ function onIntersecting(entries, observer) {
           </span>
         </h3>
         <i18n-t
+          scope="global"
           keypath="toSatisfy"
           tag="p"
-          scope="global"
           class="description px-4 text-left leading-loose lg:px-0"
         >
           <template #firstGrade> 1<sup class="-ml-0.5"> st </sup> </template>
@@ -161,7 +161,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-orange mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png"
+            src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png/m/"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
@@ -203,7 +203,7 @@ function onIntersecting(entries, observer) {
           >
             <Image
               cdn="storyblok"
-              src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png"
+              src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png/m/"
               width="635"
               height="469"
               sizes="xs:275px lg:588px"
@@ -237,7 +237,7 @@ function onIntersecting(entries, observer) {
         >
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/580x430/21e6d6fb2c/kipas-angin.png"
+            src="https://a.storyblok.com/f/118728/580x430/21e6d6fb2c/kipas-angin.png/m/"
             alt="head fan (kipas angin) illustration"
             width="580"
             height="430"
@@ -249,7 +249,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-merah mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png"
+            src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png/m/"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
@@ -264,9 +264,9 @@ function onIntersecting(entries, observer) {
           >
         </h3>
         <i18n-t
+          scope="global"
           keypath="performerIsSweating"
           tag="p"
-          scope="global"
           class="description px-4 text-left leading-loose lg:px-0"
         >
           <template #performer>
@@ -330,13 +330,5 @@ function onIntersecting(entries, observer) {
   100% {
     -webkit-transform: translateY(-25px);
   }
-}
-
-[data-theme="dark"] .description {
-  @apply text-idm-base-100;
-}
-
-[data-theme="light"] .description {
-  @apply text-idm-base-300;
 }
 </style>

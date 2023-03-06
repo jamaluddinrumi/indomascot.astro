@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+defineProps({
+  blok: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div v-editable="blok">
     <component
@@ -8,14 +17,3 @@
     />
   </div>
 </template>
-
-<script lang="ts">
-export default {
-  props: {
-    blok: {
-      type: Object,
-      required: true,
-    },
-  },
-};
-</script>

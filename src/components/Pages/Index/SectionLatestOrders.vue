@@ -13,20 +13,15 @@ import { Image } from "@unpic/vue";
 import { useI18n } from "vue-i18n";
 import $device from "@src/device";
 import Human from "@components/Icon/Human.vue";
-import { menus } from "@src/states";
+import menus from "@src/menu";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+const portfolioTransKey = "portfolio";
 
 const portfolioLink = ref(
-  menus.get().find((item) => item.text === "portfolio")
+  menus.find((item) => item.text === portfolioTransKey).href
 );
-
-const portfolioHref = ref(portfolioLink.value.href);
-const portfolioText = ref(portfolioLink.value.text);
-
-const props = defineProps<{
-  modelValue?: boolean;
-}>();
 
 const onSwiper = (swiper) => {
   console.log(swiper);
@@ -57,10 +52,10 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
 </script>
 
 <template>
-  <div class="relative mx-auto mt-12 lg:mt-20 mb-0 w-fit lg:mb-8">
+  <div class="relative mx-auto mt-24 mb-0 w-fit lg:mt-32 lg:mb-8">
     <div
       id="bg-blur"
-      class="absolute blur-lg"
+      class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
       :class="[
         $device.isDesktopOrTablet ? 'h-[40px] w-[190px]' : 'h-[24px] w-[125px]',
       ]"
@@ -68,7 +63,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
     <h2 id="portfolio-title" class="relative mb-0">
       <span
         id="title-text"
-        class="text-[1.5rem] font-semibold uppercase leading-8 lg:text-[2.5rem] lg:leading-[3rem]"
+        class="text-[1.5rem] font-semibold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:leading-[3rem]"
       >
         {{ t("newest") }}
       </span>
@@ -87,7 +82,7 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     }"
-    :coverflowEffect="{
+    :coverflow-effect="{
       rotate: 50,
       stretch: 0,
       depth: 100,
@@ -155,14 +150,14 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
     <div class="relative flex justify-center">
       <a
         class="bg-gradient flex cursor-pointer justify-center rounded-full bg-primary px-6 py-4 uppercase tracking-wide shadow-2xl"
-        :href="portfolioHref"
-        :aria-label="t(portfolioText)"
+        :href="portfolioLink"
+        :aria-label="t(portfolioTransKey)"
       >
         <div class="fa-fw fa-layers">
           <Human />
         </div>
         <span
-          class="ml-0 mr-0.5 text-xs font-bold uppercase leading-normal lg:ml-0.5 lg:text-base"
+          class="ml-0 mr-0.5 text-xs font-bold uppercase leading-normal text-neutral-content lg:ml-0.5 lg:text-base"
         >
           {{ $t("showMore") }}
         </span>
@@ -187,26 +182,8 @@ const modules = ref([Navigation, Pagination, EffectCoverflow]);
 </template>
 
 <style lang="scss" scoped>
-[data-theme="dark"] {
-  #title-text {
-    @apply text-small-title;
-  }
-  #bg-blur {
-    @apply bg-gradient-to-t from-indigo-600/20 to-small-title-darken/20;
-  }
-}
-
-[data-theme="light"] {
-  #title-text {
-    @apply text-small-title-darken;
-  }
-  #bg-blur {
-    @apply bg-gradient-to-t from-indigo-300/20 to-small-title/30;
-  }
-}
-
 .swiper {
-  --swiper-theme-color: hsl(270, 60%, 52%);
+  --swiper-theme-color: var(--idm-swiper);
   --swiper-pagination-bottom: 2rem;
 }
 </style>

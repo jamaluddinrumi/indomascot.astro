@@ -54,10 +54,10 @@ function drawCanvasImage(img) {
 </script>
 
 <template>
-  <div class="relative mx-auto mt-24 mb-4 w-fit lg:mb-8">
+  <div class="relative mx-auto mt-24 mb-4 w-fit lg:mt-32 lg:mb-8">
     <div
       id="bg-blur"
-      class="absolute blur-lg"
+      class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
       :class="[
         $device.isDesktopOrTablet ? 'h-[40px] w-[157px]' : 'h-[24px] w-[97px]',
       ]"
@@ -65,7 +65,7 @@ function drawCanvasImage(img) {
     <h2 id="portfolio-title" class="relative mb-4 lg:mb-0">
       <span
         id="title-text"
-        class="text-[1.5rem] font-semibold uppercase leading-8 lg:text-[2.5rem] lg:leading-[3rem]"
+        class="text-[1.5rem] font-semibold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:leading-[3rem]"
       >
         {{ t("fitting") }}
       </span>
@@ -213,32 +213,17 @@ function drawCanvasImage(img) {
 
 <style lang="scss" scoped>
 [data-theme="dark"] {
-  #title-text {
-    @apply text-small-title;
-  }
-  #bg-blur {
-    @apply bg-gradient-to-t from-indigo-700/20 to-small-title-darken/20;
-  }
   #instructions {
-    @apply text-idm-base-100;
     .icon {
-      @apply text-small-title/70;
+      @apply text-idm-title text-opacity-0;
     }
   }
 }
 
 [data-theme="light"] {
-  #title-text {
-    @apply text-small-title-darken;
-  }
-  #bg-blur {
-    @apply bg-gradient-to-t from-indigo-600/10 to-small-title/20;
-  }
   #instructions {
-    @apply text-idm-base-300;
-
     .icon {
-      @apply text-primary/70;
+      @apply text-primary text-opacity-70;
     }
   }
 }

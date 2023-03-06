@@ -79,17 +79,11 @@ const { t } = useI18n();
   #bg-blur-tim-produksi {
     @apply opacity-80;
   }
-  .description {
-    @apply text-idm-base-300;
-  }
 }
 
 [data-theme="dark"] {
   #bg-blur-tim-produksi {
     @apply opacity-20;
-  }
-  .description {
-    @apply text-idm-base-200;
   }
 }
 </style>
