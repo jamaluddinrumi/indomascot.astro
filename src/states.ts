@@ -14,3 +14,5 @@ export const isDark = atom(
 export const mainMenu = atom(false);
 export const menus = atom(new Array<Menu>());
 export const inheritLocale = atom("");
+export const lightbox = atom(false);
+export const slide = atom(0);

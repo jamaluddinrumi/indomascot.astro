@@ -41,6 +41,7 @@ import {
   faCheckCircle,
   faCloudUploadAlt,
   faBars,
+  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -82,7 +83,8 @@ export default (app: App) => {
     faHouseChimney,
     faCheckCircle,
     faCloudUploadAlt,
-    faBars
+    faBars,
+    faClose
   );
 
   app.component("font-awesome-icon", FontAwesomeIcon);

@@ -14,9 +14,10 @@ defineProps({
   >
     <component
       :is="blok.component"
-      v-for="blok in blok.columns"
+      v-for="(blok, index) in blok.columns"
       :key="blok._uid"
       :blok="blok"
+      :index="index"
     />
   </div>
 </template>

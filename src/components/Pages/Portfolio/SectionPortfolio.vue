@@ -1,12 +1,7 @@
 <script setup lang="ts">
-const props = defineProps<{
-  modelValue?: boolean,
-}>()
-
+import Grid from "@components/Lightbox/Grid.vue";
 </script>
 
 <template>
-  <div>
-    <slot/>
-  </div>
+  <Grid />
 </template>
