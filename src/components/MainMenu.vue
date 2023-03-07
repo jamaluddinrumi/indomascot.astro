@@ -10,15 +10,16 @@ import { getBrowserHeight, Dimension } from "@src/dimension";
 import { themeChange } from "theme-change";
 import { prependTrailingSlash } from "@src/utils";
 import type { Menu } from "@src/menu";
+import { themes } from "@src/themes";
 
-const themes = ref(["light", "dark"]);
+const $isDark = useStore(isDark);
 
 const theme = computed({
   get() {
-    return isDark.value.value ? "dark" : "light";
+    return $isDark.value ? "dark" : "light";
   },
-  set(theme) {
-    isDark.value.value = theme === "dark" ? true : false;
+  set(newTheme) {
+    isDark.set(newTheme === "dark" ? true : false);
   },
 });
 
