@@ -234,8 +234,9 @@ function drawCanvasImage(img) {
 
 #instructions {
   --fa-li-margin: 1.5rem;
+  @apply leading-relaxed;
 }
-> li {
+li {
   margin-top: 0.5rem;
 }
 </style>
