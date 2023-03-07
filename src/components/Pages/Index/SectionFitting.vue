@@ -54,7 +54,7 @@ function drawCanvasImage(img) {
 </script>
 
 <template>
-  <div class="relative mx-auto mt-24 mb-4 w-fit lg:mt-32 lg:mb-8">
+  <div class="relative mx-auto mt-20 mb-4 w-fit lg:mt-32 lg:mb-8">
     <div
       id="bg-blur"
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
@@ -62,10 +62,10 @@ function drawCanvasImage(img) {
         $device.isDesktopOrTablet ? 'h-[40px] w-[157px]' : 'h-[24px] w-[97px]',
       ]"
     ></div>
-    <h2 id="portfolio-title" class="relative mb-4 lg:mb-0">
+    <h2 id="portfolio-title" class="relative mb-6 lg:mb-0">
       <span
         id="title-text"
-        class="text-[1.5rem] font-semibold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:leading-[3rem]"
+        class="text-[1.5rem] font-bold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:font-semibold lg:leading-[3rem]"
       >
         {{ t("fitting") }}
       </span>
@@ -87,27 +87,25 @@ function drawCanvasImage(img) {
             class="w-60 text-center"
             alt="panduan tubuh manusia yang proporsional"
           />
-          <client-only>
-            <div class="absolute top-0 left-0">
-              <canvas id="target" ref="target" class="target" />
-              <Moveable
-                class="moveable"
-                :rotation-position="`none`"
-                :target="['#target']"
-                :pinchable="true"
-                :use-resize-observer="true"
-                :draggable="true"
-                :scalable="true"
-                :rotatable="true"
-                :resizable="true"
-                @drag="handleDrag"
-                @scale="handleScale"
-                @rotate="handleRotate"
-                @resize="handleResize"
-                @warp="handleWarp"
-              />
-            </div>
-          </client-only>
+          <div class="absolute top-0 left-0">
+            <canvas id="target" ref="target" class="target" />
+            <Moveable
+              class="moveable"
+              :rotation-position="`none`"
+              :target="['#target']"
+              :pinchable="true"
+              :use-resize-observer="true"
+              :draggable="true"
+              :scalable="true"
+              :rotatable="true"
+              :resizable="true"
+              @drag="handleDrag"
+              @scale="handleScale"
+              @rotate="handleRotate"
+              @resize="handleResize"
+              @warp="handleWarp"
+            />
+          </div>
         </div>
         <div class="my-8 grid grid-cols-1 lg:mt-12">
           <div class="flex justify-center">
@@ -213,6 +211,9 @@ function drawCanvasImage(img) {
 
 <style lang="scss" scoped>
 [data-theme="dark"] {
+  #title-text {
+    @apply mix-blend-lighten;
+  }
   #instructions {
     .icon {
       @apply text-idm-title text-opacity-0;
@@ -221,6 +222,9 @@ function drawCanvasImage(img) {
 }
 
 [data-theme="light"] {
+  #title-text {
+    @apply mix-blend-multiply;
+  }
   #instructions {
     .icon {
       @apply text-primary text-opacity-70;
@@ -228,7 +232,10 @@ function drawCanvasImage(img) {
   }
 }
 
-#instructions > li {
+#instructions {
+  --fa-li-margin: 1.5rem;
+}
+> li {
   margin-top: 0.5rem;
 }
 </style>

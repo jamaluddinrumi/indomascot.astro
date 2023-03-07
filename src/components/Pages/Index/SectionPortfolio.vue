@@ -29,7 +29,7 @@ useStoryblok("halaman-depan", { version: "draft" })
       <h2 id="portfolio-title" class="relative mb-4 lg:mb-12">
         <span
           id="title-text"
-          class="text-[1.5rem] font-semibold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:leading-[3rem]"
+          class="text-[1.5rem] font-bold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:font-semibold lg:leading-[3rem]"
         >
           {{ t("portfolio") }}
         </span>

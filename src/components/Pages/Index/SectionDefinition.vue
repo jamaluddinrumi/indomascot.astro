@@ -5,8 +5,8 @@ import type { Menu } from "@src/menu";
 
 const props = defineProps({
   menus: {
-    type: Array(),
-    default: new Array(),
+    type: Array<Menu>,
+    default: new Array<Menu>(),
   },
 });
 
