@@ -24,15 +24,15 @@ watch(whatSlide, () => {
   }
 });
 
-const onSwiper = (swiper) => {
+const onSwiper = (swiper: typeof Swiper) => {
   swiperRef.value = swiper;
 };
 
-const onInit = (swiper) => {
+const onInit = (swiper: typeof Swiper) => {
   console.log("on init carousel");
 };
 
-const onDestroy = (swiper) => {
+const onDestroy = (swiper: typeof Swiper) => {
   console.log("on destroy carousel");
 };
 

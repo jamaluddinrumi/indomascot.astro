@@ -7,7 +7,7 @@ import "swiper/css";
 
 const emit = defineEmits(["thumbs"]);
 
-const onSwiper = (swiper) => {
+const onSwiper = (swiper: typeof Swiper) => {
   emit("thumbs", swiper);
 };
 </script>
