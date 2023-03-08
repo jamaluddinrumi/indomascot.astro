@@ -10,7 +10,7 @@ export default {
   howToOrderCostumDoll: "Cara Pemesanan Boneka Custom",
   aboutUs: "Tentang Kami",
   termsAndConditions: "Syarat & Ketentuan",
-  portfolio: "Portfolio",
+  portfolio: "Portofolio",
   customDoll: "Boneka Custom",
   mascotCostume: "Badut Maskot",
   blog: "Artikel",
