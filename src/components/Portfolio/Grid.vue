@@ -10,7 +10,7 @@ defineProps({
 <template>
   <div
     v-editable="blok"
-    class="grid grid-cols-3 gap-0 lg:-ml-0 lg:w-auto lg:gap-x-0.5 lg:gap-y-12"
+    class="mt-6 grid grid-cols-3 gap-0 lg:mt-20 lg:-ml-0 lg:w-auto lg:gap-x-0.5 lg:gap-y-12"
   >
     <component
       :is="blok.component"

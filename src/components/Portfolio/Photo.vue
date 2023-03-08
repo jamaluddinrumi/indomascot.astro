@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
 import { Image } from "@unpic/vue";
 import { lightbox, slide } from "@src/states";
 import { useI18n } from "vue-i18n";
@@ -20,7 +19,9 @@ const { t } = useI18n();
 const openCarousel = () => {
   lightbox.set(true);
   slide.set(props.index);
+
   document.body.style.overflow = "hidden";
+  document.body.scroll = "no";
 };
 </script>
 

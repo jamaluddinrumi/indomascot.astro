@@ -48,6 +48,8 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/parser": "^5.54.1",
+    "@unpic/pixels": "^1.1.0",
+    "@unpic/placeholder": "^0.1.2",
     "@unpic/vue": "^0.0.3",
     "@vite-pwa/astro": "^0.0.1",
     "@vueuse/core": "^9.13.0",

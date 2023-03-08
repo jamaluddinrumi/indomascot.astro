@@ -13,12 +13,6 @@ import "swiper/css/navigation";
 
 const isLightbox = useStore(lightbox);
 
-onMounted(() => {
-  document.body.style.overflow = computed(() => {
-    return isLightbox.value ? "hidden" : "auto";
-  }).value;
-});
-
 const whatSlide = useStore(slide);
 
 const swiperRef = ref(null);
@@ -76,11 +70,15 @@ useStoryblok("badut-maskot", { version: "draft" })
           layout="constrained"
           width="628"
           height="628"
-          class="photo-mascot swiper-lazy"
+          class="photo-mascot swiper-lazy rounded-xl"
           :alt="photo.caption"
         />
         <div class="swiper-lazy-preloader"></div>
-        <div class="photo-caption text-center">{{ photo.caption }}</div>
+        <div
+          class="photo-caption mt-1 w-full text-center font-semibold text-slate-300"
+        >
+          {{ photo.caption }}
+        </div>
       </div>
     </SwiperSlide>
   </Swiper>
