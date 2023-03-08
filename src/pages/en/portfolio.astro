@@ -1,12 +1,11 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/default.astro";
-import SectionPortfolio from "@components/Pages/Portfolio/SectionPortfolio.vue";
-import SectionTitle from "@components/Pages/Portfolio/SectionTitle.vue";
 import { useStoryblokApi } from "@storyblok/astro";
 import { detectLocaleFromPath } from "astro-i18next";
 import storyPagesMapping from "@src/stories";
 import { prependTrailingSlash } from "@src/utils";
+import InitPage from "@components/Pages/Portfolio/InitPage.vue";
 
 changeLanguage("en");
 
@@ -24,6 +23,5 @@ const meta = content.meta;
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <SectionTitle client:only="vue" />
-  <SectionPortfolio client:only="vue" />
+  <InitPage client:only="vue" />
 </Layout>
