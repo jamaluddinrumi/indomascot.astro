@@ -130,7 +130,7 @@ export default {
       "kostum badut, badut maskot, kostum maskot, kostum badut maskot, badut lucu, badut gemes, kostum badut perusahaan, kostum badut instansi, kostum badut maskot olahraga",
   },
   pageTitle: {
-    mascotCostume: "Portfolio",
+    mascotCostume: "Portofolio",
     toc: "Syarat & Ketentuan",
     aboutUs: "Tentang Kami",
     customDoll: "Spesialis Boneka Custom (Boneka Maskot Kecil)",

@@ -7,7 +7,9 @@ import $device from "@src/device";
 const { t } = useI18n();
 const content = ref(new Object());
 
-useStoryblok("halaman-depan", { version: "draft" })
+const story = ref("halaman-depan");
+
+useStoryblok(story.value, { version: "draft" })
   .then(async (data) => {
     content.value = data.value.content;
   })
@@ -35,6 +37,6 @@ useStoryblok("halaman-depan", { version: "draft" })
         </span>
       </h2>
     </div>
-    <StoryblokComponent v-if="content" :blok="content" />
+    <StoryblokComponent v-if="content" :blok="content" :story="story" />
   </div>
 </template>

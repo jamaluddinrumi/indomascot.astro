@@ -2,10 +2,7 @@
 import { ref, watch, computed } from "vue";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import {
-  lightboxSlidePortfolio as slide,
-  lightboxPortfolio as lightbox,
-} from "@src/states";
+import { lightbox, slide } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import { useStoryblok } from "@storyblok/vue";
 import { Image } from "@unpic/vue";
@@ -13,7 +10,7 @@ import { Image } from "@unpic/vue";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const story = ref("badut-maskot");
+const story = ref("halaman-depan");
 
 const isLightbox = useStore(lightbox);
 

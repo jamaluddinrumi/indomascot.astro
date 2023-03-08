@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { Navigation, Pagination, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 import IconOnFinal from "@components/Icon/OnFinal.vue";
 import IconOnProgress from "@components/Icon/OnProgress.vue";
 import { ref, onMounted } from "vue";
@@ -14,6 +10,11 @@ import { useI18n } from "vue-i18n";
 import $device from "@src/device";
 import Human from "@components/Icon/Human.vue";
 import menus from "@src/menu";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 const { t, locale } = useI18n();
 

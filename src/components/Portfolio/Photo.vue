@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import { Image } from "@unpic/vue";
-import { lightbox, slide } from "@src/states";
+import {
+  lightbox,
+  slide,
+  lightboxPortfolio,
+  lightboxSlidePortfolio,
+} from "@src/states";
+import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps({
@@ -12,13 +18,22 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  story: {
+    type: String,
+    default: "badut-maskot",
+  },
 });
 
 const { t } = useI18n();
 
 const openCarousel = () => {
-  lightbox.set(true);
-  slide.set(props.index);
+  if (props.story === "halaman-depan") {
+    lightbox.set(true);
+    slide.set(props.index);
+  } else if (props.story === "badut-maskot") {
+    lightboxPortfolio.set(true);
+    lightboxSlidePortfolio.set(props.index);
+  }
 
   document.body.style.overflow = "hidden";
   document.body.scroll = "no";

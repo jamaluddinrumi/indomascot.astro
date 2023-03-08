@@ -1,8 +1,14 @@
 <script lang="ts" setup>
-defineProps({
+import Lightbox from "@components/Portfolio/Lightbox.vue";
+
+const props = defineProps({
   blok: {
     type: Object,
     required: true,
+  },
+  story: {
+    type: String,
+    default: "badut-maskot",
   },
 });
 </script>
@@ -18,6 +24,9 @@ defineProps({
       :key="blok._uid"
       :blok="blok"
       :index="index"
+      :story="story"
     />
   </div>
+
+  <Lightbox />
 </template>
