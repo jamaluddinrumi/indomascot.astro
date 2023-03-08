@@ -7,16 +7,17 @@ import SectionHero from "@components/Pages/Index/SectionHero.vue";
 import SectionLatestOrders from "@components/Pages/Index/SectionLatestOrders.vue";
 import SectionPortfolio from "@components/Pages/Index/SectionPortfolio.vue";
 import SectionVisionMision from "@components/Pages/Index/SectionVisionMision.vue";
+import type { Menu } from "@src/menu";
 
 const props = defineProps<{
-  modelValue?: boolean;
+  menus?: Array<Menu>;
 }>();
 </script>
 
 <template>
   <SectionHero client:only="vue" />
   <SectionClients client:only="vue" />
-  <SectionDefinition client:only="vue" />
+  <SectionDefinition client:only="vue" :menus="menus" />
   <SectionVisionMision client:only="vue" />
   <SectionFeaturedService client:only="vue" />
   <SectionPortfolio client:only="vue" />

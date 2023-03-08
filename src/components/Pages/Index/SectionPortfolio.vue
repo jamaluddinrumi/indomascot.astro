@@ -36,8 +36,8 @@ useStoryblok(story.value, { version: "draft" })
             ? 'h-[40px] w-[240px]'
             : 'h-[24px] w-[145px]',
         ]"
-      ></div>
-      <h2 id="portfolio-title" class="relative mb-4 lg:mb-12">
+      />
+      <h2 id="portfolio-title" class="relative mb-4 lg:mb-0">
         <span
           id="title-text"
           class="text-[1.5rem] font-bold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:font-semibold lg:leading-[3rem]"
@@ -48,7 +48,7 @@ useStoryblok(story.value, { version: "draft" })
     </div>
     <StoryblokComponent v-if="content" :blok="content" :story="story" />
   </div>
-  <div class="mb-8 mt-4 grid grid-cols-1 lg:mt-12">
+  <div class="my-8 grid grid-cols-1 lg:mt-12">
     <div class="relative flex justify-center">
       <a
         class="bg-gradient flex cursor-pointer justify-center rounded-full bg-primary px-6 py-4 uppercase tracking-wide shadow-2xl"

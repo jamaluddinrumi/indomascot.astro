@@ -18,4 +18,6 @@ export const lightbox = atom(false);
 export const slide = atom(0);
 export const lightboxPortfolio = atom(false);
 export const lightboxSlidePortfolio = atom(0);
-export const lightboxStory = atom("");
+export const lightboxLatest = atom(false);
+export const lightboxSlideLatest = atom(0);
+

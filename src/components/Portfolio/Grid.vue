@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Lightbox from "@components/Portfolio/Lightbox.vue";
+import LightboxPortfolio from "@components/Pages/Index/LightboxPortfolio.vue";
 
 const props = defineProps({
   blok: {
@@ -16,7 +16,7 @@ const props = defineProps({
 <template>
   <div
     v-editable="blok"
-    class="mt-6 grid grid-cols-3 gap-0 lg:mt-20 lg:-ml-0 lg:w-auto lg:gap-x-0.5 lg:gap-y-12"
+    class="mt-6 grid grid-cols-3 gap-0 lg:mt-12 lg:-ml-0 lg:w-auto lg:gap-x-0.5 lg:gap-y-12"
   >
     <component
       :is="blok.component"
@@ -28,5 +28,5 @@ const props = defineProps({
     />
   </div>
 
-  <Lightbox />
+  <LightboxPortfolio />
 </template>

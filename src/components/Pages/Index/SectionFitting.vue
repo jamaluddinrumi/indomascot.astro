@@ -54,7 +54,7 @@ function drawCanvasImage(img) {
 </script>
 
 <template>
-  <div class="relative mx-auto mt-20 mb-4 w-fit lg:mt-32 lg:mb-8">
+  <div class="relative mx-auto mt-20 mb-4 w-fit lg:mt-32 lg:mb-12">
     <div
       id="bg-blur"
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
@@ -71,7 +71,7 @@ function drawCanvasImage(img) {
       </span>
     </h2>
   </div>
-  <section id="fitting" class="mt-4 px-2">
+  <section id="fitting" class="p-4 lg:mb-32 lg:p-0">
     <div class="grid grid-cols-1 gap-0 px-0 lg:grid-cols-2 lg:px-8">
       <div
         class="order-2 mt-4 flex flex-col justify-self-center lg:order-1 lg:mt-0"

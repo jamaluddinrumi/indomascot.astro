@@ -2,7 +2,7 @@
 import { ref, watch, computed } from "vue";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { lightbox, slide } from "@src/states";
+import { slide, lightbox } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import { useStoryblok } from "@storyblok/vue";
 import { Image } from "@unpic/vue";
@@ -29,11 +29,11 @@ const onSwiper = (swiper: typeof Swiper) => {
 };
 
 const onInit = (swiper: typeof Swiper) => {
-  console.log("on init carousel");
+  // console.log("on init carousel");
 };
 
-const onDestroy = (swiper: typeof Swiper) => {
-  console.log("on destroy carousel");
+const onDestroy = (swipe: typeof Swiper) => {
+  // console.log("on destroy carousel");
 };
 
 const content = ref(new Object());
@@ -41,8 +41,6 @@ const photos = ref(new Array());
 
 useStoryblok(story.value, { version: "draft" })
   .then(async (data) => {
-    console.log("story kuda:", story.value);
-
     content.value = data.value.content;
     photos.value = await content.value.body[0].columns;
   })
@@ -106,7 +104,7 @@ const closeLightbox = () => {
                   />
                   <div class="swiper-lazy-preloader"></div>
                   <div
-                    class="photo-caption mt-1 text-center font-semibold text-slate-300"
+                    class="photo-caption mt-1 text-center font-semibold text-neutral-content"
                   >
                     {{ photo.caption }}
                   </div>
