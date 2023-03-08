@@ -70,12 +70,12 @@ useStoryblok("badut-maskot", { version: "draft" })
           layout="constrained"
           width="628"
           height="628"
-          class="photo-mascot swiper-lazy rounded-xl"
+          class="photo-mascot swiper-lazy rounded-xl border-0 border-none"
           :alt="photo.caption"
         />
         <div class="swiper-lazy-preloader"></div>
         <div
-          class="photo-caption mt-1 w-full text-center font-semibold text-slate-300"
+          class="photo-caption mt-1 text-center font-semibold text-slate-300"
         >
           {{ photo.caption }}
         </div>
@@ -88,9 +88,5 @@ useStoryblok("badut-maskot", { version: "draft" })
 .swiper {
   --swiper-theme-color: var(--idm-swiper);
   --swiper-pagination-bottom: 2rem;
-}
-
-body {
-  overflow: v-bind(overflow);
 }
 </style>

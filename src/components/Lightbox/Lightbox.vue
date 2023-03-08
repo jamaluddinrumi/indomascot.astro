@@ -26,11 +26,11 @@ const closeLightbox = () => {
       <div class="relative z-[10000]">
         <div class="relative z-[102] overflow-auto">
           <div class="absolute flex w-screen justify-end">
-            <div class="z-[105] p-4" @click.stop="closeLightbox">
+            <div class="z-[105] cursor-pointer p-4" @click.stop="closeLightbox">
               <font-awesome-icon
                 :icon="['fas', 'close']"
                 aria-hidden="true"
-                class="!h-8 !w-8 fill-neutral-content/90 text-neutral-content/90 lg:mt-1 lg:!h-8 lg:!w-8"
+                class="!h-8 !w-8 fill-idm-title text-idm-title lg:mt-1 lg:!h-8 lg:!w-8"
               />
             </div>
           </div>

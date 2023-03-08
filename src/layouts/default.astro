@@ -130,6 +130,11 @@ const isHomepage =
         border-radius: 20px;
         border: transparent;
       }
+      @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+        img[loading="lazy"] {
+          clip-path: inset(0.6px)
+        }
+      }
 
       // :root,
       // [data-theme] {
