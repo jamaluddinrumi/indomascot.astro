@@ -6,11 +6,20 @@ const { t } = useI18n();
 
 <template>
   <header>
-    <h1 class="mt-8 text-center text-lg uppercase lg:mt-12 lg:text-4xl">
+    <h1
+      class="mt-8 text-center text-lg font-bold uppercase lg:mt-12 lg:text-4xl"
+    >
       {{ t("mascotCostume") }}
     </h1>
-    <p class="subtitle p-2 text-center lg:p-0">
-      {{ t("mascotCostumeSubtitle") }}
-    </p>
+    <i18n-t
+      scope="global"
+      keypath="mascotCostumeSubtitle"
+      tag="p"
+      class="subtitle p-2 text-center lg:p-0"
+    >
+      <template #allSize>
+        <span class="italic">{{ t("allSize") }}</span>
+      </template>
+    </i18n-t>
   </header>
 </template>
