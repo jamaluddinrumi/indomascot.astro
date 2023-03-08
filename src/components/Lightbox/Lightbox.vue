@@ -71,13 +71,16 @@ const closeLightbox = () => {
       <div class="container relative z-[10000] mx-auto">
         <div class="relative z-[102] overflow-auto">
           <div class="container absolute mx-auto flex justify-end">
-            <div class="z-[105] cursor-pointer p-4" @click.stop="closeLightbox">
+            <button
+              class="bg-primary btn-circle btn z-[105] mt-4 mr-4 hover:bg-primary"
+              @click.stop="closeLightbox"
+            >
               <font-awesome-icon
                 :icon="['fas', 'close']"
                 aria-hidden="true"
-                class="!h-8 !w-8 fill-idm-title text-idm-title lg:mt-1 lg:!h-8 lg:!w-8"
+                class="!h-5 !w-5 text-slate-100/90"
               />
-            </div>
+            </button>
           </div>
           <div class="relative z-[103]">
             <Swiper
@@ -109,7 +112,7 @@ const closeLightbox = () => {
                   />
                   <div class="swiper-lazy-preloader"></div>
                   <div
-                    class="photo-caption mt-1 text-center font-semibold text-slate-300"
+                    class="photo-caption mt-1 text-center font-semibold text-neutral-content"
                   >
                     {{ photo.caption }}
                   </div>
