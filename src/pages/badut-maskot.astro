@@ -14,8 +14,8 @@ const url: URL = new URL(Astro.url);
 const locale = detectLocaleFromPath(url.pathname);
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(`cdn/stories`, {
-  content_type: "page",
-  version: "draft",
+    content_type: "page",
+    version: "draft",
 });
 const stories = data.stories as Array<object>;
 const storyPath = storyPagesMapping[locale][prependTrailingSlash(url.pathname)];
