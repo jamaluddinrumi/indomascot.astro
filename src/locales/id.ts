@@ -230,4 +230,5 @@ export default {
   portfolioPage: "Halaman Portfolio",
   chatUsonWhatsapp: "Chat kami di WhatsApp 0822-2155-6633",
   homepage: "Halaman Depan",
+  workshopAmbiance: "Suasana Workshop INDOMASCOT",
 };

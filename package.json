@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "^5.54.1",
     "@unpic/pixels": "^1.1.0",
     "@unpic/placeholder": "^0.1.2",
-    "@unpic/vue": "^0.0.3",
+    "@unpic/vue": "^0.0.11",
     "@vite-pwa/astro": "^0.0.1",
     "@vueuse/core": "^9.13.0",
     "@vueuse/motion": "2.0.0-beta.12",

@@ -226,4 +226,5 @@ export default {
   portfolioPage: "Portfolio Page",
   chatUsonWhatsapp: "Chat us on WhatsApp +62 822-2155-6633",
   homepage: "Homepage",
+  workshopAmbiance: "INDOMASCOT Workshop",
 };

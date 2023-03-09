@@ -25,7 +25,7 @@ specifiers:
   '@unhead/vue': ^1.1.21
   '@unpic/pixels': ^1.1.0
   '@unpic/placeholder': ^0.1.2
-  '@unpic/vue': ^0.0.3
+  '@unpic/vue': ^0.0.11
   '@vite-pwa/astro': ^0.0.1
   '@vueuse/core': ^9.13.0
   '@vueuse/motion': 2.0.0-beta.12
@@ -103,7 +103,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.54.1_ycpbpc6yetojsgtrx3mwntkhsu
   '@unpic/pixels': 1.1.0
   '@unpic/placeholder': 0.1.2
-  '@unpic/vue': 0.0.3
+  '@unpic/vue': 0.0.11
   '@vite-pwa/astro': 0.0.1
   '@vueuse/core': 9.13.0_vue@3.2.47
   '@vueuse/motion': 2.0.0-beta.12_vue@3.2.47
@@ -2398,10 +2398,10 @@ packages:
       vue: 3.2.47
     dev: false
 
-  /@unpic/core/0.0.6:
-    resolution: {integrity: sha512-R/oiZecXhpXKiX6g+l7B78IGziXnAACbM3XrrXB4RhVt/xxCzrixYZdwQFHp5bCb5hYaXOZ9N8phk6kOyVw2kA==}
+  /@unpic/core/0.0.13:
+    resolution: {integrity: sha512-/dUPKYz0rZUGrf69WaPC7AMKK7CiBOB2k8r63Q5JZkvcYS7yvq9HctB2j9i7imXKiqJURc4pR9AOcTqHjbR7dg==}
     dependencies:
-      unpic: 2.1.0
+      unpic: 2.2.2
     dev: true
 
   /@unpic/pixels/1.1.0:
@@ -2417,10 +2417,10 @@ packages:
       blurhash: 2.0.5
     dev: true
 
-  /@unpic/vue/0.0.3:
-    resolution: {integrity: sha512-zUAAVi6rHxFtYhgeeJcsERS9ciHEeWUzfmtn5gQM1SeAJ8i5OVsDjk8zGA+oP51QxN6Bei6rYntasBZuKxIu5w==}
+  /@unpic/vue/0.0.11:
+    resolution: {integrity: sha512-ginbIoeFR67FlSAyRoF5OPkA5cj1M0sCo8UZ8DplW8jBVYe0CjVCMdYxqsMXoaKjbbY8NmH/VD3+MmMqdqMvtA==}
     dependencies:
-      '@unpic/core': 0.0.6
+      '@unpic/core': 0.0.13
       vue: 3.2.47
     dev: true
 
@@ -7445,8 +7445,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unpic/2.1.0:
-    resolution: {integrity: sha512-Jvf9J5wOrPgCXBYohlWHvGHMgI2Cq/vkcAJW2xBKGZokR2a2kb+gsr8DNcwaghu7ypV7bR1Q2zk2NARd2TVRFQ==}
+  /unpic/2.2.2:
+    resolution: {integrity: sha512-lVgXUSRNPIvfIZp4avqeBmQ56NMeApv4Ej71OS6uIFjsYo6dxJ1N+UA+DWthOHiGqzlbYK4wBmOk7cSjpU4nhQ==}
     dev: true
 
   /unplugin-ast/0.7.0:
