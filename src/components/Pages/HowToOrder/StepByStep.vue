@@ -7,6 +7,7 @@ import { useStoryblok } from "@storyblok/vue";
 import { menus } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import { Image } from "@unpic/vue";
+import $device from "@src/device";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -47,27 +48,29 @@ const getSidePhoto = (side: number) => {
 
 <template>
   <div class="mb-16 lg:mb-32">
-    <h1
-      class="mt-8 text-center text-lg font-bold uppercase lg:mt-12 lg:text-4xl"
-    >
-      {{ t("howToOrder") }}
-    </h1>
+    <div class="relative mx-auto mt-8 w-fit lg:mt-12">
+      <div
+        class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
+        :class="[
+          $device.isDesktop ? 'h-[40px] w-[350px]' : 'h-[24px] w-[125px]',
+        ]"
+      />
+      <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
+        {{ t("howToOrder") }}
+      </h1>
+    </div>
     <ul
       class="cara-pemesanan mx-auto mt-16 max-w-none lg:mt-20 lg:max-w-[650px]"
     >
-      <li
-        class="cara-pemesanan-item-baru satu mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step0") }}
           <a :href="designFittingLinkHref">
             <span class="underline decoration-dotted">{{ t("fitting") }}</span>
           </a>
           <font-awesome-icon
             :icon="['fas', 'external-link-alt']"
-            class="ml-0.5 mb-0.5 text-[1.125rem]"
+            class="ml-0.5 mb-0.5 text-xs lg:text-xl"
             aria-hidden="true"
           />
           {{ t("design") }}
@@ -95,12 +98,8 @@ const getSidePhoto = (side: number) => {
           >.
         </p>
       </li>
-      <li
-        class="cara-pemesanan-item-baru satu mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step1") }}
         </h4>
         <Image
@@ -116,12 +115,8 @@ const getSidePhoto = (side: number) => {
           class="mx-auto"
         />
       </li>
-      <li
-        class="cara-pemesanan-item-baru dua mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step2") }}
         </h4>
         <Image
@@ -137,12 +132,8 @@ const getSidePhoto = (side: number) => {
           class="mx-auto"
         />
       </li>
-      <li
-        class="cara-pemesanan-item-baru tiga mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step3") }}
         </h4>
         <Image
@@ -158,12 +149,8 @@ const getSidePhoto = (side: number) => {
           class="mx-auto"
         />
       </li>
-      <li
-        class="cara-pemesanan-item-baru empat mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step4.0") }}
         </h4>
         <swiper
@@ -206,16 +193,11 @@ const getSidePhoto = (side: number) => {
           </swiper-slide>
           <div class="swiper-button-prev" />
           <div class="swiper-button-next" />
-          <div id="swiper-pagination" />
+          <div class="swiper-pagination" />
         </swiper>
-        <!-- END OF swiper -->
       </li>
-      <li
-        class="cara-pemesanan-item-baru lima mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step5") }}
         </h4>
         <Image
@@ -231,12 +213,8 @@ const getSidePhoto = (side: number) => {
           class="mx-auto"
         />
       </li>
-      <li
-        class="cara-pemesanan-item-baru enam mb-16 text-center shadow-xl lg:mb-20"
-      >
-        <h4
-          class="mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem]"
-        >
+      <li class="cara-pemesanan-item">
+        <h4>
           {{ t("howToOrderMascotCostumeSteps.step6") }}
         </h4>
         <Image
@@ -257,43 +235,26 @@ const getSidePhoto = (side: number) => {
 </template>
 
 <style lang="scss" scoped>
-li.cara-pemesanan-item-baru {
-  z-index: 1;
-  position: relative;
-  padding: 3rem 0;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
-  text-align: center;
-  font-size: 2.5rem;
+li.cara-pemesanan-item {
   counter-increment: stepcarapemesanan;
+  @apply relative z-10 mx-4 mb-16 rounded-lg border-slate-900 bg-white pb-8 pt-10 text-center text-[2.5rem] shadow lg:mb-20;
 }
 
-li.cara-pemesanan-item-baru::after {
+li.cara-pemesanan-item::after {
   content: counter(stepcarapemesanan);
-  position: absolute;
-  top: -28px;
-  left: calc(50% - 28px);
-  width: 4rem;
-  height: 4rem;
-  color: #ffffff;
-  border-radius: 200px;
-  background-color: hsl(var(--p));
-  box-shadow: rgba(50, 54, 72, 0.22) 0 2px 8px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 3.75rem;
-  @apply bg-gradient;
+  @apply bg-gradient absolute top-[-28px] left-[calc(50%_-_28px)] h-16 w-16 rounded-full bg-primary text-center text-3xl font-semibold leading-loose text-white shadow;
+}
+
+.cara-pemesanan-item > h4 {
+  @apply mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem];
 }
 
 .swiper {
   --swiper-theme-color: var(--idm-swiper);
   --swiper-pagination-bottom: 2rem;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
+  --swiper-pagination-color: var(--idm-swiper);
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-navigation-sides-offset: 1rem;
 }
 </style>
