@@ -15,7 +15,7 @@ const { t } = useI18n({ useScope: "global" });
       class="flex flex-col items-center rounded-xl border px-8 py-16 lg:flex-row lg:justify-between lg:px-16"
     >
       <div class="flex flex-col items-center lg:flex-row">
-        <Image
+        <img
           id="whatsapp-logo"
           cdn="storyblok"
           src="https://a.storyblok.com/f/118728/800x800/1fcef2ccc9/whatsapp-symbol-logo.svg"
