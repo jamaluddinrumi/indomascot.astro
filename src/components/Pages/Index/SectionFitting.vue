@@ -54,15 +54,18 @@ function drawCanvasImage(img) {
 </script>
 
 <template>
-  <div class="relative mx-auto mt-20 mb-4 w-fit lg:mt-32 lg:mb-12">
+  <div
+    id="fitting-title"
+    class="relative mx-auto mt-20 mb-4 w-fit lg:mt-32 lg:mb-12"
+  >
     <div
       id="bg-blur"
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
       :class="[
         $device.isDesktopOrTablet ? 'h-[40px] w-[157px]' : 'h-[24px] w-[97px]',
       ]"
-    ></div>
-    <h2 id="portfolio-title" class="relative mb-6 lg:mb-0">
+    />
+    <h2 class="relative mb-6 lg:mb-0">
       <span
         id="title-text"
         class="text-[1.5rem] font-bold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:font-semibold lg:leading-[3rem]"

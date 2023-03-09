@@ -4,6 +4,7 @@ import { useStoryblok } from "@storyblok/vue";
 import Lightbox from "@components/Pages/Portfolio/Lightbox.vue";
 import { useI18n } from "vue-i18n";
 import { dateOptions } from "@src/date";
+import $device from "@src/device";
 
 const storyPath = ref("badut-maskot");
 
@@ -30,11 +31,19 @@ useStoryblok(storyPath.value, { version: "draft" })
 
 <template>
   <header>
-    <h1
-      class="mt-8 text-center text-lg font-bold uppercase lg:mt-12 lg:text-4xl"
-    >
-      {{ t("mascotCostume") }}
-    </h1>
+    <div class="relative mx-auto mt-8 w-fit lg:mt-12">
+      <div
+        class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
+        :class="[
+          $device.isDesktop ? 'h-[40px] w-[290px]' : 'h-[24px] w-[145px]',
+        ]"
+      />
+      <h1
+        class="mt-8 text-center text-lg font-bold uppercase lg:mt-12 lg:text-4xl"
+      >
+        {{ t("mascotCostume") }}
+      </h1>
+    </div>
     <i18n-t
       scope="global"
       keypath="mascotCostumeSubtitle"

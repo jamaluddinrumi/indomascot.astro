@@ -50,13 +50,12 @@ const alt = (caption: string, uploaded_date: string) => {
 <template>
   <div class="relative mx-auto mt-20 mb-0 w-fit lg:mt-32 lg:mb-8">
     <div
-      id="bg-blur"
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
       :class="[
         $device.isDesktopOrTablet ? 'h-[40px] w-[190px]' : 'h-[24px] w-[125px]',
       ]"
-    ></div>
-    <h2 id="portfolio-title" class="relative mb-0">
+    />
+    <h2 id="portfolio-title" class="relative z-10 mb-0">
       <span
         id="title-text"
         class="text-[1.5rem] font-bold uppercase leading-8 text-idm-title lg:text-[2.5rem] lg:font-semibold lg:leading-[3rem]"
@@ -137,5 +136,8 @@ const alt = (caption: string, uploaded_date: string) => {
 .swiper {
   --swiper-theme-color: var(--idm-swiper);
   --swiper-pagination-bottom: 2rem;
+  --swiper-pagination-color: var(--idm-swiper);
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 1;
 }
 </style>

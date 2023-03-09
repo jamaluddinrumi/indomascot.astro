@@ -52,9 +52,8 @@ onMounted(() => {
   >
     <div id="left relative">
       <div
-        id="video-bg-blur"
-        class="bg-idm-title/30 absolute overflow-hidden blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
-      ></div>
+        class="bg-fuchsia-400/30 absolute overflow-hidden blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
+      />
       <video
         id="inilahmaskot"
         preload="true"

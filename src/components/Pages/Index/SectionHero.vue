@@ -28,7 +28,7 @@ const { t } = useI18n();
     <div class="left order-2 grid place-content-center lg:order-1">
       <h1 class="mt-8 mb-4 text-center lg:mt-0">
         <span
-          class="animate-text overflow-x-hidden bg-gradient-to-r from-[#0066FF] via-[#CC66FF] to-[#66CCFF] bg-clip-text text-xl font-bold uppercase text-transparent lg:text-2xl"
+          class="animate-text overflow-x-hidden bg-gradient-to-r from-indomascot-old-blue via-cyan-100 to-primary bg-clip-text text-xl font-bold uppercase text-transparent lg:text-2xl"
         >
           {{ t("titleHero") }}
         </span>
