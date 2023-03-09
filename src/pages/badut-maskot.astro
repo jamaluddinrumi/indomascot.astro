@@ -5,7 +5,7 @@ import { useStoryblokApi } from "@storyblok/astro";
 import { detectLocaleFromPath } from "astro-i18next";
 import storyPagesMapping from "@src/stories";
 import { prependTrailingSlash } from "@src/utils";
-import InitPage from "@components/Pages/Portfolio/InitPage.vue";
+import SectionPortfolio from "@components/Pages/Portfolio/SectionPortfolio.vue";
 
 changeLanguage("id");
 
@@ -13,8 +13,8 @@ const url: URL = new URL(Astro.url);
 const locale = detectLocaleFromPath(url.pathname);
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(`cdn/stories`, {
-    content_type: "page",
-    version: "draft",
+  content_type: "page",
+  version: "draft",
 });
 const stories = data.stories as Array<object>;
 const storyPath = storyPagesMapping[locale][prependTrailingSlash(url.pathname)];
@@ -23,5 +23,5 @@ const meta = content.meta;
 ---
 
 <Layout title={meta.title} description={meta.description}>
-  <InitPage client:only="vue" />
+  <SectionPortfolio client:only="vue" />
 </Layout>
