@@ -188,11 +188,11 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
           </tbody>
         </table>
       </li>
-      <i18n path="generalTerms.li3" tag="li">
+      <i18n-t keypath="generalTerms.li3" tag="li" scope="global">
         <template #downPayment>
           <span class="italic">(Down Payment)</span>
         </template>
-      </i18n>
+      </i18n-t>
       <li>
         {{ t("mascotCostumeTerms.li1") }}
       </li>
