@@ -20,4 +20,3 @@ export const lightboxPortfolio = atom(false);
 export const lightboxSlidePortfolio = atom(0);
 export const lightboxLatest = atom(false);
 export const lightboxSlideLatest = atom(0);
-
