@@ -50,7 +50,7 @@ export default {
     li3: "The new manufacturing process will start 1 day after the DP & mascot design is received.",
     li4: {
       shipping: "Shipping",
-      pickInWorkshop: "Self Pick UP",
+      pickInWorkshop: "Self Pick Up",
       youCanPickInWorkshop:
         "Your mascot costume are always can be picked up in working hours at our workshop at:",
       byCourier: "Shipped Using a Shipping/Expediting Agent",
@@ -68,7 +68,7 @@ export default {
     },
     li5: "Issues related to the copyright of the mascot design, are fully borne by the client.",
     li6: "All consequences of changing the invoice price at the client's request, are fully borne by the client.",
-    li7: "Changes may occur at any time without notice.",
+    li7: "Changes may occur at any time without any notices.",
     li8: "By ordering here, you are agreeing to the terms & conditions on this page.",
   },
   mascotCostumeTerms: {

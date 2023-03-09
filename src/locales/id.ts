@@ -79,7 +79,7 @@ export default {
     li1: "DP untuk tiap 1 unitnya adalah Rp1.500.000,-.",
     li2: "Umumnya proses pembuatan memakan waktu 10-14 hari kerja saja (Minggu libur).",
     li3: "Kostum maskot yang sudah selesai pengerjaannya namun klien tidak menyelesaikan pembayarannya dalam waktu 30 hari, maka keadaan kostum maskot sudah bukan merupakan tanggung jawab kami.",
-    li4: "INDOMASCOT berhak mendisplay (memajang) foto & video kostum maskot hasil pengerjaan untuk tujuan portfolio, kecuali ada permintaan khusus dari klien.",
+    li4: "{company} berhak mendisplay (memajang) foto & video kostum maskot hasil pengerjaan untuk tujuan portfolio, kecuali ada permintaan khusus dari klien.",
   },
   customDollTerms: {
     title: "BONEKA SOUVENIR (BONEKA MASKOT KECIL)",

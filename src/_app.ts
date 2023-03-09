@@ -42,6 +42,7 @@ import {
   faCloudUploadAlt,
   faBars,
   faClose,
+  faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -84,7 +85,8 @@ export default (app: App) => {
     faCheckCircle,
     faCloudUploadAlt,
     faBars,
-    faClose
+    faClose,
+    faTruck
   );
 
   app.component("font-awesome-icon", FontAwesomeIcon);
