@@ -58,7 +58,9 @@ const openCarousel = () => {
       @click.stop="openCarousel"
     />
     <figcaption class="mb-2 hidden h-7 text-center lg:block">
-      <span class="text-sm font-semibold text-primary">
+      <span
+        class="overflow-x-hidden bg-gradient-to-r from-fuchsia-600 to-fuchsia-900 bg-clip-text text-sm font-semibold text-transparent"
+      >
         {{ blok.caption }}
       </span>
     </figcaption>
