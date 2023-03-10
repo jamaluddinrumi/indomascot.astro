@@ -40,18 +40,23 @@ const { t, locale } = useI18n();
       <div
         class="wp-block-column medium-6 small-12 medium-order-1 small-order-2 justify-center"
       >
-        <Image
-          id="workshop-boneka-maskot-besar-indomascot-bandung"
-          provider="storyblok"
-          src="https://a.storyblok.com/f/118728/900x1200/ebd4e7dd5a/workshop-kostum-maskot-boneka-besar-indomascot-bandung.jpg"
-          alt="workshop-boneka-maskot-besar-indomascot-bandung"
-          width="450"
-          height="600"
-          sizes="xs:275px lg:450px"
-          class="mx-auto shadow"
-          background="auto"
-          layout="constrained"
-        />
+        <div class="relative flex justify-center">
+          <div
+            class="absolute z-10 overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[600px] lg:w-[450px]"
+          />
+          <Image
+            id="workshop-boneka-maskot-besar-indomascot-bandung"
+            provider="storyblok"
+            src="https://a.storyblok.com/f/118728/900x1200/ebd4e7dd5a/workshop-kostum-maskot-boneka-besar-indomascot-bandung.jpg"
+            alt="workshop-boneka-maskot-besar-indomascot-bandung"
+            width="450"
+            height="600"
+            sizes="xs:275px lg:450px"
+            class="z-20 my-0 shadow"
+            background="auto"
+            layout="constrained"
+          />
+        </div>
         <p class="has-text-align-left">
           {{ t("aboutUsParagraph.p1") }}
         </p>
