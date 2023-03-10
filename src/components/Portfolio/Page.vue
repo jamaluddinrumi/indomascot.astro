@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-editable="blok" class="min-h-screen">
+  <div v-editable="blok">
     <component
       :is="blok.component"
       v-for="blok in blok.body"
