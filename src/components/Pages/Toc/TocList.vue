@@ -26,7 +26,7 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
       {{ t("termsAndConditions") }}
     </h1>
   </header>
-  <section class="prose mx-auto mt-8 p-4">
+  <section class="prose mx-auto mt-8 pl-8 pr-4">
     <h2 class="mb-0 text-left text-sm uppercase lg:text-lg">
       {{ t("generalTermsAndConditions") }}
     </h2>
