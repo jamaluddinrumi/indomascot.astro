@@ -29,13 +29,13 @@ const { t, locale } = useI18n();
   <header class="relative mx-auto mt-8 w-fit lg:mt-12">
     <div
       class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
-      :class="[$device.isDesktop ? 'h-[40px] w-[287px]' : 'h-[24px] w-[208px]']"
+      :class="[$device.isDesktop ? 'h-[40px] w-[287px]' : 'h-[24px] w-[145px]']"
     />
     <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
       {{ t("aboutUs") }}
     </h1>
   </header>
-  <section class="prose mx-auto mt-4 lg:mt-12">
+  <section class="prose mx-auto mt-4 px-4 lg:mt-12">
     <div class="">
       <div
         class="wp-block-column medium-6 small-12 medium-order-1 small-order-2 justify-center"
