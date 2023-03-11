@@ -4,5 +4,6 @@
     "plugin:astro/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "plugins": ["astro", "vue3", "prettier"]
 }
