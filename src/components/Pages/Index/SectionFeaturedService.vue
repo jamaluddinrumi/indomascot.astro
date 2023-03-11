@@ -96,12 +96,11 @@ function onIntersecting(entries, observer) {
         >
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png/m/"
+            src="https://a.storyblok.com/f/118728/655x553/d2c574ed1e/benang.png"
             width="655"
             height="553"
             sizes="xs:275px lg:588px"
-            alt="high quality material (material pembuatan) illustration"
-            background="auto"
+            :alt="t('qualityMaterial')"
           />
         </figure>
       </div>
@@ -109,7 +108,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-hijau mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png/m/"
+            src="https://a.storyblok.com/f/118728/80x80/1c4cdf35dd/oval-hijau.png"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
@@ -161,7 +160,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-orange mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png/m/"
+            src="https://a.storyblok.com/f/118728/80x80/0ad0820472/oval-orange.png"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
@@ -203,11 +202,11 @@ function onIntersecting(entries, observer) {
           >
             <Image
               cdn="storyblok"
-              src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png/m/"
+              src="https://a.storyblok.com/f/118728/635x469/632db168bb/speedometer.png"
               width="635"
               height="469"
               sizes="xs:275px lg:588px"
-              alt="fast (pengerjaan cepat) illustration"
+              :alt="t('fast')"
             />
           </figure>
         </div>
@@ -237,11 +236,11 @@ function onIntersecting(entries, observer) {
         >
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/580x430/21e6d6fb2c/kipas-angin.png/m/"
-            alt="head fan (kipas angin) illustration"
+            src="https://a.storyblok.com/f/118728/580x430/21e6d6fb2c/kipas-angin.png"
             width="580"
             height="430"
             sizes="xs:275px lg:580px"
+            :alt="t('freeBonusHeadFanAndMask')"
           />
         </figure>
       </div>
@@ -249,7 +248,7 @@ function onIntersecting(entries, observer) {
         <figure class="oval-merah mb-6 hidden lg:block">
           <Image
             cdn="storyblok"
-            src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png/m/"
+            src="https://a.storyblok.com/f/118728/80x80/b3923b406c/oval-merah.png"
             width="80"
             height="80"
             sizes="xs:80px lg:80px"
