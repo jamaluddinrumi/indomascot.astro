@@ -104,6 +104,7 @@ function onIntersecting(
             width="655"
             height="553"
             sizes="xs:275px lg:588px"
+            loading="eager"
             :alt="t('qualityMaterial')"
           />
         </figure>
@@ -210,6 +211,7 @@ function onIntersecting(
               width="635"
               height="469"
               sizes="xs:275px lg:588px"
+              loading="eager"
               :alt="t('fast')"
             />
           </figure>
@@ -244,6 +246,7 @@ function onIntersecting(
             width="580"
             height="430"
             sizes="xs:275px lg:580px"
+            loading="eager"
             :alt="t('freeBonusHeadFanAndMask')"
           />
         </figure>
