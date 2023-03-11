@@ -38,9 +38,7 @@ useStoryblok(storyPath.value, { version: "draft" })
           $device.isDesktop ? 'h-[40px] w-[290px]' : 'h-[24px] w-[145px]',
         ]"
       />
-      <h1
-        class="mt-8 text-center text-lg font-bold uppercase lg:mt-12 lg:text-4xl"
-      >
+      <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
         {{ t("mascotCostume") }}
       </h1>
     </div>
