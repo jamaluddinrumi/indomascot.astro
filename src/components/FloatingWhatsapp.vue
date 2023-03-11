@@ -34,18 +34,8 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
   </a>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #floating-whatsapp {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00ff5f+0,25d366+100 */
-  background: #00ff5f;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #00ff5f 0%, #25d366 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #00ff5f 0%, #25d366 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #00ff5f 0%, #25d366 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ff5f', endColorstr='#25d366', GradientType=0);
-  /* IE6-9 */
+  @apply bg-[#00ff5f] bg-gradient-to-b from-[#00ff5f] to-[#25d366];
 }
 </style>
