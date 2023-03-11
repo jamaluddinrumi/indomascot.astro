@@ -48,11 +48,11 @@ onMounted(() => {
 <template>
   <section
     id="definisi"
-    class="definisi mt-14 grid grid-cols-1 gap-4 p-2 overflow-hidden border text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
+    class="definisi mt-14 grid grid-cols-1 gap-4 overflow-hidden border p-2 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
   >
     <div id="left relative">
       <div
-        class="bg-fuchsia-400/30 absolute overflow-hidden blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
+        class="absolute overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
       />
       <video
         id="inilahmaskot"
@@ -117,11 +117,14 @@ onMounted(() => {
             tag="p"
             class="answer mb-4 text-left leading-loose lg:mb-0"
           >
-            <a
-              class="link-accent link hover:text-accent"
-              :href="portfolioLink"
-              >{{ $t("portfolioPage") }}</a
-            >
+            <a class="link-accent link hover:text-accent" :href="portfolioLink">
+              {{ $t("portfolioPage") }}
+            </a>
+            <font-awesome-icon
+              :icon="['fas', 'external-link-alt']"
+              class="link-accent link ml-1 hover:text-accent text-sm"
+              aria-hidden="true"
+            />
           </i18n-t>
         </template>
         <template v-else>
