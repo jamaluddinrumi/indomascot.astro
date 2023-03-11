@@ -1,25 +1,27 @@
 <script lang="ts" setup>
 import $device from "@src/device";
 import { ref, onMounted, computed } from "vue";
-import { onClickOutside } from "@vueuse/core";
+import { onClickOutside, useToggle, useDark } from "@vueuse/core";
 import InstallButton from "@components/InstallButton.vue";
-import { mainMenu, isDark } from "@src/states";
+import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
-import { themeChange } from "theme-change";
 import { prependTrailingSlash } from "@src/utils";
 import type { Menu } from "@src/menu";
-import { themes } from "@src/themes";
 
-const $isDark = useStore(isDark);
+const themes = [true, false];
+
+const isDark = useDark();
+
+const toggleDark = useToggle(isDark);
 
 const theme = computed({
   get() {
-    return $isDark.value ? "dark" : "light";
+    return isDark.value;
   },
   set(newTheme) {
-    isDark.set(newTheme === "dark" ? true : false);
+    toggleDark(newTheme);
   },
 });
 
@@ -64,19 +66,13 @@ onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
   switchLanguage.value = function (event: Event) {
-    const lang = event.target.value;
+    const element = event.target;
+
+    console.log(element);
+
+    const lang = element?.value;
 
     window.location = props.localizedPaths[lang];
-  };
-
-  themeChange(false);
-
-  switchTheme.value = function (event: Event) {
-    const theme = event.target.value;
-
-    localStorage.setItem("vueuse-color-scheme", theme);
-
-    document.documentElement.setAttribute("data-theme", theme);
   };
 });
 </script>
@@ -161,12 +157,12 @@ onMounted(() => {
                 class="select-bordered select w-full max-w-xs"
               >
                 <option
-                  v-for="themeItem in themes"
-                  :key="themeItem"
+                  v-for="(themeItem, index) in themes"
+                  :key="index"
                   :value="themeItem"
-                  :selected="themeItem === theme ? true : false"
+                  :selected="themeItem === theme"
                 >
-                  {{ t(themeItem) }}
+                  {{ t(themeItem === true ? "dark" : "light") }}
                 </option>
               </select>
             </div>

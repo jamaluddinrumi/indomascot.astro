@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { ref, computed } from "vue";
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
+import { usePreferredDark, useColorMode, useDark } from "@vueuse/core";
 import { inheritLocale, menus } from "@src/states";
 import { useI18n } from "vue-i18n";
 import type { Menu } from "@src/menu";
+import { themeChange } from "theme-change";
 
 const props = defineProps({
   inheritLocale: {
@@ -16,13 +19,34 @@ const props = defineProps({
   },
 });
 
-inheritLocale.set(props.inheritLocale);
-menus.set(props.menus);
+const menus = ref(props.menus);
 
-const { t, locale } = useI18n({ useScope: "global" });
+const isPreferredDark = usePreferredDark();
+
+const isDark = useDark();
+
+const { locale } = useI18n({ useScope: "global" });
 
 try {
+  themeChange(false);
+
+  inheritLocale.set(props.inheritLocale);
+
   locale.value = <string>props.inheritLocale;
+
+  isDark.value = isPreferredDark.value;
+
+  useHead({
+    meta: [
+      {
+        name: "theme-color",
+        content: computed(() => (isDark.value ? "#13111C" : "#8532CE")),
+      },
+    ],
+    htmlAttrs: {
+      "data-theme": computed(() => (isDark.value ? "dark" : "light")),
+    },
+  });
 } catch (error) {
   console.log(error);
 } finally {
@@ -32,5 +56,5 @@ try {
 
 <template>
   <FlashyBg />
-  <BaseHeader client:only="vue" :menus="menus.value" />
+  <BaseHeader client:only="vue" :menus="menus" />
 </template>

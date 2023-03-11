@@ -101,7 +101,7 @@ function onIntersecting(entries, observer) {
             height="553"
             sizes="xs:275px lg:588px"
             alt="high quality material (material pembuatan) illustration"
-            placeholder
+            background="auto"
           />
         </figure>
       </div>
@@ -114,7 +114,7 @@ function onIntersecting(entries, observer) {
             height="80"
             sizes="xs:80px lg:80px"
             alt="oval hijau"
-            :placeholder="[100, 100, 10]"
+            background="auto"
           />
         </figure>
         <h3 class="mb-2 text-center lg:mb-6 lg:text-left">
@@ -166,7 +166,7 @@ function onIntersecting(entries, observer) {
             height="80"
             sizes="xs:80px lg:80px"
             alt="oval orange"
-            :placeholder="[100, 100, 10]"
+            background="auto"
           />
         </figure>
         <h3 class="mb-2 text-center lg:mb-6 lg:text-left">
@@ -254,7 +254,7 @@ function onIntersecting(entries, observer) {
             height="80"
             sizes="xs:80px lg:80px"
             alt="oval merah"
-            :placeholder="[100, 100, 10]"
+            background="auto"
           />
         </figure>
         <h3 class="mb-2 text-center lg:mb-6 lg:text-left">

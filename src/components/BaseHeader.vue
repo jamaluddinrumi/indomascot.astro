@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
 import IconIndomascot from "@components/Icon/IndomascotLogo.vue";
-import { mainMenu, isDark } from "@src/states";
+import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 import type { Menu } from "@src/menu";
 
@@ -12,25 +11,16 @@ const props = defineProps({
   },
 });
 
-const homeLink: Menu = props.menus.find((item) => item.text === "homepage");
+const homeLink: Menu = <Menu>(
+  props.menus.find((item) => item.text === "homepage")
+);
 const homeLinkHref = homeLink.href;
 
 const $mainMenu = useStore(mainMenu);
 
-const $isDark = useStore(isDark);
-
 function openMainMenu() {
   if (!mainMenu.get()) mainMenu.set(true);
 }
-
-useHead({
-  meta: [
-    {
-      name: "theme-color",
-      content: computed(() => ($isDark.value ? "#13111C" : "#8532CE")),
-    },
-  ],
-});
 </script>
 
 <template>

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { useToggle } from "@vueuse/core";
-import { isDark, mainMenu } from "@src/states";
+import { useToggle, useDark } from "@vueuse/core";
+import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
 
 const $mainMenu = ref(useStore(mainMenu));
 
-const toggleDark = useToggle(isDark.value);
+const isDark = useDark();
+
+const toggleDark = useToggle(isDark);
 </script>
 
 <template>

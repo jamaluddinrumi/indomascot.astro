@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { startCase } from "lodash-es";
 import { useI18n } from "vue-i18n";
+import type { Menu } from "@src/menu";
 
 const { t } = useI18n();
 
@@ -18,8 +19,8 @@ const props = defineProps({
     default: undefined,
   },
   menus: {
-    type: Array,
-    default: undefined,
+    type: Array<Menu>,
+    default: new Array<Menu>(),
   },
 });
 
@@ -31,7 +32,7 @@ interface BreadcrumbItem {
 }
 
 // const paths = Astro.url.pathname.split("/").filter((crumb: any) => crumb);
-const paths = props.pathname.split("/").filter((crumb: any) => crumb);
+const paths = props.pathname?.split("/").filter((crumb: any) => crumb);
 
 /**
  * Array of breadcrumb items.
@@ -51,13 +52,19 @@ if (props.inheritLocale === "id") {
 /**
  * Loop through the paths and create a breadcrumb item for each.
  */
-paths.forEach((text: string, index: number) => {
+paths?.forEach((text: string, index: number) => {
   const href = `/${paths.slice(0, index + 1).join("/")}`;
+
+  const link: Menu = <Menu>(
+    props.menus?.find((item: Menu) => item.href === href)
+  );
+
+  const linkText = link.text;
 
   parts = [
     ...parts,
     {
-      text: props.menus.find((item) => item.href === href).text,
+      text: linkText,
       href,
       alt: startCase(text),
       "aria-label": startCase(text),
