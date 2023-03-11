@@ -8,11 +8,10 @@ const waUrl = import.meta.env.PUBLIC_WA_URL;
 
 const { t, locale } = useI18n();
 
-const lastUpdated = ref("");
+const tocLastUpdated = import.meta.env.PUBLIC_TOC_LAST_UPDATED;
 
-lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
-  locale.value,
-  dateOptions
+const lastUpdated = ref(
+  new Date(tocLastUpdated).toLocaleDateString(locale.value, dateOptions)
 );
 </script>
 
@@ -63,7 +62,9 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-bca lg:w-96">
-                <span class="font-bold text-white">Jamaluddin Rumi</span>
+                <span class="mr-2 whitespace-nowrap font-bold text-white"
+                  >Jamaluddin Rumi</span
+                >
               </td>
             </tr>
             <tr>
@@ -91,7 +92,9 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-mandiri lg:w-96">
-                <span class="font-bold text-white">Jamaluddin Rumi</span>
+                <span class="mr-2 whitespace-nowrap font-bold text-white"
+                  >Jamaluddin Rumi</span
+                >
               </td>
             </tr>
             <tr>
@@ -99,7 +102,7 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountNo") }}
               </td>
               <td class="w-auto bg-mandiri lg:w-96">
-                <span class="font-bold text-white">900-00-3631773-4</span>
+                <span class="mr-2 font-bold text-white">900-00-3631773-4</span>
               </td>
             </tr>
           </tbody>
@@ -119,7 +122,9 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-bni lg:w-96">
-                <span class="font-bold text-white">Jamaluddin Rumi</span>
+                <span class="mr-2 whitespace-nowrap font-bold text-white"
+                  >Jamaluddin Rumi</span
+                >
               </td>
             </tr>
             <tr>
@@ -147,7 +152,9 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-bri lg:w-96">
-                <span class="font-bold text-white">Jamaluddin Rumi</span>
+                <span class="whitespace-nowrap font-bold text-white"
+                  >Jamaluddin Rumi</span
+                >
               </td>
             </tr>
             <tr>
@@ -175,7 +182,9 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-jenius lg:w-96">
-                <span class="font-bold text-white">Jamaluddin Rumi</span>
+                <span class="whitespace-nowrap font-bold text-white mr-2"
+                  >Jamaluddin Rumi</span
+                >
               </td>
             </tr>
             <tr>
@@ -183,7 +192,7 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
                 {{ t("accountNo") }}
               </td>
               <td class="w-auto bg-jenius lg:w-96">
-                <span class="font-bold text-white">900-214-686-01</span>
+                <span class="mr-2 font-bold text-white">900-214-686-01</span>
               </td>
             </tr>
           </tbody>
@@ -202,9 +211,6 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
       </li>
       <li>
         {{ t("generalTerms.li4.shipping") }}
-        <div class="wp-block-spacer" style="height: 1rem" aria-hidden="true">
-          &nbsp;
-        </div>
         <h4 class="text-center">
           <font-awesome-layers class="fa-fw">
             <font-awesome-icon
@@ -222,16 +228,13 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
           Cibeunying Kaler,<br />
           Cimenyan, Bandung, Jawa Barat<br />40191, Indonesia
         </address>
-        <div class="wp-block-spacer" style="height: 1rem" aria-hidden="true">
-          &nbsp;
-        </div>
         <h4 class="text-center">
           <font-awesome-layers class="fa-fw">
             <font-awesome-icon :icon="['fas', 'truck']" aria-hidden="true" />
           </font-awesome-layers>
           {{ t("generalTerms.li4.byCourier") }}
         </h4>
-        <table class="shipping-details unstriped tabular-nums">
+        <table class="shipping-details unstriped mt-6 tabular-nums">
           <tbody>
             <tr>
               <td rowspan="2" class="align-middle">
@@ -340,9 +343,7 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
             </tr>
           </tbody>
         </table>
-        <p>
-          {{ t("generalTerms.li4.orByCustomDeal") }}
-        </p>
+        {{ t("generalTerms.li4.orByCustomDeal") }}
       </li>
       <li>
         {{ t("mascotCostumeTerms.li3") }}
@@ -365,12 +366,12 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
         {{ t("generalTerms.li8") }}
       </li>
     </ol>
-    <p class="p-4">
+    <div aria-label="last updated">
       <span class="text-sm italic">{{ t("lastUpdated") }}</span>
       <span class="text-sm italic">
         {{ lastUpdated }}
       </span>
-    </p>
+    </div>
   </section>
 </template>
 
