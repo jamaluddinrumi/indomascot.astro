@@ -34,14 +34,15 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
       <li>
         {{ t("designCanBeSentVia") }}
         <a
+          id="whatsapp-toc"
           target="_blank"
           :href="waUrl"
-          class="whitespace-nowrap text-whatsapp-old-green no-underline"
+          class="whitespace-nowrap no-underline"
         >
           <font-awesome-layers class="fa-fw">
             <font-awesome-icon :icon="['fab', 'whatsapp']" aria-hidden="true" />
           </font-awesome-layers>
-          <span class="-ml-0.5">WhatsApp</span>
+          <span class="ml-0.5">WhatsApp</span>
         </a>
         (<span class="italic">recommended</span>) {{ t("or") }} Email.
       </li>
@@ -372,3 +373,17 @@ lastUpdated.value = new Date("2022-12-21").toLocaleDateString(
     </p>
   </section>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #whatsapp-toc {
+    @apply text-whatsapp-green;
+  }
+}
+
+[data-theme="light"] {
+  #whatsapp-toc {
+    @apply text-whatsapp-old-green;
+  }
+}
+</style>

@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick, onBeforeUnmount } from "vue";
+import type { Ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { Image } from "@unpic/vue";
 
 const { t } = useI18n();
 
-const keunggulanBahan = ref(null);
-const keunggulanWaktu = ref(null);
-const keunggulanMasker = ref(null);
+const keunggulanBahan: Ref<HTMLElement | undefined | null> = ref();
+const keunggulanWaktu: Ref<HTMLElement | undefined | null> = ref();
+const keunggulanMasker: Ref<HTMLElement | undefined | null> = ref();
 const showKeunggulanMasker = ref(false);
 const showKeunggulanWaktu = ref(false);
 const showKeunggulanBahan = ref(false);
-const intersectionOptions = ref([]);
-const observer = ref(null);
+const intersectionOptions: Ref<IntersectionObserverInit | undefined> = ref();
+const observer: Ref<IntersectionObserver | undefined> = ref();
 const benang = ref({
   duration: Math.floor(Math.random() * 1000) + 3000,
   delay: Math.floor(Math.random() * 1000) + 200,
@@ -34,19 +35,22 @@ onMounted(() => {
 
     observer.value = new IntersectionObserver(
       onIntersecting,
-      intersectionOptions
+      intersectionOptions.value
     );
-    observer.value.observe(keunggulanBahan.value);
-    observer.value.observe(keunggulanWaktu.value);
-    observer.value.observe(keunggulanMasker.value);
+    observer.value.observe(<Element>keunggulanBahan.value);
+    observer.value.observe(<Element>keunggulanWaktu.value);
+    observer.value.observe(<Element>keunggulanMasker.value);
   });
 });
 
 onBeforeUnmount(() => {
-  observer.value.disconnect();
+  observer.value?.disconnect();
 });
 
-function onIntersecting(entries, observer) {
+function onIntersecting(
+  entries: Array<IntersectionObserverEntry>,
+  observer: IntersectionObserver
+) {
   entries.forEach((entry) => {
     if (entry.target.id === "keunggulan-bahan") {
       if (entry.isIntersecting) {

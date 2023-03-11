@@ -36,57 +36,51 @@ const { t, locale } = useI18n();
     </h1>
   </header>
   <section class="prose mx-auto mt-4 px-4 lg:mt-12">
-    <div class="">
+    <div class="relative flex justify-center">
       <div
-        class="wp-block-column medium-6 small-12 medium-order-1 small-order-2 justify-center"
-      >
-        <div class="relative flex justify-center">
-          <div
-            class="absolute z-10 overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[600px] lg:w-[450px]"
-          />
-          <Image
-            id="workshop-boneka-maskot-besar-indomascot-bandung"
-            provider="storyblok"
-            src="https://a.storyblok.com/f/118728/900x1200/ebd4e7dd5a/workshop-kostum-maskot-boneka-besar-indomascot-bandung.jpg"
-            alt="workshop-boneka-maskot-besar-indomascot-bandung"
-            width="450"
-            height="600"
-            sizes="xs:275px lg:450px"
-            class="z-20 my-0 shadow"
-            background="auto"
-            layout="constrained"
-          />
-        </div>
-        <p class="has-text-align-left">
-          {{ t("aboutUsParagraph.p1") }}
-        </p>
-        <p class="has-text-align-left">
-          {{ t("aboutUsParagraph.p2") }}
-        </p>
-        <i18n-t keypath="aboutUsParagraph.p3" scope="global" tag="p">
-          <template #potentialCustomer>
-            <span class="italic">
-              {{ t("potentialCustomer") }}
-            </span>
-          </template>
-        </i18n-t>
-        <i18n-t keypath="aboutUsParagraph.p4" scope="global" tag="p">
-          <template #potentialCustomer>
-            <span class="italic">
-              {{ t("potentialCustomer") }}
-            </span>
-          </template>
-        </i18n-t>
-        <p>
-          {{ t("aboutUsParagraph.p5") }}
-        </p>
-        <p>
-          {{ t("aboutUsParagraph.p6") }}
-        </p>
-      </div>
+        class="absolute z-10 overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[600px] lg:w-[450px]"
+      />
+      <Image
+        id="workshop-boneka-maskot-besar-indomascot-bandung"
+        provider="storyblok"
+        src="https://a.storyblok.com/f/118728/900x1200/ebd4e7dd5a/workshop-kostum-maskot-boneka-besar-indomascot-bandung.jpg"
+        alt="workshop-boneka-maskot-besar-indomascot-bandung"
+        width="450"
+        height="600"
+        sizes="xs:275px lg:450px"
+        class="z-20 my-0 border-4 border-idm-title shadow-inner"
+        background="auto"
+        layout="constrained"
+      />
     </div>
+    <p class="has-text-align-left">
+      {{ t("aboutUsParagraph.p1") }}
+    </p>
+    <p class="has-text-align-left">
+      {{ t("aboutUsParagraph.p2") }}
+    </p>
+    <i18n-t keypath="aboutUsParagraph.p3" scope="global" tag="p">
+      <template #potentialCustomer>
+        <span class="italic">
+          {{ t("potentialCustomer") }}
+        </span>
+      </template>
+    </i18n-t>
+    <i18n-t keypath="aboutUsParagraph.p4" scope="global" tag="p">
+      <template #potentialCustomer>
+        <span class="italic">
+          {{ t("potentialCustomer") }}
+        </span>
+      </template>
+    </i18n-t>
+    <p>
+      {{ t("aboutUsParagraph.p5") }}
+    </p>
+    <p>
+      {{ t("aboutUsParagraph.p6") }}
+    </p>
     <lite-youtube
-      class="mx-auto shadow-2xl"
+      class="mx-auto border-4 border-idm-title shadow-inner"
       style="
         background-image: url('https://a.storyblok.com/f/118728/480x360/dd682a5d78/hqdefault.jpg/m/');
       "
@@ -99,16 +93,18 @@ const { t, locale } = useI18n();
         <p>
           {{ t("ifThereIsSomethingElse") }}
           <a
+            id="whatsapp-link-text"
             target="_blank"
             :href="waUrl"
-            class="text-whatsapp-old-green no-underline"
+            class="no-underline"
           >
             <font-awesome-layers class="fa-fw">
               <font-awesome-icon
                 :icon="['fab', 'whatsapp']"
                 aria-hidden="true"
-              /> </font-awesome-layers
-            >WhatsApp
+              />
+            </font-awesome-layers>
+            <span class="ml-0.5">WhatsApp</span>
           </a>
           <br />
         </p>
@@ -126,7 +122,7 @@ const { t, locale } = useI18n();
         </address>
       </div>
     </div>
-    <div class="mt-8 shadow">
+    <div class="mt-8 border-4 border-idm-title shadow-inner">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0295961254546!2d107.6340594147727!3d-6.887058395023372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e70924a12e53%3A0x601a9d4dc870588d!2sIndomascot!5e0!3m2!1sen!2sid!4v1625486210172!5m2!1sen!2sid"
         width="100%"
@@ -156,3 +152,17 @@ const { t, locale } = useI18n();
     </a>
   </div>
 </template>
+
+<style lang="scss" scoped>
+[data-theme="dark"] {
+  #whatsapp-link-text {
+    @apply text-whatsapp-green;
+  }
+}
+
+[data-theme="light"] {
+  #whatsapp-link-text {
+    @apply text-whatsapp-old-green;
+  }
+}
+</style>

@@ -66,11 +66,9 @@ onMounted(() => {
   browserDimension.value = getBrowserHeight();
 
   switchLanguage.value = function (event: Event) {
-    const element = event.target;
+    const target = <HTMLSelectElement>event.target;
 
-    console.log(element);
-
-    const lang = element?.value;
+    const lang = target.value;
 
     window.location = props.localizedPaths[lang];
   };
@@ -109,7 +107,7 @@ onMounted(() => {
           <li v-for="menu in menusRef" :key="menu.text" class="my-0.5">
             <a
               rel="prefetch"
-              class="flex justify-center rounded-full p-4 focus-visible:ring focus-visible:ring-indomascot-yellow"
+              class="flex justify-center rounded-full py-4 px-8"
               :class="{
                 'btn-shadow btn-gradient active':
                   menu.href ===
