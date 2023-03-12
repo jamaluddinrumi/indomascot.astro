@@ -18,8 +18,7 @@ const lastUpdated = ref(
 <template>
   <header class="relative mx-auto mt-8 w-fit lg:mt-12">
     <div
-      class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
-      :class="[$device.isDesktop ? 'h-[40px] w-[415px]' : 'h-[24px] w-[208px]']"
+      class="absolute h-full w-full bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
     />
     <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
       {{ t("termsAndConditions") }}
@@ -182,7 +181,7 @@ const lastUpdated = ref(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-jenius lg:w-96">
-                <span class="whitespace-nowrap font-bold text-white mr-2"
+                <span class="mr-2 whitespace-nowrap font-bold text-white"
                   >Jamaluddin Rumi</span
                 >
               </td>

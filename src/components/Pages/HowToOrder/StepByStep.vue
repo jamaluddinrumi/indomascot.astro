@@ -50,10 +50,7 @@ const getSidePhoto = (side: number) => {
   <div class="mb-16 lg:mb-32">
     <div class="relative mx-auto mt-8 w-fit lg:mt-12">
       <div
-        class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
-        :class="[
-          $device.isDesktop ? 'h-[40px] w-[350px]' : 'h-[24px] w-[175px]',
-        ]"
+        class="absolute h-full w-full bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
       />
       <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
         {{ t("howToOrder") }}

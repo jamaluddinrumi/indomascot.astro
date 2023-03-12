@@ -33,10 +33,7 @@ useStoryblok(storyPath.value, { version: "draft" })
   <header>
     <div class="relative mx-auto mt-8 w-fit lg:mt-12">
       <div
-        class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg"
-        :class="[
-          $device.isDesktop ? 'h-[40px] w-[290px]' : 'h-[24px] w-[145px]',
-        ]"
+        class="absolute bg-gradient-to-t from-indigo-300 to-idm-title opacity-30 blur-lg w-full h-full"
       />
       <h1 class="text-center text-lg font-bold uppercase lg:text-4xl">
         {{ t("mascotCostume") }}
