@@ -60,10 +60,10 @@ const lastUpdated = ref(
               <td class="lg:w-96">
                 {{ t("accountHolder") }}
               </td>
-              <td class="w-auto bg-bca lg:w-96">
-                <span class="mr-2 whitespace-nowrap font-bold text-white"
-                  >Jamaluddin Rumi</span
-                >
+              <td class="w-auto bg-bca align-middle lg:w-96">
+                <span class="mr-2 whitespace-nowrap font-bold text-white">
+                  Jamaluddin Rumi
+                </span>
               </td>
             </tr>
             <tr>
@@ -90,10 +90,10 @@ const lastUpdated = ref(
               <td class="lg:w-96">
                 {{ t("accountHolder") }}
               </td>
-              <td class="w-auto bg-mandiri lg:w-96">
-                <span class="mr-2 whitespace-nowrap font-bold text-white"
-                  >Jamaluddin Rumi</span
-                >
+              <td class="w-auto bg-mandiri align-middle lg:w-96">
+                <span class="mr-2 whitespace-nowrap font-bold text-white">
+                  Jamaluddin Rumi
+                </span>
               </td>
             </tr>
             <tr>
@@ -120,10 +120,10 @@ const lastUpdated = ref(
               <td class="lg:w-96">
                 {{ t("accountHolder") }}
               </td>
-              <td class="w-auto bg-bni lg:w-96">
-                <span class="mr-2 whitespace-nowrap font-bold text-white"
-                  >Jamaluddin Rumi</span
-                >
+              <td class="w-auto bg-bni align-middle lg:w-96">
+                <span class="mr-2 whitespace-nowrap font-bold text-white">
+                  Jamaluddin Rumi
+                </span>
               </td>
             </tr>
             <tr>
@@ -150,10 +150,10 @@ const lastUpdated = ref(
               <td class="lg:w-96">
                 {{ t("accountHolder") }}
               </td>
-              <td class="w-auto bg-bri lg:w-96">
-                <span class="whitespace-nowrap font-bold text-white"
-                  >Jamaluddin Rumi</span
-                >
+              <td class="w-auto bg-bri align-middle lg:w-96">
+                <span class="whitespace-nowrap font-bold text-white">
+                  Jamaluddin Rumi
+                </span>
               </td>
             </tr>
             <tr>
@@ -181,9 +181,9 @@ const lastUpdated = ref(
                 {{ t("accountHolder") }}
               </td>
               <td class="w-auto bg-jenius lg:w-96">
-                <span class="mr-2 whitespace-nowrap font-bold text-white"
-                  >Jamaluddin Rumi</span
-                >
+                <span class="mr-2 whitespace-nowrap font-bold text-white">
+                  Jamaluddin Rumi
+                </span>
               </td>
             </tr>
             <tr>
@@ -239,13 +239,13 @@ const lastUpdated = ref(
               <td rowspan="2" class="align-middle">
                 {{ t("generalTerms.li4.jabodetabek") }}
               </td>
-              <td align="right">
+              <td class="align-middle" align="right">
                 <a
                   href="http://4848.my.id/"
                   target="_blank"
                   rel="noopener noreferrer"
                   alt="4848 Express"
-                  class="block"
+                  class="block text-center"
                 >
                   <span>4848 Express</span>
                 </a>
@@ -255,18 +255,19 @@ const lastUpdated = ref(
                   class="block"
                   target="_blank"
                   href="https://wa.me/6281802004848"
-                  >0818-0200-4848</a
                 >
+                  0818-0200-4848
+                </a>
               </td>
             </tr>
             <tr>
-              <td align="right">
+              <td class="align-middle" align="right">
                 <a
                   href="https://www.sicepat.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   alt="SiCepat GOKIL"
-                  class="block"
+                  class="block text-center"
                 >
                   <span>SiCepat GOKIL</span>
                 </a>
@@ -281,7 +282,7 @@ const lastUpdated = ref(
               <td rowspan="2" class="align-middle">
                 {{ t("generalTerms.li4.sumatera") }}
               </td>
-              <td align="right">
+              <td class="align-middle" align="right">
                 <a
                   href="https://www.sicepat.com/"
                   target="_blank"
@@ -299,13 +300,13 @@ const lastUpdated = ref(
               </td>
             </tr>
             <tr>
-              <td align="right">
+              <td class="align-middle" align="right">
                 <a
                   href="https://indahonline.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   alt="Indah Cargo"
-                  class="block"
+                  class="block text-center"
                 >
                   <span>Indah Cargo</span>
                 </a>
@@ -323,13 +324,13 @@ const lastUpdated = ref(
               <td class="align-middle">
                 {{ t("generalTerms.li4.papua") }}
               </td>
-              <td align="right">
+              <td class="align-middle" align="right">
                 <a
                   href="https://www.sicepat.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   alt="SiCepat GOKIL"
-                  class="block"
+                  class="block text-center"
                 >
                   <span>SiCepat GOKIL</span>
                 </a>

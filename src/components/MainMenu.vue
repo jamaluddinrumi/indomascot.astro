@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import $device from "@src/device";
 import { ref, onMounted, computed } from "vue";
-import { onClickOutside, useToggle, useDark } from "@vueuse/core";
+import { onClickOutside, useToggle, useDark, useStorage } from "@vueuse/core";
 import InstallButton from "@components/InstallButton.vue";
 import { mainMenu } from "@src/states";
 import { useStore } from "@nanostores/vue";
@@ -9,6 +9,8 @@ import { useI18n } from "vue-i18n";
 import { getBrowserHeight, Dimension } from "@src/dimension";
 import { prependTrailingSlash } from "@src/utils";
 import type { Menu } from "@src/menu";
+
+const themeStorage = useStorage("vueuse-color-scheme", "auto");
 
 const themes = [true, false];
 
@@ -71,6 +73,29 @@ onMounted(() => {
     const lang = target.value;
 
     window.location = props.localizedPaths[lang];
+  };
+
+  switchTheme.value = function (event: Event) {
+    const target = <HTMLSelectElement>event.target;
+
+    const theme = target.value;
+
+    console.log(theme);
+
+    themeStorage.value = theme === "true" ? "dark" : "light";
+
+    console.log("themeStorage: ", themeStorage.value);
+
+    console.log(
+      "vueuse-color-scheme: ",
+      localStorage.getItem("vueuse-color-scheme")
+    );
+
+    useHead({
+      htmlAttrs: {
+        "data-theme": computed(() => themeStorage.value),
+      },
+    });
   };
 });
 </script>

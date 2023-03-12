@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: #fefefe;
+    background: hsla(var(--p));
+  }
+
+  ::selection {
+    color: #fefefe;
+    background: hsla(var(--p));
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent;
+  }
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    img[loading="lazy"] {
+      clip-path: inset(1px);
+    }
+  }
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    font-family: "Josefin Sans", serif;
+  }
+
+  .josefin-sans {
+    font-family: "Josefin Sans", serif;
+  }
+
+  .bangers {
+    font-family: "Bangers", sans-serif;
+    @apply tracking-wide;
+  }
+
+  .btn-shadow {
+    box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
+  }
+
+  [data-theme="dark"] {
+    --idm-swiper: hsl(270, 70%, 75%);
+  }
+  
+  [data-theme="pink"] {
+    --idm-swiper: hsl(270, 60%, 52%);
+  }
+}

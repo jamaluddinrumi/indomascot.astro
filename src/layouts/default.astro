@@ -19,11 +19,11 @@ import { Seo } from "astro-seo-meta";
 import { localizePath, detectLocaleFromPath } from "astro-i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
 import menu from "@src/menu";
+import InitFooter from "@components/InitFooter.vue";
 import InitHeader from "@components/InitHeader.vue";
-import BaseFooter from "@components/BaseFooter.vue";
-import MainMenu from "@components/MainMenu.vue";
-import FloatingWhatsapp from "@components/FloatingWhatsapp.vue";
-import WhatsappContact from "@components/WhatsappContact.vue";
+import type { Locales } from "@src/locale";
+
+import "@assets/css/main.scss";
 
 export interface Props {
   title: string;
@@ -51,7 +51,7 @@ const url: URL = Astro.url;
 
 const inheritLocale = detectLocaleFromPath(url.pathname);
 
-const localizedPaths = {
+const localizedPaths: Locales = {
   en: localizePath(url.pathname, "en"),
   id: localizePath(url.pathname, "id"),
 };
@@ -77,11 +77,7 @@ const isHomepage =
   <Seo title={title} description={description} />
 
   <body class="bg-body bg-gradient">
-    <InitHeader
-      client:only="vue"
-      inheritLocale={inheritLocale}
-      menus={menus}
-    />
+    <InitHeader client:only="vue" inheritLocale={inheritLocale} menus={menus} />
     <main class="container mx-auto min-h-screen lg:max-w-6xl">
       {
         !isHomepage && (
@@ -96,89 +92,12 @@ const isHomepage =
       }
       <slot />
     </main>
-    <WhatsappContact client:only="vue" />
-    <BaseFooter client:only="vue" menus={menus} />
-    <MainMenu
+    <InitFooter
       client:only="vue"
       localizedPaths={localizedPaths}
       inheritLocale={inheritLocale}
       url={url}
       menus={menus}
     />
-    <FloatingWhatsapp client:only="vue" />
-
-    <style lang="scss" is:global>
-      ::-moz-selection {
-        /* Code for Firefox */
-        color: #fefefe;
-        background: hsl(var(--p));
-      }
-
-      ::selection {
-        color: #fefefe;
-        background: hsl(var(--p));
-      }
-
-      ::-webkit-scrollbar {
-        width: 9px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background-color: rgba(155, 155, 155, 0.5);
-        border-radius: 20px;
-        border: transparent;
-      }
-      @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-        img[loading="lazy"] {
-          clip-path: inset(1px)
-        }
-      }
-
-      // :root,
-      // [data-theme] {
-      //   background-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
-      //   color: hsla(var(--bc) / var(--tw-text-opacity, 1));
-      // }
-
-      // html[data-theme="light"] body {
-      //   background-image: linear-gradient(-180deg, $full-white 0%, #f1f7ff 100%);
-      // }
-
-      // html[data-theme="dark"] body,
-      // html[data-theme="auto"] body {
-      //   background-image: linear-gradient(-180deg, hsl(var(--b1)), hsl(var(--n)));
-      // }
-
-      .h1,
-      .h2,
-      .h3,
-      .h4,
-      .h5,
-      .h6,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a {
-        font-family: "Josefin Sans", serif;
-      }
-
-      .josefin-sans {
-        font-family: "Josefin Sans", serif;
-      }
-
-      .bangers {
-        font-family: "Bangers", sans-serif;
-        @apply tracking-wide;
-      }
-
-      .btn-shadow {
-        box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
-      }
-    </style>
   </body>
 </html>

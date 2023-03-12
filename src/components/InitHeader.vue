@@ -2,7 +2,7 @@
 import { ref, computed } from "vue";
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
-import { usePreferredDark, useDark } from "@vueuse/core";
+import { useDark, useStorage } from "@vueuse/core";
 import { inheritLocale, menus as menusState } from "@src/states";
 import { useI18n } from "vue-i18n";
 import type { Menu } from "@src/menu";
@@ -19,36 +19,35 @@ const props = defineProps({
   },
 });
 
+const themeStorage = useStorage("vueuse-color-scheme", "auto");
+
 const menus = ref(props.menus);
 
 menusState.set(props.menus);
-
-const isPreferredDark = usePreferredDark();
 
 const isDark = useDark();
 
 const { locale } = useI18n({ useScope: "global" });
 
-try {
-  themeChange(false);
+themeChange(false);
 
-  inheritLocale.set(props.inheritLocale);
+inheritLocale.set(props.inheritLocale);
 
-  locale.value = <string>props.inheritLocale;
+locale.value = <string>props.inheritLocale;
 
-  isDark.value = isPreferredDark.value;
-
-  useHead({
-    meta: [
-      {
-        name: "theme-color",
-        content: computed(() => (isDark.value ? "#13111C" : "#8532CE")),
-      },
-    ],
-    htmlAttrs: {
-      "data-theme": computed(() => (isDark.value ? "dark" : "light")),
+useHead({
+  meta: [
+    {
+      name: "theme-color",
+      content: computed(() => (isDark.value ? "#13111C" : "#8532CE")),
     },
-  });
+  ],
+  htmlAttrs: {
+    "data-theme": computed(() => themeStorage.value),
+  },
+});
+
+try {
 } catch (error) {
   console.log(error);
 } finally {
