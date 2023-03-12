@@ -80,16 +80,7 @@ onMounted(() => {
 
     const theme = target.value;
 
-    console.log(theme);
-
     themeStorage.value = theme === "true" ? "dark" : "light";
-
-    console.log("themeStorage: ", themeStorage.value);
-
-    console.log(
-      "vueuse-color-scheme: ",
-      localStorage.getItem("vueuse-color-scheme")
-    );
 
     useHead({
       htmlAttrs: {
