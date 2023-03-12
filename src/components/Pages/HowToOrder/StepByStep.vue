@@ -246,10 +246,6 @@ li.cara-pemesanan-item::after {
   @apply mt-4 mb-0 py-0 px-4 text-sm font-bold uppercase text-primary lg:text-[1.5rem];
 }
 
-[data-theme="light"] .swiper {
-  --swiper-theme-color: var(--idm-swiper);
-}
-
 [data-theme="dark"] .swiper {
   --swiper-theme-color: hsl(var(--p));
 }

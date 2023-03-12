@@ -60,11 +60,11 @@
     box-shadow: rgba(132, 59, 206, 0.15) 0px 4px 24px;
   }
 
-  [data-theme="dark"] {
-    --idm-swiper: hsl(270, 70%, 75%);
+  :root[data-theme="dark"] {
+    --swiper-theme-color: hsl(270, 70%, 75%);
   }
-  
-  [data-theme="pink"] {
-    --idm-swiper: hsl(270, 60%, 52%);
+
+  :root[data-theme="light"] {
+    --swiper-theme-color: hsl(270, 60%, 52%);
   }
 }

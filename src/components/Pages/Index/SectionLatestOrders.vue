@@ -131,7 +131,6 @@ const alt = (caption: string, uploaded_date: string) => {
 
 <style lang="scss" scoped>
 .swiper {
-  --swiper-theme-color: var(--idm-swiper);
   --swiper-pagination-bottom: 2rem;
   --swiper-pagination-bullet-inactive-color: white;
   --swiper-pagination-bullet-opacity: 1;
