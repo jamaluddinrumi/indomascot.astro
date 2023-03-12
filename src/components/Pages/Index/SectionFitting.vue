@@ -216,7 +216,7 @@ function drawCanvasImage(img) {
   }
   #instructions {
     .icon {
-      @apply text-idm-title text-opacity-0;
+      @apply text-idm-title;
     }
   }
 }
@@ -227,7 +227,7 @@ function drawCanvasImage(img) {
   }
   #instructions {
     .icon {
-      @apply text-primary text-opacity-70;
+      @apply text-primary/70;
     }
   }
 }
