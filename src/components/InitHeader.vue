@@ -2,8 +2,8 @@
 import { ref, computed } from "vue";
 import BaseHeader from "@components/BaseHeader.vue";
 import FlashyBg from "@components/FlashyBg.vue";
-import { usePreferredDark, useColorMode, useDark } from "@vueuse/core";
-import { inheritLocale, menus } from "@src/states";
+import { usePreferredDark, useDark } from "@vueuse/core";
+import { inheritLocale, menus as menusState } from "@src/states";
 import { useI18n } from "vue-i18n";
 import type { Menu } from "@src/menu";
 import { themeChange } from "theme-change";
@@ -20,6 +20,8 @@ const props = defineProps({
 });
 
 const menus = ref(props.menus);
+
+menusState.set(props.menus);
 
 const isPreferredDark = usePreferredDark();
 
