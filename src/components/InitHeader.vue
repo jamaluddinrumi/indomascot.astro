@@ -43,7 +43,9 @@ useHead({
     },
   ],
   htmlAttrs: {
-    "data-theme": computed(() => themeStorage.value),
+    "data-theme": computed(() =>
+      themeStorage.value === "light" ? "light" : "dark"
+    ),
   },
 });
 
