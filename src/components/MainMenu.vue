@@ -43,7 +43,7 @@ const props = defineProps({
   },
   url: {
     type: URL,
-    default: new URL("https://www.indomascot.com"),
+    required: true,
   },
 });
 
@@ -97,7 +97,10 @@ const motions = useMotions();
 </script>
 
 <template>
-  <Transition :css="false" @leave="(_, done) => motions.transition.leave(done)">
+  <Transition
+    :css="false"
+    @leave="(_: any, done: () => void) => motions.transition.leave(done)"
+  >
     <div
       v-if="$mainMenu"
       id="main-menu"
@@ -134,11 +137,11 @@ const motions = useMotions();
             <li v-for="menu in menusRef" :key="menu.text" class="my-0.5">
               <a
                 rel="prefetch"
-                class="flex justify-center rounded-full py-4 px-8"
+                class="menu-item flex justify-center rounded-full py-4 px-8"
                 :class="{
                   'btn-shadow btn-gradient active':
-                    menu.href ===
-                    (url.pathname || prependTrailingSlash(url.pathname)),
+                    url.pathname === menu.href ||
+                    url.pathname === prependTrailingSlash(menu.href),
                 }"
                 :href="menu.href"
                 :aria-label="menu.href === '/' ? t('homepage') : menu.text"
@@ -218,6 +221,9 @@ const motions = useMotions();
 [data-theme="light"] {
   #main-menu {
     @apply bg-base-100/70;
+    .menu-item {
+      @apply hover:text-neutral-content focus:text-neutral-content;
+    }
   }
 }
 </style>
