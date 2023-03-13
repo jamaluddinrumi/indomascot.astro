@@ -24,10 +24,7 @@ const lastUpdated = ref(
       {{ t("termsAndConditions") }}
     </h1>
   </header>
-  <section class="prose mx-auto mt-8 pl-8 pr-4">
-    <h2 class="mb-0 text-left text-sm uppercase lg:text-lg">
-      {{ t("generalTermsAndConditions") }}
-    </h2>
+  <section class="prose mx-auto pl-8 pr-4 lg:mt-8">
     <ol class="list-decimal p-4">
       <li>
         {{ t("designCanBeSentVia") }}
@@ -219,21 +216,17 @@ const lastUpdated = ref(
           </font-awesome-layers>
           {{ t("generalTerms.li4.pickInWorkshop") }}
         </h4>
-        <p class="text-center">
-          {{ t("generalTerms.li4.youCanPickInWorkshop") }}
-        </p>
-        <address class="text-center">
-          Jl. Cukang Kawung, Gang Bojong Mekar<br />RT 01 RW 15 No 53,
-          Cibeunying Kaler,<br />
-          Cimenyan, Bandung, Jawa Barat<br />40191, Indonesia
+        <address class="text-center leading-loose">
+          Jl. Cukang Kawung Gang Bojong Mekar No. 53 RT 1 RW 15 <br />
+          Cibeunying Kaler, Kec. Cimenyan, Bandung, Jawa Barat 40191
         </address>
-        <h4 class="text-center">
+        <h4 class="text-center mt-8">
           <font-awesome-layers class="fa-fw">
             <font-awesome-icon :icon="['fas', 'truck']" aria-hidden="true" />
           </font-awesome-layers>
           {{ t("generalTerms.li4.byCourier") }}
         </h4>
-        <table class="shipping-details unstriped mt-6 tabular-nums">
+        <table class="shipping-details unstriped mt-4 tabular-nums">
           <tbody>
             <tr>
               <td rowspan="2" class="align-middle">
