@@ -46,7 +46,7 @@ const { t, locale } = useI18n();
   <section class="prose mx-auto mt-4 px-4 lg:mt-12">
     <div class="relative flex justify-center">
       <div
-        class="absolute z-10 overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[600px] lg:w-[450px]"
+        class="absolute h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
       />
       <Image
         id="workshop-boneka-maskot-besar-indomascot-bandung"
@@ -56,7 +56,7 @@ const { t, locale } = useI18n();
         width="450"
         height="600"
         sizes="xs:275px lg:450px"
-        class="z-20 my-0 border-4 border-idm-title shadow-inner"
+        class="relative my-0 border-4 border-idm-title shadow-inner"
         background="auto"
         layout="constrained"
       />
@@ -87,15 +87,20 @@ const { t, locale } = useI18n();
     <p>
       {{ t("aboutUsParagraph.p6") }}
     </p>
-    <lite-youtube
-      class="mx-auto border-4 border-idm-title shadow-inner"
-      style="
-        background-image: url('https://a.storyblok.com/f/118728/480x360/dd682a5d78/hqdefault.jpg/m/');
-      "
-      :videoid="youtubeWorkshopIdUrl"
-      :playlabel="t('workshopAmbiance')"
-      params="controls=1&modestbranding=2&rel=0&enablejsapi=1&autoplay=1"
-    />
+    <div class="relative">
+      <div
+        class="absolute h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
+      />
+      <lite-youtube
+        class="relative mx-auto border-4 border-idm-title shadow-inner"
+        style="
+          background-image: url('https://a.storyblok.com/f/118728/480x360/dd682a5d78/hqdefault.jpg/m/');
+        "
+        :videoid="youtubeWorkshopIdUrl"
+        :playlabel="t('workshopAmbiance')"
+        params="controls=1&modestbranding=2&rel=0&enablejsapi=1&autoplay=1"
+      />
+    </div>
     <div class="wp-block-columns has-2-columns">
       <div class="wp-block-column">
         <p>
@@ -120,26 +125,29 @@ const { t, locale } = useI18n();
           <whatsapp-button />
         </div>
       </div>
-      <div class="wp-block-column">
-        <p class="text-center">
-          {{ t("ourPostalAddress") }}
-        </p>
-        <address class="text-center leading-loose">
-          Jl. Cukang Kawung Gang Bojong Mekar No. 53 RT 1 RW 15 <br />
-          Cibeunying Kaler, Kec. Cimenyan, Bandung, Jawa Barat 40191
-        </address>
-      </div>
+      <p class="mt-10 text-center">
+        {{ t("ourPostalAddress") }}
+      </p>
+      <address class="text-center leading-loose">
+        Jl. Cukang Kawung Gang Bojong Mekar No. 53 RT 1 RW 15 <br />
+        Cibeunying Kaler, Kec. Cimenyan, Bandung, Jawa Barat 40191
+      </address>
     </div>
-    <div class="mt-8 border-4 border-idm-title shadow-inner">
-      <iframe
-        :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0295961254546!2d107.6340594147727!3d-6.887058395023372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e70924a12e53%3A0x601a9d4dc870588d!2sIndomascot!5e0!3m2!1sen!2sid!4v1625486210172!5m2!1sen!2sid&region=${locale}&language=${locale}`"
-        width="100%"
-        height="480px"
-        style="border: 0"
-        allowfullscreen="false"
-        frameborder="0"
-        loading="lazy"
+    <div class="relative">
+      <div
+        class="absolute h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
       />
+      <div class="relative mt-4 border-4 border-idm-title shadow-inner lg:mt-8">
+        <iframe
+          :src="`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0295961254546!2d107.6340594147727!3d-6.887058395023372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e70924a12e53%3A0x601a9d4dc870588d!2sIndomascot!5e0!3m2!1sen!2sid!4v1625486210172!5m2!1sen!2sid&region=${locale}&language=${locale}`"
+          width="100%"
+          height="480px"
+          style="border: 0"
+          allowfullscreen="false"
+          frameborder="0"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
   <div class="h-12" aria-hidden="true" />
