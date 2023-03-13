@@ -125,10 +125,12 @@ const { t, locale } = useI18n();
           <whatsapp-button />
         </div>
       </div>
-      <p class="mt-10 text-center">
-        {{ t("ourPostalAddress") }}
-      </p>
-      <address class="text-center leading-loose">
+      <div class="mt-10 text-center">
+        <span class="">
+          {{ t("ourPostalAddress") }}
+        </span>
+      </div>
+      <address class="text-center leading-loose mt-1">
         Jl. Cukang Kawung Gang Bojong Mekar No. 53 RT 1 RW 15 <br />
         Cibeunying Kaler, Kec. Cimenyan, Bandung, Jawa Barat 40191
       </address>
