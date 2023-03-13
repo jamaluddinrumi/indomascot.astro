@@ -46,11 +46,11 @@ const { t } = useI18n();
     </div>
     <div class="right relative order-1 lg:order-2">
       <div
-        class="absolute z-10 h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
+        class="absolute h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
       />
       <Image
         cdn="storyblok"
-        class="relative z-20 lg:rounded-xl lg:rounded-tr-lg lg:border-4 lg:border-idm-title"
+        class="relative lg:rounded-xl lg:rounded-tr-lg lg:border-4 lg:border-idm-title"
         loading="lazy"
         src="https://a.storyblok.com/f/118728/973x903/647fab1977/all-grab-mascots-gradient.jpg/m/576x513"
         alt="all grab mascots"
