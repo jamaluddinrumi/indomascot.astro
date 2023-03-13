@@ -50,16 +50,16 @@ onMounted(() => {
     id="definisi"
     class="definisi mt-14 grid grid-cols-1 gap-4 overflow-hidden border p-2 text-center lg:mt-16 lg:grid-cols-2 lg:rounded-2xl lg:p-20"
   >
-    <div id="left relative">
+    <div id="left" class="relative">
       <div
-        class="absolute overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block lg:h-[847px] lg:w-[480px]"
+        class="absolute h-full w-full overflow-hidden bg-fuchsia-400/30 blur-3xl lg:block"
       />
       <video
         id="inilahmaskot"
         preload="true"
         controls
         width="480"
-        class="mx-auto mt-0.5 rounded-lg border-4 border-idm-title shadow-inner lg:relative lg:mt-0"
+        class="mx-auto mt-0.5 rounded-lg border-4 border-idm-title shadow-inner relative lg:mt-0"
         poster="https://a.storyblok.com/f/118728/720x1280/7cec6db713/maskot-roti-kapiten-sedang-nongkrong-di-depan-outlet.jpeg/m/480x854"
       >
         <source
@@ -122,7 +122,7 @@ onMounted(() => {
             </a>
             <font-awesome-icon
               :icon="['fas', 'external-link-alt']"
-              class="link-accent link ml-1 hover:text-accent text-sm"
+              class="link-accent link ml-1 text-sm hover:text-accent"
               aria-hidden="true"
             />
           </i18n-t>
