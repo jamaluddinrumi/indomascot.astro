@@ -21,8 +21,8 @@ specifiers:
   '@tailwindcss/typography': ^0.5.9
   '@types/lodash-es': ^4.17.6
   '@typescript-eslint/parser': ^5.54.1
-  '@unhead/addons': ^1.1.22
-  '@unhead/vue': ^1.1.22
+  '@unhead/addons': ^1.1.23
+  '@unhead/vue': ^1.1.23
   '@unpic/pixels': ^1.1.0
   '@unpic/placeholder': ^0.1.2
   '@unpic/vue': ^0.0.11
@@ -72,8 +72,8 @@ dependencies:
   '@nanostores/vue': 0.7.0_5k5a5xuqaffd2s4dm6vugcn64i
   '@storyblok/astro': 2.0.12
   '@storyblok/js': 2.1.0
-  '@unhead/addons': 1.1.22
-  '@unhead/vue': 1.1.22_vue@3.2.47
+  '@unhead/addons': 1.1.23
+  '@unhead/vue': 1.1.23_vue@3.2.47
   astro: 2.1.2_sass@1.59.2
   astro-compressor: 0.3.0
   lazysizes: 5.3.2
@@ -2365,51 +2365,51 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@unhead/addons/1.1.22:
-    resolution: {integrity: sha512-/zmGKEX881PBt3l7kmhYF4gwu77GmbgCSX4MLyFDbW6/2c4siJFcIHCK7m7GFXqYD8pwwSEhLA48bccI/MBMMA==}
+  /@unhead/addons/1.1.23:
+    resolution: {integrity: sha512-13lXGOZensrv3edbDsqfX+oJKtQTkL3xxXXV2bwkop8fXPdAoMvlSsdMpDsJvDfeAnP4ePQMArkZKAeWbdBsJQ==}
     dependencies:
       '@rollup/pluginutils': 5.0.2
-      '@unhead/schema': 1.1.22
-      '@unhead/shared': 1.1.22
+      '@unhead/schema': 1.1.23
+      '@unhead/shared': 1.1.23
       magic-string: 0.30.0
       mlly: 1.1.1
       ufo: 1.1.1
-      unhead: 1.1.22
+      unhead: 1.1.23
       unplugin: 1.1.0
       unplugin-ast: 0.7.0
     transitivePeerDependencies:
       - rollup
     dev: false
 
-  /@unhead/dom/1.1.22:
-    resolution: {integrity: sha512-teutFdu4Frn1iRwacqvDz1Cxbygu6kgeI4N8T3Tu1YTMFIOnmqEklJdQGsY6ozR6MrcCV7CP6p89J5yJdPpnig==}
+  /@unhead/dom/1.1.23:
+    resolution: {integrity: sha512-Ofa427IF7tMhL/Qw4JzlAbRVBnQjURZONcjhGHVOCoNLU+GAKfbDLBpR2r3kXQFFcv2aDKygoSVyxU6R0cLptw==}
     dependencies:
-      '@unhead/schema': 1.1.22
-      '@unhead/shared': 1.1.22
+      '@unhead/schema': 1.1.23
+      '@unhead/shared': 1.1.23
     dev: false
 
-  /@unhead/schema/1.1.22:
-    resolution: {integrity: sha512-587TasZqBD3BTzXRxE0p8DNyzcZ8Dc+6ssAzsER5fZTcymZwskgIQ9sYNkCUy4GpjnA1wCSRmKKpblLErBuWdg==}
+  /@unhead/schema/1.1.23:
+    resolution: {integrity: sha512-ens8dY3ji8xLVutrcLnNmWq4dpBQIzvSHBr6yZqj7mF8RORXYNwJsY0LRAyAgTyv9aD5aEVpQIiz9s4f2+Nncg==}
     dependencies:
       hookable: 5.5.1
       zhead: 2.0.4
     dev: false
 
-  /@unhead/shared/1.1.22:
-    resolution: {integrity: sha512-fTbyltjNUzT8+Sq7lE2F9B/8AoPUdsKqnC+qZgdKnmKWy4QWT9TtfWUPT58wt4NhFMRhZjV5iKBW2m3AHZ8aIg==}
+  /@unhead/shared/1.1.23:
+    resolution: {integrity: sha512-6uFEn/DRainxc3IE+RTMV6AK4Xi8osg7qAUAVMz3KpF0EoHzGbBjVBuSrkf7CnrE9Eg+/QYGLdwTvONJHCcYOA==}
     dependencies:
-      '@unhead/schema': 1.1.22
+      '@unhead/schema': 1.1.23
     dev: false
 
-  /@unhead/vue/1.1.22_vue@3.2.47:
-    resolution: {integrity: sha512-c9yuRL15ec7kO0cUyXEXYTUN15LQX7nemV6zk3ILzElDwnJWENYkvVSG65abkDW/cdGlfZs3s7djGzoFdWEJiA==}
+  /@unhead/vue/1.1.23_vue@3.2.47:
+    resolution: {integrity: sha512-v693TmDYIZyVkZBW+YGyy4Zgl78gQZby84yXpok+E9tmqg2POQ9oG0ILdPNdlwLfWeSrhb8dTahWb68v608LdA==}
     peerDependencies:
       vue: '>=2.7 || >=3'
     dependencies:
-      '@unhead/schema': 1.1.22
-      '@unhead/shared': 1.1.22
+      '@unhead/schema': 1.1.23
+      '@unhead/shared': 1.1.23
       hookable: 5.4.2
-      unhead: 1.1.22
+      unhead: 1.1.23
       vue: 3.2.47
     dev: false
 
@@ -7338,12 +7338,12 @@ packages:
     dependencies:
       busboy: 1.6.0
 
-  /unhead/1.1.22:
-    resolution: {integrity: sha512-yDkW3u7473IvpQEySAMw7X0o3FZgTk/e+QM8YpnYk5BnmgJ2HcY8rwu+B6LzQm8d14aZ7QFxVO8F8tMzxTe9Jg==}
+  /unhead/1.1.23:
+    resolution: {integrity: sha512-nM74sM3+puqhHLC9cbwk0rOsjZR41aP0UJeQcoYVuzFlX0+abECgPkpkSI+/HZsXeRVTGxs9WWmjiFHaG18DrQ==}
     dependencies:
-      '@unhead/dom': 1.1.22
-      '@unhead/schema': 1.1.22
-      '@unhead/shared': 1.1.22
+      '@unhead/dom': 1.1.23
+      '@unhead/schema': 1.1.23
+      '@unhead/shared': 1.1.23
       hookable: 5.5.1
     dev: false
 
