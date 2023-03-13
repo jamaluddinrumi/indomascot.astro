@@ -108,21 +108,19 @@ const motions = useMotions();
       :enter="{
         y: 0,
         transition: {
-          type: 'spring',
-          stiffness: 250,
-          damping: 25,
-          mass: 0.5,
-          delay: 0,
+          type: 'keyframes',
+          duration: 300,
+          ease: 'easeOut',
+          delay: 10,
         },
       }"
       :leave="{
         y: -browserDimension.height,
         transition: {
-          type: 'spring',
-          stiffness: 250,
-          damping: 25,
-          mass: 0.5,
-          delay: 1000,
+          type: 'keyframes',
+          duration: 200,
+          ease: 'easeIn',
+          delay: 500,
         },
       }"
       class="fixed top-0 left-0 z-[9999] mx-auto h-screen w-screen max-w-none overflow-y-scroll backdrop-blur-3xl"
