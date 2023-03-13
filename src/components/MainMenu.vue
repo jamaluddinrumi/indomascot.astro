@@ -221,9 +221,6 @@ const motions = useMotions();
 [data-theme="light"] {
   #main-menu {
     @apply bg-base-100/70;
-    .menu-item {
-      @apply hover:text-neutral-content focus:text-neutral-content;
-    }
   }
 }
 </style>
