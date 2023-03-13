@@ -53,7 +53,7 @@ export default {
     li3: "Proses pembuatan baru akan dimulai 1 hari setelah DP {downPayment} & desain maskot diterima.",
     li4: {
       shipping: "Pengiriman",
-      pickInWorkshop: "Diambil Sendiri",
+      pickInWorkshop: "Diambil Di Workshop",
       youCanPickInWorkshop:
         "Kostum dapat diambil sendiri di workshop Kami yang beralamat di:",
       byCourier: "Dikirim Menggunakan Agen Pengiriman/Ekspedisi",
@@ -231,4 +231,9 @@ export default {
   chatUsonWhatsapp: "Chat kami di WhatsApp 0822-2155-6633",
   homepage: "Halaman Depan",
   workshopAmbiance: "Suasana Workshop INDOMASCOT",
+  proportionalHumanBodyGuide: "panduan tubuh manusia yang proporsional",
+  passesFittingGuide:
+    "contoh desain maskot yang proporsional dengan tubuh manusia",
+  notPassesFittingGuide:
+    "contoh desain maskot yang tidak proporsional dengan tubuh manusia",
 };

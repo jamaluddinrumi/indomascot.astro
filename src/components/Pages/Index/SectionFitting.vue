@@ -1,11 +1,34 @@
 <script setup lang="ts">
 import { Image as UnpicImage } from "@unpic/vue";
-import Moveable, { VueMoveableInstance } from "vue3-moveable";
+import Moveable from "vue3-moveable";
 import $device from "@src/device";
-import { ref } from "vue";
+import { useDark } from "@vueuse/core";
+import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+const isDark = useDark();
+
+const theme = computed(() => (isDark.value ? "dark" : "light"));
+
+const fittingImages = {
+  proportionalHumanBodyGuide: {
+    dark: "https://a.storyblok.com/f/118728/275x275/237f619670/mascot-costume-proportional-design-guide-white.png",
+    light:
+      "https://a.storyblok.com/f/118728/1564x1584/0a5e1806bb/mascot-costume-proportional-design-guide.png",
+  },
+  passesFittingGuide: {
+    dark: "https://a.storyblok.com/f/118728/281x281/3704feab47/uniku-fitting-is-passed-white.png",
+    light:
+      "https://a.storyblok.com/f/118728/782x793/604d6a7a85/uniku-fitting-is-passed.png",
+  },
+  notPassesFittingGuide: {
+    dark: "https://a.storyblok.com/f/118728/281x281/1f0b2f6488/zeze-fitting-is-not-passed-white.png",
+    light:
+      "https://a.storyblok.com/f/118728/782x793/3c893e1395/zeze-fitting-is-not-passed.png",
+  },
+};
 
 const target = ref(null);
 
@@ -71,7 +94,7 @@ function drawCanvasImage(img) {
       </span>
     </h2>
   </div>
-  <section id="fitting" class="overflow-hidden p-4 lg:mb-32 lg:p-0">
+  <section id="fitting" class="overflow-hidden p-4 lg:mb-20 lg:p-0">
     <div class="grid grid-cols-1 gap-0 px-0 lg:grid-cols-2 lg:px-8">
       <div
         class="order-2 mt-4 flex flex-col justify-self-center lg:order-1 lg:mt-0"
@@ -83,13 +106,14 @@ function drawCanvasImage(img) {
             width="275"
             height="275"
             sizes="sm:275px lg:275px"
-            src="https://a.storyblok.com/f/118728/1564x1584/0a5e1806bb/mascot-costume-proportional-design-guide.png/m/275x275"
+            :src="fittingImages.proportionalHumanBodyGuide[theme]"
             class="w-60 text-center"
-            alt="panduan tubuh manusia yang proporsional"
+            :alt="t('proportionalHumanBodyGuide')"
           />
-          <div class="absolute top-0 left-0">
+          <div class="-left-1/5 absolute top-1/4">
             <canvas id="target" ref="target" class="target" />
             <Moveable
+              id="moveable"
               class="moveable"
               :rotation-position="`none`"
               :target="['#target']"
@@ -107,7 +131,7 @@ function drawCanvasImage(img) {
             />
           </div>
         </div>
-        <div class="my-8 grid grid-cols-1 lg:mt-12">
+        <div class="mt-8 grid grid-cols-1 lg:mt-12">
           <div class="flex justify-center">
             <label
               class="bg-gradient flex cursor-pointer justify-center rounded-full bg-primary px-6 py-4 uppercase tracking-wide text-neutral-content"
@@ -136,8 +160,8 @@ function drawCanvasImage(img) {
             width="281"
             height="281"
             sizes="sm:133px lg:281px"
-            src="https://a.storyblok.com/f/118728/782x793/604d6a7a85/uniku-fitting-is-passed.png/m/281x281"
-            alt="contoh desain maskot yang tidak proporsional dengan tubuh manusia"
+            :src="fittingImages.passesFittingGuide[theme]"
+            :alt="t('passesFittingGuide')"
           />
           <UnpicImage
             cdn="storyblok"
@@ -145,8 +169,8 @@ function drawCanvasImage(img) {
             width="281"
             height="281"
             sizes="sm:133px lg:281px"
-            src="https://a.storyblok.com/f/118728/782x793/3c893e1395/zeze-fitting-is-not-passed.png/m/281x281"
-            alt="contoh desain maskot yang tidak proporsional dengan tubuh manusia"
+            :src="fittingImages.notPassesFittingGuide[theme]"
+            :alt="t('notPassesFittingGuide')"
           />
         </div>
         <div class="mt-4 lg:mt-0">
@@ -238,5 +262,21 @@ function drawCanvasImage(img) {
 }
 li {
   margin-top: 0.5rem;
+}
+</style>
+
+<style lang="scss">
+[data-theme="dark"] {
+  #moveable.moveable-control-box .moveable-line,
+  #moveable.moveable-control-box .moveable-control {
+    --moveable-color: hsl(var(--idm-title));
+  }
+}
+
+[data-theme="light"] {
+  #moveable.moveable-control-box .moveable-line,
+  #moveable.moveable-control-box .moveable-control {
+    --moveable-color: hsl(var(--p));
+  }
 }
 </style>

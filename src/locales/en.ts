@@ -227,4 +227,7 @@ export default {
   chatUsonWhatsapp: "Chat us on WhatsApp +62 822-2155-6633",
   homepage: "Homepage",
   workshopAmbiance: "INDOMASCOT Workshop",
+  proportionalHumanBodyGuide: "Proportional Human Body Guide",
+  passesFittingGuide: "mascot design passed proportional human body sample",
+  notPassesFittingGuide: "mascot design not passed proportional human body sample",
 };
